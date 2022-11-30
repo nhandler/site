@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 import LOGO from 'assets/logo.svg';
 import styles from './styles.module.scss';
@@ -28,8 +29,12 @@ type PropTypes = {
 };
 
 const NavBar = ({ hideLogo, showHome, showRegister, mobileBreakpoint = 768, className }: PropTypes): JSX.Element => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < mobileBreakpoint);
+  const [isMobile, setIsMobile] = useState(false);
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < mobileBreakpoint);
+  }, []);
 
   useEffect(() => {
     const mql = window.matchMedia(`(max-width: ${mobileBreakpoint}px)`);
@@ -101,11 +106,11 @@ const NavBar = ({ hideLogo, showHome, showRegister, mobileBreakpoint = 768, clas
   return (
     <header>
       <nav className={clsx(styles.navBar, className)}>
-        <Link to="/">
+        <Link href="/">
           <img className={clsx(styles.logo, isMobile && styles.mobile, hideLogo && styles.hidden)} src={LOGO} alt="HackIllinois Logo" />
         </Link>
 
-        { showRegister && <Link className={styles.registerButton} to="/register">Register</Link> }
+        { showRegister && <Link className={styles.registerButton} href="/register">Register</Link> }
 
         { dropdownMenu }
       </nav>

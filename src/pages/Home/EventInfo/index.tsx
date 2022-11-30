@@ -88,15 +88,15 @@ const EventInfo: React.FC = () => {
         <div className={styles.cakeMiddle}>
           <div className={styles.faqSectionHeaders}>
             {Array(faqs.length).fill(0).map((_, i) => i).map((i) => (
-              <div className={styles.faqSectionHeaderContainer}>
+              <div key={i} className={styles.faqSectionHeaderContainer}>
                 <button key={i} className={styles.faqSectionHeader} onClick={() => setFaqSectionIndex(i)}>{faqs[i].sectionTitle}</button>
                 {i === faqSectionIndex && <div ref={piping} className={styles.faqSectionPiping} />}
               </div>
             ))}
           </div>
           <div className={styles.faqContent}>
-            {faqs[faqSectionIndex].sectionFaqs.map(({ question, answer }) => (
-              <div className={styles.faqContentColumn}>
+            {faqs[faqSectionIndex].sectionFaqs.map(({ question, answer }, i) => (
+              <div key={i} className={styles.faqContentColumn}>
                 <h3>{question}</h3>
                 {answer}
               </div>

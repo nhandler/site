@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import React, { ReactNode } from 'react';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
+import Link from 'next/link';
 
 import styles from './styles.module.scss';
 
@@ -17,7 +18,7 @@ type PropTypes = {
 
 const HighlightedLink = ({ to, children, color = 'white', highlightEnabled = true,
   highlightColor = '#EE6C72', className, style, ...props }: PropTypes): JSX.Element => (
-    <NavLink
+    <Link
       className={clsx(styles.highlightedLink, className)}
       to={to}
       style={{ color, ...style }}
@@ -27,7 +28,7 @@ const HighlightedLink = ({ to, children, color = 'white', highlightEnabled = tru
     >
       {children}
       <div className={styles.highlight} style={{ backgroundColor: highlightColor }} />
-    </NavLink>
+    </Link>
 );
 
 export default HighlightedLink;
