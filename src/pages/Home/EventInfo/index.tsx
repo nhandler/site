@@ -2,6 +2,10 @@ import React, { useState, useRef, useEffect } from 'react';
 import lottie from 'lottie-web';
 import styles from './styles.module.scss';
 
+import firework1 from 'assets/home/event_info/firework_1.svg';
+import firework2 from 'assets/home/event_info/firework_2.svg';
+import firework3 from 'assets/home/event_info/firework_3.svg';
+
 
 
 const EventInfo: React.FC = () => {
@@ -9,6 +13,10 @@ const EventInfo: React.FC = () => {
   return (
   
     <div className={styles.eventInfo}>
+      <div>
+      <img src= {firework1}/>
+
+      </div>
       <div>
     <h1 className={styles.h1} > The Event</h1>
       <p>HackIllinois is University of Illinois at Urbana-Champaign’s premiere collegiate hackathon. In recent years, we have run our first fully virtual hackathon as well as our very new Open Source Fellowship.</p>
