@@ -12,7 +12,7 @@ import styles from './styles.module.scss';
 
 const Home: React.FC = () => (
   <div className={styles.home}>
-    <Hero />
+    <Hero/>
     <EventInfo />
     <FAQs />
     {/* <Speakers /> */}
