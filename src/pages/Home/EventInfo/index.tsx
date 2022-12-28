@@ -18,7 +18,7 @@ const EventInfo: React.FC = () => {
 
   <div>
 <h1>Join Us</h1>
-<p>Follow us on Twitter (@HackIllinois) and Instagram (@HackIllinois) to be notified of our event updates! There will be regular content and posts.</p>
+<p>Follow us on Twitter <a href = "https://twitter.com/hackillinois?lang=en" target="_blank">(@HackIllinois)</a> and Instagram  <a href = "https://www.instagram.com/hackillinois/?hl=en" target="_blank">(@HackIllinois)</a> to be notified of our event updates! There will be regular content and posts.</p>
 <h2> Discord</h2>
 <p>Our discord server will be the main hub for our event. You’ll use this to find and communicate with teammates and other attendees, access our workshops and company events, and get help from mentors—all through one centralized platform.</p>
 
@@ -33,5 +33,6 @@ const EventInfo: React.FC = () => {
 </div>
   );
 };
+
 
 export default EventInfo;
