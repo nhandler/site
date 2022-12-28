@@ -13,8 +13,18 @@ const EventInfo: React.FC = () => {
   return (
   
     <div className={styles.eventInfo}>
-      <div>
+      <div className={styles.firework1position}>
       <img src= {firework1}/>
+
+      </div>
+
+      <div className={styles.firework2position}>
+      <img src= {firework2}/>
+
+      </div>
+
+      <div className={styles.firework3position}>
+      <img src= {firework3}/>
 
       </div>
       <div>
