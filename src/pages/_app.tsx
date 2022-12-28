@@ -7,8 +7,6 @@ import reportWebVitals from '../reportWebVitals';
 
 // import './index.css';
 
-dynamic(() => import('array-flat-polyfill'), { ssr: false });
-dynamic(() => import('unfocus'), { ssr: false });
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {
