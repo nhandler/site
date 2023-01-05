@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Hero from './Hero';
+import Hero from '../components/Hero';
 // import EventInfo from './EventInfo';
 // import FAQs from './FAQs';
 // import Sponsors from './Sponsors';
