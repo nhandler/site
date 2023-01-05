@@ -2,6 +2,7 @@ import React from 'react';
 
 import Hero from './Hero';
 // import EventInfo from './EventInfo';
+// import FAQs from './FAQs';
 // import Sponsors from './Sponsors';
 // import Speakers from './Speakers';
 // import OurTeam from './OurTeam';
@@ -13,6 +14,9 @@ const Home: React.FC = () => (
   <div className={styles.home}>
     <Hero />
     {/* <EventInfo /> */}
+    {/* <Hero/> */}
+    {/* <EventInfo /> */}
+    {/* <FAQs /> */}
     {/* <Speakers /> */}
     {/* <OurTeam /> */}
     {/* <Sponsors /> */}

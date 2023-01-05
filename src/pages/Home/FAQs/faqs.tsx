@@ -2,12 +2,12 @@ import React from 'react';
 
 const faqs = [
   {
-    sectionTitle: 'General',
+    sectionTitle: 'During',
     sectionFaqs: [
       {
-        question: 'What is a hackathon?',
+        question: 'How do I get to the University of Illinois?',
         answer: [
-          <p>A hackathon is a collaborative event in which teams learn new skills &amp; technologies and create projects. There’s prizes to win, workshops on various fields in Computer Science, and other fun mini-events to take part in! This year, HackIllinois will be a 36-hour virtual hackathon, meaning that attendees from around the world can attend from the comfort of their home.</p>,
+          <p>HackIllinois will be providing some bus routes to the event. If you are a University of Illinois student, please walk or utilize the MTD bus system.</p>,
         ],
       },
       {
@@ -17,21 +17,33 @@ const faqs = [
         ],
       },
       {
-        question: 'How do I register?',
+        question: 'How do applications work?',
         answer: [
-          <p>Here is the link to register: <a href="https://hackillinois.org/register">https://hackillinois.org/register</a>. Interested participants can register until the day of the event, February 25, 2022.</p>,
+          <p>You must apply in order to be considered for HackIllinois. Admissions will be based on a weighted lottery. Decisions will be released in late January in multiple waves, and it is to your advantage to apply as soon as possible. If you’re accepted, there will be a limited time to RSVP before we reallocate your spot to another student.</p>,
         ],
       },
       {
-        question: 'Who can register?',
+        question: 'How can I stay updated with what is going on at the event?',
         answer: [
-          <p>Anyone 18 years or older and enrolled in a high school, college, or university (or left school during the current school year) can register!</p>,
+          <p>Please download the HackIllinois app (available shortly before the event on the App Store and Play Store)! Our website will also be continually updated with new information throughout the year. We will also be sending out reminders for various workshops and events on our Discord. Once you register, you’ll receive instructions on how to RSVP and join the Discord server.</p>,
+        ],
+      },
+      {
+        question: 'Have more questions?',
+        answer: [
+          <p>Please don’t hesitate to reach out to us at <a href="mailto:contact@hackillinois.org">contact@hackillinois.org</a> if you have any other questions.</p>,
+        ],
+      },
+      {
+        question: 'Interested in being a sponsor at our event?',
+        answer: [
+          <p>Email us at <a href="mailto:sponsor@hackillinois.org">sponsor@hackillinois.org</a>!</p>,
         ],
       },
     ],
   },
   {
-    sectionTitle: 'Before the Event',
+    sectionTitle: 'Before',
     sectionFaqs: [
       {
         question: 'Do I need a team? How do I find one?',
@@ -42,7 +54,7 @@ const faqs = [
       {
         question: 'What should I bring?',
         answer: [
-          <p>Nothing! Everything will be online!</p>,
+          <p>You should bring a student ID, reusable water bottle, change of clothing, personal items such as toiletries, laptop, and charger. Due to safety considerations, please do not bring desktop computers, extra monitors, weapons, or alcoholic beverages.</p>,
         ],
       },
       {
@@ -57,10 +69,16 @@ const faqs = [
           <p>No! People of all skill levels are welcomed!</p>,
         ],
       },
+      {
+        question: 'Is there a Code of Conduct?',
+        answer: [
+          <p>Yes! All attendees of the event (sponsors, mentors, etc.) agree to the <u>HackIllinois 2022 Code of Conduct</u> </p>,
+        ],
+      },
     ],
   },
   {
-    sectionTitle: 'Day of Event',
+    sectionTitle: 'After',
     sectionFaqs: [
       {
         question: 'Is there anything to do other than code?',

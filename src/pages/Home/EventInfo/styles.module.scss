@@ -1,240 +1,79 @@
 @import '../breakpoints.scss';
 
-.emphasized {
-  font-weight: 500;
-}
 
-section.eventInfo {
-  background-image: linear-gradient(to bottom, #F2F3D4, #C9CF76);
+
+
+.eventInfo {
+  background: linear-gradient(to bottom, #14518A, #196795);
   position: relative;
-  margin-top: -35px;
-  padding-top: 30vw;
+  min-height: 100vh;
   z-index: 2;
   margin-bottom: 0;
-
-  @media (max-width: $mobile-breakpoint) {
-    padding-top: 25vh;
-  }
-
-  .cakeLayer1, .cakeLayer2, .cakeLayer3 {
-    margin: auto;
-    display: block;
-  }
-
-  .cakeLayer1 {
-    width: 53%;
-    @media (max-width: $mobile-breakpoint) {
-      width: 77%;
-    }
-
-    .cakeTop {
-      padding-top: 15%;
-    }
-  }
-
-  .cakeLayer2 {
-    width: 73.5%;
-    @media (max-width: $mobile-breakpoint) {
-      width: 85%;
-    }
-
-    .cakeTop {
-      padding-top: 10%;
-    }
-  }
-
-  .cakeLayer3 {
-    width: 91.5%;
-
-    .cakeTop {
-      padding-top: 10%;
-    }
-
-    .cakeBottom {
-      z-index: 10;
-    }
-  }
-
-  .cakeTop {
-    position: relative;
-    padding-bottom: 4%;
-    border-radius: 10px 10px 0 0;
-
-    h1 {
-      padding-left: 5%;
-      font-size: 4vw;
-
-      @media (max-width: 1100px) {
-        font-size: 6vw;        
-      }
-
+  
+    h1 {     
+      font-family: Montserrat, sans-serif;
+      font-style: normal;
       font-weight: 600;
-      margin: 0;
-    }
-  }
-
-  .cakeFrosting {
-    position: absolute;
-    width: 101%;
-    top: 0;
-    transform: translate(-0.5%, -50%);
-  }
-
-  .cakeTop, .cakeBottom {
-    color: #E8D7A5;
-    background-color: #C96928;
-  }
-
-  .cakeMiddle {
-    background-color: #F19B79;
-    color: #542120;
-    margin-top: 0;
-    padding: 30px 5%;
-
-    a {
-      color: inherit;
+      font-size: 48px;
+      line-height: 59px;
+      
+      color: #FCDC8F;
+      
     }
 
-    .platformTitle {
-      display: flex;
-      margin-bottom: 5px;
 
-      img {
-        width: 30px;
-        align-self: center;
-        margin-right: 10px;
-      }
-    }
 
-    .platforms {
-      margin-top: 30px;
-      display: flex;
-      flex-direction: row;
-
-      .platform:not(:last-child) {
-        margin-right: 25px;
-
-        @media (max-width: 1000px) {
-          margin-right: 0;
-          margin-bottom: 25px;
-        }
-      }
-
-      @media (max-width: 1000px) {
-        flex-direction: column;
-      }
-    }
 
     h2 {
-      font-size: 30px;
-      margin: 0;
-
-      @media (max-width: 1100px) {
-        font-size: 22px;        
-      }
-    }
-
-    h3 {
-      font-size: 25px;
-      margin-bottom: 5px;
-
-      @media (max-width: 1100px) {
-        font-size: 18px;        
-      }
-    }
-
-    p {
-      margin: 0;
-      font-size: 22px;
-
-      @media (max-width: 1100px) {
-        font-size: 18px;        
-      }
-
-      @media (max-width: 800px) {
-        font-size: 16px;        
-      }
-    }
-
-    p:not(:last-of-type) {
-      margin-bottom: 30px;
-    }
-  }
-
-  .cakeBottom {
-    padding-top: 12.5%;
-    border-radius: 0 0 10px 10px;
-    position: relative;
-  }
-
-  .cakeStand {
-    width: 100%;
-    display: block;
-    position: relative;
-    margin-top: -2%;
-    z-index: 0px;
-  }
-
-  .faqSectionHeaders {
-    background-color: #E48A66C7;
-
-    display: flex;
-    justify-content: space-around;
-
-    .faqSectionHeaderContainer {
-      position: relative;
-    }
-
-    .faqSectionHeader {
-      margin: 0;
-      padding: 2.5vw 0;
-      font-size: max(2.25vw, 0.8em);
+      font-family: Montserrat, sans-serif;
+      font-style: normal;
       font-weight: 400;
-      border: none;
-      background-color: rgba(255, 255, 255, 0);
-      font-family: inherit;
-      color: inherit;
-      cursor: pointer;
-      position: relative;
+      font-size: 25px;
+      line-height: 35px;
+      /* or 140% */
+      
+      
+      color: #FFFFFF;
+      
     }
 
-    .faqSectionPiping {
-      z-index: 100;
-      $ratio: 8;
-      height: calc(78vw / #{$ratio});
-      width: calc(225vw / #{$ratio});
-      display: block;
-      position: absolute;
-      left: -12vw;
-      bottom: -0.5vw;
-    }
-  }
-
-  .faqContent {
-    display: flex;
-
-    .faqContentColumn {
-      flex: 1;
-
-      &:not(:last-of-type) {
-        margin-right: 2vw;
-
-        @media (max-width: 1000px) {
-          margin-right: 0;
-        }
-      }
-
-      h3 {
-        margin: 40px 0 20px 0;
-
-        @media (max-width: 1000px) {
-          margin: 20px 0 5px 0;
-        }
-      }
+    p{
+      font-size: 22px;
+      font-weight: 200;
+      line-height: 27px;
+      font-family: Montserrat, sans-serif;
+      color:#FFFFFF
     }
 
-    @media (max-width: 1000px) {
-      flex-direction: column;
+  firework1position{
+
+position: absolute;
+left: -4.53%;
+right: 70.51%;
+top: 28.54%;
+bottom: 63.8%;
     }
-  }
+firework2position{
+  position: absolute;
+  left: 59.69%;
+  right: -12.84%;
+  top: 33.49%;
+  bottom: 58.11%;
+  
+  opacity: 0.38;
+          }
+
+
+  firework3position{
+    position: absolute;
+    left: 56.73%;
+    right: 10.07%;
+    top: 21.25%;
+    bottom: 71.91%;
+                }
+
+
+
+ 
 }
+  
