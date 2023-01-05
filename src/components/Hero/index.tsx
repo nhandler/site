@@ -1,8 +1,8 @@
 import React from 'react';
 
-import FERRIS_WHEEL_LARGE from '../../../assets/home/hero/ferris_wheel_large.svg';
-import FERRIS_WHEEL_SMALL from '../../../assets/home/hero/ferris_wheel_small.svg';
-import BANNER from '../../../assets/home/hero/banner.svg';
+import FERRIS_WHEEL_LARGE from '../../assets/home/hero/ferris_wheel_large.svg';
+import FERRIS_WHEEL_SMALL from '../../assets/home/hero/ferris_wheel_small.svg';
+import BANNER from '../../assets/home/hero/banner.svg';
 
 import styles from './styles.module.scss';
 
