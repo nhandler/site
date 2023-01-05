@@ -29,7 +29,8 @@
   },
   "include": [
     "src",
-    "functions"
+    "functions",
+    "custom.d.ts"
   ],
   "exclude": [
     "node_modules"
