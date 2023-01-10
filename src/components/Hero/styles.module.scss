@@ -93,6 +93,7 @@
   background-color: #0D387C;
   line-height: 100px;
   width: 100%;
+  overflow-y: hidden;
 
   display: flex;
   flex-direction: column;
@@ -112,5 +113,17 @@
   .banner {
     width: 250px;
     margin-bottom: 25px;
+  }
+
+  .lines {
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    // top: 0;
+    transform: translateY(-75%);
+
+    @media screen and (max-width: 800px) {
+      transform: translateY(-100%);
+    }
   }
 }
