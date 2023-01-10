@@ -1,0 +1,11 @@
+.home {
+  position: relative;
+
+  .gradient {
+    height: 20vh;
+    position: relative;
+    bottom: 0;
+
+    background: linear-gradient(0deg, #F7F4D3 45.96%, #E4EFD6 112.74%);
+  }
+}
