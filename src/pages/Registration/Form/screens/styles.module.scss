@@ -1,0 +1,268 @@
+@import 'common.scss';
+
+.screen {
+  --field-margin: 40px;
+  font-size: 0.85em;
+  position: relative;
+  flex: 1;
+
+  @media (max-height: 740px) {
+    margin-top: -15px;
+  }
+
+  @include registration-floating-screen {
+    margin-top: -10px;
+    font-size: 0.8em;
+  }
+
+  .title {
+    font-size: 2em;
+    font-weight: 500;
+    color: white;
+
+    @media screen and (max-height: 700px) {
+      margin-bottom: -20px;
+    }
+
+    @include registration-floating-screen {
+      margin-bottom: -5px;
+    }
+  }
+  
+  .text {
+    font-size: 1.25em;
+    line-height: 1.5em;
+    margin-top: 25px;
+    color: white;
+
+    a {
+      font-weight: 600;
+      color: #46959F;
+      text-decoration: none;
+    }
+
+    b {
+      font-weight: 600;
+    }
+  }
+}
+
+.welcome {
+  margin-bottom: 10px;
+  // overflow: auto;
+
+  .title {
+    color: #F6F4D4;
+  }
+
+  .text {
+    margin-right: 15px;
+    color: #F6F4D4;
+
+    span {
+      color: greenyellow !important;
+    }
+  }
+
+  .text {
+    @media (max-height: 900px) {
+      font-size: 1.125em;
+    }
+
+    @media (max-height: 740px) {
+      margin-top: 20px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .title {
+    margin-bottom: 40px;
+
+    @media (max-height: 780px) {
+      margin-bottom: max(calc(-740px + 100vh), 20px);
+    }
+  }
+}
+
+.personalInfo, .education, .experience {
+  overflow: auto;
+
+  .title {
+    color: #F6F4D4;
+  }
+
+  @media (min-height: 800px) {
+    width: 85%;
+  }
+
+  @include registration-floating-screen {
+    width: auto;
+  }
+}
+
+.raceDemographics {
+  // using !important to override react-custom-scrollbars
+  // overflow: visible !important;
+  // .scrollbox {
+  //   overflow: visible !important;
+  // }
+  // .horizontalScrollbar {
+  //   display: none;
+  // }
+  // @include registration-floating-screen {
+    overflow: hidden !important;
+    .scrollbox {
+      overflow: scroll !important;
+    }
+  // }
+
+  .title {
+    margin-bottom: 20px;
+    color: #F6F4D4;
+  }
+
+  .checkboxes {
+    width: 60%;
+    // color: white;
+    color: #F6F4D4;
+    @include registration-floating-screen {
+      width: auto;
+    }
+  }
+
+  .note {
+    position: absolute;
+    width: 44%;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    // color: white;
+    color: #F6F4D4;
+
+    b{
+      font-weight: 600;
+    }
+
+    @media (max-height: 700px) {
+      right: -25px;
+    }
+
+    @media (min-height: 800px) {
+      right: 20px;
+    }
+
+    @include registration-floating-screen {
+      position: static;
+      width: auto;
+      transform: none;
+    }
+  }
+
+  @media (max-height: 860px) {
+    .checkboxes {
+      font-size: .9em;
+      --checkbox-margin: min(max(12px, calc(13/210 * (100vh - 650px) + 12px)), 25px);
+    }
+  }
+}
+
+.eventQuestions::-webkit-scrollbar {
+  display: none; // Safari and Chrome
+  // background: green;
+  // scrollbar-color: red green;
+  // background: rgba(0,0,0,0);
+  // scrollbar-width: thin;
+}
+
+// .eventQuestions::-webkit-scrollbar-track {
+//   background: transparent !important;
+//   display: none;
+// }
+
+.eventQuestions {
+  // overflow: scroll;
+  overflow: hidden !important;
+  // overflow-y: scroll !important;
+  // scrollbar-color: red green !important;
+  // .scrollbox {
+    // overflow: scroll !important;
+    // background-color: aqua;
+  // }
+
+  // .scrollbox::-webkit-scrollbar {
+  //   color: aqua;
+  // }
+
+  .title {
+    color: #F6F4D4;
+  }
+
+  .text {
+    color: #F6F4D4;
+    font-size: large;
+    // margin-top: 50px;
+  }
+
+  .checkboxes {
+    width: 60%;
+    color: #F6F4D4;
+    font-size: small;
+    // @include registration-floating-screen {
+    //   width: auto;
+    // }
+  }
+
+  @media (max-height: 860px) {
+    .checkboxes {
+      font-size: .9em;
+      --checkbox-margin: min(max(12px, calc(13/210 * (100vh - 650px) + 12px)), 25px);
+    }
+  }
+
+}
+
+.finish {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  box-sizing: border-box;
+  overflow: visible;
+
+  // @media (max-height: 800px) {
+  //   transform: translateY(50px);
+  // }
+
+  .logo {
+    display: block;
+    height: 50%;
+
+    img {
+      height: 100%;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+
+  .text {
+    text-align: center;
+    color: #F6F4D4;
+
+    a {
+      color: greenyellow;
+    }
+  }
+
+  .homeButton {
+    display: flex;
+    justify-content: flex-end;
+
+    margin: 10px auto;
+  }
+}
+
+.resume-upload {
+  color: white;
+}
