@@ -7,6 +7,7 @@ import clsx from 'clsx';
 import styles from './styles.module.scss';
 import LIGHT from '../../../assets/registration/navigation/light.svg';
 import LIGHT_ON from '../../../assets/registration/navigation/activatedLight.svg';
+import MOLE from '../../../assets/registration/navigation/mole.svg';
 
 type Props = {
   setFormIndex: React.Dispatch<React.SetStateAction<number>>,
@@ -35,7 +36,7 @@ const Fixtures = ({ setFormIndex, formIndex }: Props): JSX.Element => {
         <div className={clsx(styles.lightGroup, isDisabled(i) && styles.disabled)} onClick={() => !isDisabled(i) && setFormIndex(i)}>
           {i === formIndex ? (
             <div className={styles.image}>
-              <img className={styles.image} src={LIGHT_ON} alt="" />
+              <img className={styles.image} src={MOLE} alt="" />
             </div>
           ) : (
             <div className={styles.image}>

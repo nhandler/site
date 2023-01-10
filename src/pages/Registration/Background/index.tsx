@@ -5,7 +5,7 @@ import styles from './styles.module.scss';
 
 const Background: React.FC = () => (
   <div className={styles.background}>
-    <div className={styles.kitchen} style={{ backgroundImage: `url("${MOONLIGHT}")` }} />
+    <div className={styles.moonlight} style={{ backgroundImage: `url("${MOONLIGHT}")` }} />
   </div>
 );
 

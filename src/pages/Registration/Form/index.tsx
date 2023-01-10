@@ -5,7 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 
 import { RegistrationType } from 'util/types';
 import { getRegistration, getRoles, refreshToken, register } from 'util/api';
-import OVEN from 'assets/registration/oven.svg';
+import MOLEMACHINE from 'assets/registration/whack_a_mole_machine.svg';
 import Button from 'components/form/Button';
 import { registrationSchema, RegistrationSchema, errorMap, defaultValues } from '../validation';
 import Welcome from './screens/Welcome';
@@ -111,7 +111,7 @@ const Form = ({ formIndex, setFormIndex }: FormProps): JSX.Element => {
   const previousPage = () => setFormIndex((current) => current - 1);
 
   return (
-    <div className={styles.container} style={{ backgroundImage: `url("${OVEN}")` }}>
+    <div className={styles.container} style={{ backgroundImage: `url("${MOLEMACHINE}")` }}>
       <FormProvider {...methods}>
         <form onSubmit={handleSubmit(onSubmit, onError)} className={styles.form}>
           {pages.map((Page, i) => (
