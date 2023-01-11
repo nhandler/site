@@ -89,7 +89,8 @@
 
 .heroFooter {
   position: absolute;
-  bottom: 0;
+  bottom: 100vh;
+  transform: translateY(-100%);
   background-color: #0D387C;
   line-height: 100px;
   width: 100%;
@@ -125,50 +126,5 @@
     @media screen and (max-width: 800px) {
       transform: translateY(-100%);
     }
-  }
-}
-
-
-.footer {
-  position: relative;
-  min-height: 1050px;
-  background: #088BC1;
-
-  .footerText {
-    position: relative;
-    z-index: 3 !important;
-
-    h2 {
-      color: white;
-      font-weight: 500;
-      text-align: center;
-      padding: 500px 0px 10px 0px;
-      font-size: 30px;
-    }
-  }
-
-  .icons {
-    margin: auto;
-    position: relative;
-    z-index: 3;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-flow: wrap;
-    
-    .icon {
-      margin: 15px;
-      transform: scale(0.8);
-    }
-
-  }
-
-  .footerBackground {
-    position: absolute;
-    right: 0;
-    min-width: 100%;
-    bottom: 0;
-    z-index: 1;
   }
 }
