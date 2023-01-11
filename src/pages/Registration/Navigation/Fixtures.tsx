@@ -120,6 +120,8 @@ const Fixtures = ({ setFormIndex, formIndex }: Props): JSX.Element => {
           )}
           {i === formIndex ? (
             <p className={styles.selectedText}>{name}</p>
+          ) : i < formIndex ?(
+            <p className={styles.pastText}>{name}</p>
           ) : (
             <p className={styles.normalText}>{name}</p>
           )}

@@ -36,14 +36,14 @@
       transform: translateY(-35px);
     }
     .inactiveMole {
-      // width: auto;
+      width: 95px;
+      height: 106px;
       margin: auto;
       justify-content: center;
       align-items: center;
-      // transform: translateY(-38px);
+      transform: translateY(-1.5px);
     }
     .hole {
-      // width: 68px;
       margin: auto;
       justify-content: center;
       align-items: center;
@@ -83,8 +83,12 @@
     
   }
 
+  
   .selectedText {
-    transform: translateY(-35px);
+    transform: translateY(-38.5px);
+  }
+  .pastText {
+    transform: translateY(-38.5px);
   }
 
 
