@@ -1,6 +1,6 @@
 .ovenLights {
   position: absolute;
-  top: 80vh;
+  top: 78vh;
   display: flex;
   flex-direction: row;
   z-index: 5;
@@ -28,11 +28,26 @@
   .lightGroup {
     text-align: center;
     margin: auto;
-    .image {
-      width: 68px;
+    .activeMole {
+      // width: auto;
       margin: auto;
       justify-content: center;
       align-items: center;
+      transform: translateY(-35px);
+    }
+    .inactiveMole {
+      // width: auto;
+      margin: auto;
+      justify-content: center;
+      align-items: center;
+      // transform: translateY(-38px);
+    }
+    .hole {
+      // width: 68px;
+      margin: auto;
+      justify-content: center;
+      align-items: center;
+      transform: translateY(3px);
     }
     margin: auto;
     align-items: center;
@@ -45,12 +60,31 @@
 
 
   p {
+    /* Figma Based */
+    color: #10689A;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+
+    // display: flex;
+    // align-items: center;
+    // text-align: center;
+    // text-transform: capitalize;
+    /* Figma Unbased */
+
     text-align: center;
     margin-top: 5px;
     font-size: medium;
     width: 148px;
     // height: 25px;
     
+  }
+
+  .selectedText {
+    transform: translateY(-35px);
   }
 
 
@@ -81,6 +115,10 @@
     @media (min-width: 1400px) {
       --size: 12px;
     }
+  }
+
+  .disabled {
+    visibility: hidden;
   }
 }
 
