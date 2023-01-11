@@ -12,9 +12,12 @@ const Auth = () => {
         isiOS?: string;
         to?: string;
     };
-    const { code, isAndroid, isiOS, to }: QueryTypes = router.query;
 
     useEffect(() => {
+        if (!router.isReady) return;
+
+        const { code, isAndroid, isiOS, to }: QueryTypes = router.query;
+
         if (code) {
             if (isAndroid || isiOS) {
                 const os = isAndroid ? 'android' : 'ios';
@@ -29,7 +32,7 @@ const Auth = () => {
         } else {
             router.replace('/');
         }
-    }, []);
+    }, [router.isReady]);
 
     return <div>Loading...</div>;
 };
