@@ -6,7 +6,7 @@ import Hero from '../components/Hero';
 // import Sponsors from './Sponsors';
 // import Speakers from './Speakers';
 // import OurTeam from './OurTeam';
-// import Footer from './Footer';
+import Footer from '../components/Footer';
 
 import styles from './styles.module.scss';
 
@@ -20,7 +20,7 @@ const Home: React.FC = () => (
     {/* <Speakers /> */}
     {/* <OurTeam /> */}
     {/* <Sponsors /> */}
-    {/* <Footer /> */}
+    <Footer />
   </div>
 );
 
