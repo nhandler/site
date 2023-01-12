@@ -29,6 +29,8 @@
     text-align: center;
     margin: auto;
     .activeMole {
+      width: 95px;
+      height: 106px;
       // width: auto;
       margin: auto;
       justify-content: center;
@@ -44,6 +46,8 @@
       transform: translateY(-1.5px);
     }
     .hole {
+      width: 95px;
+      height: 106px;
       margin: auto;
       justify-content: center;
       align-items: center;
@@ -83,11 +87,7 @@
     
   }
 
-  
   .selectedText {
-    transform: translateY(-38.5px);
-  }
-  .pastText {
     transform: translateY(-38.5px);
   }
 

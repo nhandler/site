@@ -33,7 +33,8 @@ const fields: (keyof RegistrationSchema)[][] = [
   [],
 ];
 
-const pages = [Welcome, PersonalInfo, RaceDemographics, Education, Experience, Event, Finish];
+// const pages = [Welcome, PersonalInfo, RaceDemographics, Education, Experience, Event, Finish]; //With Welcome Page
+const pages = [PersonalInfo, RaceDemographics, Education, Experience, Event, Finish];
 const submitPageIndex = pages.length - 2;
 
 const convertToAPI = (data: RegistrationSchema): RegistrationType => {
