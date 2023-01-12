@@ -16,7 +16,7 @@ const Home: React.FC = () => (
     {/* <EventInfo /> */}
     {/* <Hero/> */}
     {/* <EventInfo /> */}
-    <FAQs />
+    {/* <FAQs /> */}
     {/* <Speakers /> */}
     {/* <OurTeam /> */}
     {/* <Sponsors /> */}
