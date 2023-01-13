@@ -25,7 +25,7 @@ type Props = {
 const lights: [name: string, cx: number, cy: number, r: number, textx: number][] = [
   // ['Welcome', 1639.5, 120, 18, 1602.5],
   ['Personal Info', 1817, 120, 18, 1760],
-  ['Demographics', 1995, 120, 18, 1915],
+  // ['Demographics', 1995, 120, 18, 1915],
   ['Education', 2276.5, 120, 18, 2236.5],
   ['Experience', 2496.5, 120, 18, 2454.5],
   ['Event Questions', 2496.5, 120, 18, 2454.5],
@@ -33,7 +33,7 @@ const lights: [name: string, cx: number, cy: number, r: number, textx: number][]
 ];
 
 // const startScreenIndex = 0; //Disabling Welcome Screen
-const finishScreenIndex = 5;
+const finishScreenIndex = 8;
 
 const Fixtures = ({ setFormIndex, formIndex }: Props): JSX.Element => {
   // we don't want the moles for the Finish page to be clickable, and if we're on the Finish page nothing should be clickable
@@ -45,38 +45,63 @@ const Fixtures = ({ setFormIndex, formIndex }: Props): JSX.Element => {
 
 
   //Increase each case by 1 if Welcome screen
-  switch (formIndex) {
-    case 0:
-      mole1 = PERSONAL_INFO_MOLE;
-      break;
-    case 1:
-      mole1 = HIDE_PERSONAL_INFO_MOLE;
-      mole2 = EDUCATION_MOLE;
-      break;
-    case 2:
-      mole1 = HIDE_PERSONAL_INFO_MOLE;
-      mole2 = HIDE_EDUCATION_MOLE;
-      mole3 = PRIOR_EXPERIENCE_MOLE;
-      break;
-    case 3:
-      mole1 = HIDE_PERSONAL_INFO_MOLE;
-      mole2 = HIDE_EDUCATION_MOLE;
-      mole3 = HIDE_PRIOR_EXPERIENCE_MOLE;
-      mole4 = HACKILLINOIS_MOLE;
-      break;
-    default:
-      mole1 = HIDE_PERSONAL_INFO_MOLE;
-      mole2 = HIDE_EDUCATION_MOLE;
-      mole3 = HIDE_PRIOR_EXPERIENCE_MOLE;
-      mole4 = HIDE_HACKILLINOIS_MOLE;
-      break;
+  if(formIndex >= 0) {
+    mole1 = PERSONAL_INFO_MOLE;
   }
+  if(formIndex >= 3) {
+    mole1 = HIDE_PERSONAL_INFO_MOLE;
+    mole2 = EDUCATION_MOLE;
+  }
+  if(formIndex >= 5) {
+    mole1 = HIDE_PERSONAL_INFO_MOLE;
+    mole2 = HIDE_EDUCATION_MOLE;
+    mole3 = PRIOR_EXPERIENCE_MOLE;
+  }
+  if(formIndex >= 7) {
+    mole1 = HIDE_PERSONAL_INFO_MOLE;
+    mole2 = HIDE_EDUCATION_MOLE;
+    mole3 = HIDE_PRIOR_EXPERIENCE_MOLE;
+    mole4 = HACKILLINOIS_MOLE;
+  }
+  if(formIndex >= finishScreenIndex) {
+    mole1 = HIDE_PERSONAL_INFO_MOLE;
+    mole2 = HIDE_EDUCATION_MOLE;
+    mole3 = HIDE_PRIOR_EXPERIENCE_MOLE;
+    mole4 = HIDE_HACKILLINOIS_MOLE;
+  }
+
+  // switch (formIndex) {
+  //   case 0:
+  //     mole1 = PERSONAL_INFO_MOLE;
+  //     break;
+  //   case 1:
+  //     mole1 = HIDE_PERSONAL_INFO_MOLE;
+  //     mole2 = EDUCATION_MOLE;
+  //     break;
+  //   case 2:
+  //     mole1 = HIDE_PERSONAL_INFO_MOLE;
+  //     mole2 = HIDE_EDUCATION_MOLE;
+  //     mole3 = PRIOR_EXPERIENCE_MOLE;
+  //     break;
+  //   case 3:
+  //     mole1 = HIDE_PERSONAL_INFO_MOLE;
+  //     mole2 = HIDE_EDUCATION_MOLE;
+  //     mole3 = HIDE_PRIOR_EXPERIENCE_MOLE;
+  //     mole4 = HACKILLINOIS_MOLE;
+  //     break;
+  //   default:
+  //     mole1 = HIDE_PERSONAL_INFO_MOLE;
+  //     mole2 = HIDE_EDUCATION_MOLE;
+  //     mole3 = HIDE_PRIOR_EXPERIENCE_MOLE;
+  //     mole4 = HIDE_HACKILLINOIS_MOLE;
+  //     break;
+  // }
 
   return (
     <div className={styles.ovenLights}>
       {lights.map(([name], i) => (
-        <div className={clsx(styles.lightGroup, isDisabled(i) && styles.disabled)} onClick={() => !isDisabled(i) && setFormIndex(i)}>
-          {i === formIndex ? (
+        <div className={clsx(styles.lightGroup, isDisabled(i) && styles.disabled)} onClick={() => !isDisabled(i)}>
+          {/* {i === formIndex ? (
             <div>
               {i === 0 ? (
                 <img className={styles.activeMole} src={mole1} alt="" />
@@ -118,7 +143,65 @@ const Fixtures = ({ setFormIndex, formIndex }: Props): JSX.Element => {
                 <img className={styles.hole} src={HOLE} alt="" />
               )}
             </div>
+          )} */}
+
+
+
+          {/* {formIndex === 0 || formIndex === 3 || formIndex === 5 || formIndex === 7 ? (
+            <div>
+              {i === 0 ? (
+                <img className={styles.activeMole} src={mole1} onClick={() => setFormIndex(0)} alt="" />
+              ) : i === 1 ? (
+                <img className={styles.activeMole} src={mole2} onClick={() => setFormIndex(3)} alt="" />
+              ) : i === 2 ? (
+                <img className={styles.activeMole} src={mole3} onClick={() => setFormIndex(5)} alt="" />
+              ) : i === 3 ? (
+                <img className={styles.activeMole} src={mole4} onClick={() => setFormIndex(7)} alt="" />
+              ) : (
+                <img className={styles.activeMole} src={HOLE} alt="" />
+              )}
+            </div>
+          ) : (
+            <div>
+              {i === 0 ? (
+                <img className={styles.hole} src={mole1} onClick={() => setFormIndex(0)} alt="" />
+              ) : i === 1 ? (
+                <img className={styles.hole} src={mole2} onClick={() => setFormIndex(3)} alt="" />
+              ) : i === 2 ? (
+                <img className={styles.hole} src={mole3} onClick={() => setFormIndex(5)} alt="" />
+              ) : i === 3 ? (
+                <img className={styles.hole} src={mole4}  onClick={() => setFormIndex(7)} alt="" />
+              ) : (
+                <img className={styles.hole} src={HOLE} alt="" />
+              )}
+            </div>
+          )} */}
+
+          {formIndex >= 0 && formIndex < 3 && i == 0 ? (
+            <img className={styles.activeMole} src={mole1} onClick={() => setFormIndex(0)} alt="" />
+          ) : formIndex >= 3 && formIndex < 5 && i === 1 ? (
+            <img className={styles.activeMole} src={mole2} onClick={() => setFormIndex(1)} alt="" />
+          ) : formIndex >= 5 && formIndex < 7 && i === 2 ? (
+            <img className={styles.activeMole} src={mole3} onClick={() => setFormIndex(2)} alt="" />
+          ) : formIndex >= 7 && formIndex < finishScreenIndex && i === 3 ? (
+            <img className={styles.activeMole} src={mole4} onClick={() => setFormIndex(3)} alt="" />
+          ) : (
+            <div>
+              {i === 0 ? (
+                <img className={styles.hole} src={mole1} onClick={() => setFormIndex(0)} alt="" />
+              ) : i === 1 ? (
+                <img className={styles.hole} src={mole2} onClick={() => setFormIndex(3)} alt="" />
+              ) : i === 2 ? (
+                <img className={styles.hole} src={mole3} onClick={() => setFormIndex(5)} alt="" />
+              ) : i === 3 ? (
+                <img className={styles.hole} src={mole4}  onClick={() => setFormIndex(7)} alt="" />
+              ) : (
+                <img className={styles.hole} src={HOLE} alt="" />
+              )}
+            </div>
           )}
+
+
           <p className={styles.selectedText}>{name}</p>
           
         </div>

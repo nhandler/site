@@ -9,14 +9,22 @@ import MOLEMACHINE from 'assets/registration/whack_a_mole_machine.svg';
 import Button from 'components/form/Button';
 import { registrationSchema, RegistrationSchema, errorMap, defaultValues } from '../validation';
 import Welcome from './screens/Welcome';
-import PersonalInfo from './screens/PersonalInfo';
-import RaceDemographics from './screens/RaceDemographics';
+import PersonalInfoP1 from './screens/PersonalInfo';
+import PersonalInfoP2 from './screens/PersonalInfoP2';
+import PersonalInfoP3 from './screens/PersonalInfoP3';
 import Education from './screens/Education';
+import EducationP2 from './screens/EducationP2';
 import Experience from './screens/Experience';
+import ExperienceP2 from './screens/ExperienceP2';
 import Event from './screens/Event';
+import EventP2 from './screens/EventP2';
+import EventP3 from './screens/EventP3';
 import Finish from './screens/Finish';
 
 import styles from './styles.module.scss';
+import FormNavigation from './FormNavigation';
+
+
 
 type FormProps = {
   formIndex: number,
@@ -33,8 +41,8 @@ const fields: (keyof RegistrationSchema)[][] = [
   [],
 ];
 
-// const pages = [Welcome, PersonalInfo, RaceDemographics, Education, Experience, Event, Finish]; //With Welcome Page
-const pages = [PersonalInfo, RaceDemographics, Education, Experience, Event, Finish];
+// const pages = [Welcome, PersonalInfo, PersonalInfoP2, PersonalInfoP3, Education, EducationP2, Experience, ExperienceP2, Event, EventP2, EventP3, Finish]; //With Welcome Page
+const pages = [PersonalInfoP1, PersonalInfoP2, PersonalInfoP3, Education, EducationP2, Experience, ExperienceP2, Event, EventP2, EventP3, Finish];
 const submitPageIndex = pages.length - 2;
 
 const convertToAPI = (data: RegistrationSchema): RegistrationType => {
@@ -135,6 +143,8 @@ const Form = ({ formIndex, setFormIndex }: FormProps): JSX.Element => {
           ))}
         </form>
       </FormProvider>
+      <FormNavigation setFormIndex={setFormIndex} formIndex={formIndex}></FormNavigation>
+      
     </div>
   );
 };

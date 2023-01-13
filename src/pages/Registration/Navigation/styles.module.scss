@@ -43,7 +43,7 @@
       margin: auto;
       justify-content: center;
       align-items: center;
-      transform: translateY(-1.5px);
+      // transform: translateY(-1.5px);
     }
     .hole {
       width: 95px;
@@ -51,7 +51,7 @@
       margin: auto;
       justify-content: center;
       align-items: center;
-      transform: translateY(3px);
+      // transform: translateY(3px);
     }
     margin: auto;
     align-items: center;
@@ -121,9 +121,9 @@
     }
   }
 
-  .disabled {
-    visibility: hidden;
-  }
+  // .disabled {
+  //   visibility: hidden;
+  // }
 }
 
 // @import 'common.scss';

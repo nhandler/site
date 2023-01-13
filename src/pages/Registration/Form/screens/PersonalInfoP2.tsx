@@ -16,8 +16,8 @@ const raceOptions = [
   { label: 'Prefer Not to Answer', value: 'Prefer Not to Answer', isRadio: true },
 ];
 
-const RaceDemographics = (): JSX.Element => (
-  <Scrollbars className={clsx(styles.screen, styles.raceDemographics)} renderView={(props) => <div className={styles.scrollbox} {...props} />} renderTrackHorizontal={(props) => <div className={styles.horizontalScrollbar} {...props} />}>
+const PersonalInfoP2 = (): JSX.Element => (
+  <Scrollbars className={clsx(styles.screen, styles.personalInfoP2)} renderView={(props) => <div className={styles.scrollbox} {...props} />} renderTrackHorizontal={(props) => <div className={styles.horizontalScrollbar} {...props} />}>
     <h1 className={styles.title}>Race Demographics</h1>
     <Checkboxes
       className={styles.checkboxes}
@@ -30,4 +30,4 @@ const RaceDemographics = (): JSX.Element => (
   </Scrollbars>
 );
 
-export default RaceDemographics;
+export default PersonalInfoP2;
