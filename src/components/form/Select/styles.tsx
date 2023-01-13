@@ -6,7 +6,7 @@ const menuHighlightColor = '#2C9C98';
 const customStyles: StylesConfig<Record<string, unknown>, true | false> = {
   control: () => ({
     background: 'transparent',
-    borderBottom: '1px solid #F6F4D4',
+    borderBottom: '1px solid #FFFFFF',
     display: 'flex',
     paddingBottom: 5,
   }),
@@ -17,19 +17,24 @@ const customStyles: StylesConfig<Record<string, unknown>, true | false> = {
   }),
   placeholder: (base) => ({
     ...base,
-    color: '#F6F4D4',
+    color: '#FFFFFF',
     fontWeight: 500,
     bottom: 0,
     top: 'unset',
     transform: 'none',
-    fontSize: '1.125em',
+    fontSize: '1.25em',
+    '::after' : {
+      content: '"*"',
+      color: '#FE7098',
+      marginLeft: '4px',
+    },
   }),
   input: (base) => ({
     ...base,
     fontWeight: 500,
     fontFamily: 'Montserrat',
     width: '100%',
-    color: '#F6F4D4',
+    color: '#FFFFFF',
     '& > div, & > div > input': {
       fontWeight: 'inherit',
       fontFamily: 'inherit',

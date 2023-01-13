@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Select, { OptionType } from 'components/form/Select';
+import FileUpload from 'components/form/FileUpload';
 import clsx from 'clsx';
 
 import majors from 'data/majors.json';
@@ -34,10 +35,15 @@ const majorOptions: OptionType[] = firstMajors
 const EducationP2 = (): JSX.Element => (
   <div className={clsx(styles.screen, styles.education)}>
     <h1 className={styles.title}>Education</h1>
-    <Select name="degreePursued" options={degreeOptions} placeholder="What degree are you currently pursuing? *" />
-    <Select name="graduationYear" options={graduationYearOptions} placeholder="Graduation Year (Enter N/A if not applicable) *" />
-    <Select name="school" options={schoolOptions} placeholder="School (Enter N/A if not applicable) *" creatable />
-    <Select name="major" options={majorOptions} placeholder="Major (Enter N/A if not applicable) *" menuPlacement="top" creatable />
+    <Select name="graduationYear" options={graduationYearOptions} placeholder="What is your graduation year?" />
+    <p className={styles.text}>Please submit a copy of your resume, it will be shared with our sponsors</p>
+    <FileUpload
+      className={styles['resume-upload']}
+      name="resumeFilename"
+      type="resume"
+      accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+      text="File types accepted: PDF and DOCX "
+    />
   </div>
 );
 

@@ -21,10 +21,10 @@ const StyledInput = forwardRef<HTMLInputElement|HTMLTextAreaElement, PropTypes>(
   if (multiline) {
     return (
       <textarea
-        className={clsx(styles.input, styles.multiline, className)}
+        className={clsx(styles.multiline, className)}
         {...props}
         onChange={({ target }) => adjustHeight(target)}
-        ref={(r) => {
+        {...r => {
           if (typeof ref === 'function') {
             ref(r);
           } else if (ref) {

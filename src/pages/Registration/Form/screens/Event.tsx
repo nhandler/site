@@ -17,25 +17,9 @@ const interestOptions = [
   { label: 'Other', value: 'Other', isOther: true },
 ];
 
-const learnOptions = [
-  { label: 'Instagram', value: 'Instagram' },
-  { label: 'Twitter', value: 'Twitter' },
-  { label: 'Facebook', value: 'Facebook' },
-  { label: 'LinkedIn', value: 'LinkedIn' },
-  { label: 'Slack', value: 'Slack' },
-  { label: 'Reddit', value: 'Reddit' },
-  { label: 'Word of Mouth', value: 'Word of Mouth' },
-  { label: 'CS Department Email', value: 'CS Department Email' },
-];
-
 const Event = (): JSX.Element => (
   <Scrollbars className={clsx(styles.screen, styles.eventQuestions)} renderView={(props) => <div className={styles.scrollbox} {...props} />} renderTrackHorizontal={(props) => <div className={styles.horizontalScrollbar} {...props} />}>
-    <h1 className={styles.title}>Hack-Illinois Specific Questions</h1>
-    <p className={styles.text}>How did you hear of HackIllinois?</p>
-    <Select name="outreachSurvey" options={learnOptions} placeholder="Where did you hear about us? *" creatable />
-    <br />
-    <br />
-    <br />
+    <h1 className={styles.title}>HackIllinois Questions</h1>
     <p className={styles.text}>Which of these aspects of the hackathon would you most be interested in engaging in?</p>
     <Checkboxes
       className={styles.checkboxes}

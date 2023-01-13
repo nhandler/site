@@ -2,7 +2,6 @@ import React from 'react';
 import clsx from 'clsx';
 
 import Select from 'components/form/Select';
-import FileUpload from 'components/form/FileUpload';
 import styles from './styles.module.scss';
 
 const formatYears = (years: number) => `${years} year${years === 1 ? '' : 's'}`;
@@ -27,17 +26,10 @@ const abilityOptions = [
 
 const ExperienceP2 = (): JSX.Element => (
   <div className={clsx(styles.screen, styles.experience)}>
-    <h1 className={styles.title}>Experience</h1>
-    <Select name="programmingYears" options={programmingYearsOptions} placeholder="How many years have you been programming? *" />
-    <Select name="programmingAbility" options={abilityOptions} placeholder="On a scale from 1 to 5, how do you rate your programming ability? *" />
+    <h1 className={styles.title}>Prior Experience</h1>
+    <Select name="programmingYears" options={programmingYearsOptions} placeholder="How many years have you been programming?" />
+    <Select name="programmingAbility" options={abilityOptions} placeholder="On a scale from 1 to 5, how do you rate your programming ability?" />
     {/* <Select name="hasInternship" options={internshipOptions} placeholder="Do you have an internship or full-time position this summer?" /> */}
-    <FileUpload
-      className={styles['resume-upload']}
-      name="resumeFilename"
-      type="resume"
-      accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-      text="Attach your resume [file - pdf, docx] (optional)"
-    />
   </div>
 );
 

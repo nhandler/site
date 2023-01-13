@@ -70,17 +70,21 @@
         display: flex;
       }
 
-      .buttons {
-        margin-top: 10px;
-        display: flex;
-        justify-content: flex-end;
-        z-index: 5;
+      
 
-        .spacer {
-          width: 600px;
-        }
-      }
+      
     }
+  }
+}
+
+.buttons {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-start;
+  z-index: 5;
+
+  .spacer {
+    width: 600px;
   }
 }
 

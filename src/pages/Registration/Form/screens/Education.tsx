@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Select, { OptionType } from 'components/form/Select';
+import Input from 'components/form/Input';
 import clsx from 'clsx';
 
 import majors from 'data/majors.json';
@@ -34,10 +35,12 @@ const majorOptions: OptionType[] = firstMajors
 const Education = (): JSX.Element => (
   <div className={clsx(styles.screen, styles.education)}>
     <h1 className={styles.title}>Education</h1>
-    <Select name="degreePursued" options={degreeOptions} placeholder="What degree are you currently pursuing? *" />
-    <Select name="graduationYear" options={graduationYearOptions} placeholder="Graduation Year (Enter N/A if not applicable) *" />
-    <Select name="school" options={schoolOptions} placeholder="School (Enter N/A if not applicable) *" creatable />
-    <Select name="major" options={majorOptions} placeholder="Major (Enter N/A if not applicable) *" menuPlacement="top" creatable />
+    <p className={styles.text}>What state/country are you currently residing in?</p>
+    <Input className={styles.input} name="residence" placeholder="Type your response here" />
+    <Select name="degreePursued" options={degreeOptions} placeholder="What degree are you currently pursuing?" />
+    <Select name="major" options={majorOptions} placeholder="What is your major?" menuPlacement="top" creatable />
+    {/* <Select name="graduationYear" options={graduationYearOptions} placeholder="Graduation Year (Enter N/A if not applicable)" /> */}
+    <Select name="school" options={schoolOptions} placeholder="School (Enter N/A if not applicable)" creatable />
   </div>
 );
 

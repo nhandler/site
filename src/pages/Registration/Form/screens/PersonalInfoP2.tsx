@@ -17,16 +17,18 @@ const raceOptions = [
 ];
 
 const PersonalInfoP2 = (): JSX.Element => (
-  <Scrollbars className={clsx(styles.screen, styles.personalInfoP2)} renderView={(props) => <div className={styles.scrollbox} {...props} />} renderTrackHorizontal={(props) => <div className={styles.horizontalScrollbar} {...props} />}>
-    <h1 className={styles.title}>Race Demographics</h1>
+  <Scrollbars className={clsx(styles.screen, styles.personalInfo)} renderView={(props) => <div className={styles.scrollbox} {...props} />} renderTrackHorizontal={(props) => <div className={styles.horizontalScrollbar} {...props} />}>
+    <h1 className={styles.title}>Personal Information</h1>
+    <p className={styles.text}>Race/Ethnicity</p>
+    <p className={styles.note}>
+      <i><b>Note:</b> Note: In light of recent events, we are collecting this information in order to determine what our current attendee demographics are and how we can work on increasing diversity. However, we understand if you prefer not to answer. </i>
+    </p>
     <Checkboxes
       className={styles.checkboxes}
       name="race"
       options={raceOptions}
     />
-    <p className={styles.note}>
-      <i><b>Note:</b> This is a purely optional question! :) In light of recent events, we’re collecting this information in order to determine what our current attendee demographics are and how we can work on increasing diversity! Don’t forget that it’s purely optional and won’t affect anything! </i>
-    </p>
+    
   </Scrollbars>
 );
 

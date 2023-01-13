@@ -106,7 +106,7 @@ const Checkboxes = ({ name, options = [], hideErrors, className, style, ...props
           />
           {option.isOther && isChecked(option) && (
             <StyledInput
-              placeholder={option.otherPlaceholder || ''}
+              placeholder={option.otherPlaceholder || 'If selected \'Other\', please specify below'}
               value={getOtherValue()}
               onChange={handleChangeOther}
             />
