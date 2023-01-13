@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Fixtures from './Fixtures';
+import Moles from './Moles';
 
 type Props = {
   setFormIndex: React.Dispatch<React.SetStateAction<number>>,
@@ -9,7 +9,7 @@ type Props = {
 
 const Navigation = ({ setFormIndex, formIndex }: Props): JSX.Element => (
   <div>
-    <Fixtures setFormIndex={setFormIndex} formIndex={formIndex} />
+    <Moles setFormIndex={setFormIndex} formIndex={formIndex} />
   </div>
 );
 

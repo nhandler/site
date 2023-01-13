@@ -35,7 +35,7 @@
       margin: auto;
       justify-content: center;
       align-items: center;
-      transform: translateY(-35px);
+      transform: translateY(-35.5px);
     }
     .inactiveMole {
       width: 95px;
@@ -121,9 +121,10 @@
     }
   }
 
-  // .disabled {
-  //   visibility: hidden;
-  // }
+  .disabled {
+    pointer-events: none;
+    // visibility: hidden;
+  }
 }
 
 // @import 'common.scss';
