@@ -1,0 +1,48 @@
+.container {
+display: flex;
+flex-wrap: wrap;
+  background: linear-gradient(to bottom, #14518A, #196795);
+  position: relative;
+  margin-bottom: 0;
+
+ .event-section {
+    margin-bottom: 20px;
+ } 
+
+    h1 {     
+      font-family: Montserrat, sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 48px;
+      line-height: 59px;
+      margin-bottom: 10px;
+
+      color: #FCDC8F;
+      
+    }
+    h2 {
+      font-family: Montserrat, sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 30px;
+      line-height: 35px;
+      margin-bottom: 10px;
+
+      /* or 140% */
+      
+      
+      color: #FFFFFF;
+      
+    }
+    p{
+      font-size: 25px;
+      margin-bottom: 20px;
+      font-weight: 400;
+      line-height: 35px;
+      font-family: Montserrat, sans-serif;
+      color:#FFFFFF
+    }
+    
+ 
+}
+  
