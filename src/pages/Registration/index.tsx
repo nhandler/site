@@ -16,7 +16,7 @@ const Registration: React.FC = () => {
 
   useEffect(() => {
     if (!isAuthenticated()) {
-      authenticate(`${process.env.REACT_APP_URL}${router.pathname}`);
+      authenticate(`${process.env.NEXT_PUBLIC_REACT_APP_URL}${router.pathname}`);
     }
   }, []);
 
