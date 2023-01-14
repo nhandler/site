@@ -43,7 +43,8 @@ const fields: (keyof RegistrationSchema)[][] = [
 
 // const pages = [Welcome, PersonalInfo, PersonalInfoP2, PersonalInfoP3, Education, EducationP2, Experience, ExperienceP2, Event, EventP2, EventP3, Finish]; //With Welcome Page
 const pages = [PersonalInfoP1, PersonalInfoP2, PersonalInfoP3, Education, EducationP2, Experience, ExperienceP2, Event, EventP2, EventP3, Finish];
-const submitPageIndex = pages.length - 2;
+const submitPageIndex = 9;
+const postSubmitPageIndex = submitPageIndex + 1;
 
 const convertToAPI = (data: RegistrationSchema): RegistrationType => {
   const { name, gender: possibleGender, race: possibleRace, ...registration } = data;
@@ -93,10 +94,11 @@ const Form = ({ formIndex, setFormIndex }: FormProps): JSX.Element => {
 
   const onSubmit: SubmitHandler<RegistrationSchema> = (data) => {
     console.log(data);
+    console.log("data");
 
     setIsLoading(true);
     return register(isEditing, 'attendee', convertToAPI(data)).then(() => {
-      setFormIndex(pages.length - 1);
+      setFormIndex(postSubmitPageIndex);
       refreshToken(); // token changes after registration, so need to refetch
     }).catch(() => {
       alert('There was an error while submitting. If this error persists, please email contact@hackillinois.org');
@@ -129,7 +131,7 @@ const Form = ({ formIndex, setFormIndex }: FormProps): JSX.Element => {
             <div className={clsx(styles.screenContainer, formIndex === i && styles.visible)} key={i}>
               <Page />
 
-              {formIndex !== pages.length - 1 && ( // last page does not have any buttons
+              {formIndex !== postSubmitPageIndex && ( // last page does not have any buttons
                 <div className={styles.buttons}>
                   {/* {(formIndex !== 0) && <Button arrow="right" onClick={nextPage}>Previous</Button>} */}
                   <Button arrow="left" hidden={formIndex === 0} onClick={previousPage}>Back</Button>

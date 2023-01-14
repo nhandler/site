@@ -1,4 +1,4 @@
-import { WithId, MethodType, FileType, RegistrationType, PrizeType, MentorTimeslotType, EventType, RegistrationRole, ProfileType, RSVPType, ProfileResponseType, ZoomLinks } from 'util/types';
+import { WithId, MethodType, FileType, RegistrationType, PrizeType, MentorTimeslotType, EventType, RegistrationRole, ProfileType, RSVPType, ProfileResponseType, ZoomLinks } from '../util/types';
 
 const API = 'https://api.hackillinois.org';
 
@@ -17,6 +17,7 @@ export class APIError extends Error {
 async function request(method: MethodType, endpoint: string, body?: unknown) {
   const response = await fetch(API + endpoint, {
     method,
+    // mode: 'cors',
     headers: {
       Authorization: sessionStorage.getItem('token') || '',
       'Content-Type': 'application/json',
