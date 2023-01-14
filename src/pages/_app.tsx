@@ -15,6 +15,8 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   }, []);
 
   useEffect(() => {
+    // Only for debugging:
+    // sessionStorage.setItem('token', 'TOKEN_GOES_HERE');
     console.log('App');
   }, []);
 

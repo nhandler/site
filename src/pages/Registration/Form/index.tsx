@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { useForm, SubmitHandler, SubmitErrorHandler, FormProvider } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-import { RegistrationType } from 'util/types';
+import { RegistrationType } from '../../../util/types';
 import { getRegistration, getRoles, refreshToken, register } from 'util/api';
 import MOLEMACHINE from 'assets/registration/whack_a_mole_machine.svg';
 import Button from 'components/form/Button';

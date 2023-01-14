@@ -23,13 +23,14 @@ export const registrationSchema = z.object({
 export type RegistrationSchema = z.infer<typeof registrationSchema>;
 
 export const errorMap: z.ZodErrorMap = (error, ctx) => {
+  console.log(error);
   if (error.message) return { message: error.message };
 
-  if (error.code === z.ZodErrorCode.too_small && error.type === 'string') {
+  if (error.code === z.ZodIssueCode.too_small && error.type === 'string') {
     return { message: 'Required' };
   }
 
-  if (error.code === z.ZodErrorCode.invalid_enum_value) {
+  if (error.code === z.ZodIssueCode.invalid_enum_value) {
     return { message: 'Required' };
   }
 
