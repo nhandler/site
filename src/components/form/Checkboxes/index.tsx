@@ -14,6 +14,11 @@ export type CheckboxOption = {
   // (i.e. if this is checked, then no other checkbox may be also checked)
   isRadio?: boolean,
 
+
+  // `isRadioButton: true` indicates that this specific checkbox is a radio button
+  // and the css will change accordingly
+  isRadioButton?: boolean,
+
   // there can be exactly one checkbox that serves as an "Other" option, and will allow the user
   // to enter their own choice for the `value` through a text input
   isOther?: boolean,
@@ -101,6 +106,7 @@ const Checkboxes = ({ name, options = [], hideErrors, className, style, ...props
             value={option.value}
             label={option.label}
             checked={isChecked(option)}
+            radio = {option.isRadioButton}
             onChange={(e: ChangeEvent<HTMLInputElement>) => handleSelect(e.target.checked, option)}
             style={(option.isOther && isChecked(option)) ? { marginBottom: 10 } : {}}
           />

@@ -101,8 +101,9 @@
 }
 
 .personalInfo, .education, .experience, .eventQuestions {
-  overflow: hidden !important;
+  // overflow: hidden !important;
   // overflow: auto;
+  min-width: 100%;
 
   .title {
     color: #FFFFFF;

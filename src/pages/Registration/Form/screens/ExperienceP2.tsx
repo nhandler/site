@@ -1,6 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 
+import Checkboxes from 'components/form/Checkboxes';
 import Select from 'components/form/Select';
 import styles from './styles.module.scss';
 
@@ -24,12 +25,54 @@ const abilityOptions = [
 //   { value: 'NO', label: 'No' },
 // ];
 
+
+let value = false;
+
+const handleChange = () => {
+  value = !value;
+};
+
+const yearOptions = [
+  { label: '1', value: '1', isRadio: true, isRadioButton: true },
+  { label: '2', value: '2', isRadio: true, isRadioButton: true },
+  { label: '3', value: '3', isRadio: true, isRadioButton: true },
+  { label: '4', value: '4', isRadio: true, isRadioButton: true },
+  { label: '5', value: '5', isRadio: true, isRadioButton: true },
+  { label: '6', value: '6', isRadio: true, isRadioButton: true },
+  { label: '7', value: '7', isRadio: true, isRadioButton: true },
+  { label: '8', value: '8', isRadio: true, isRadioButton: true },
+  { label: '9', value: '9', isRadio: true, isRadioButton: true },
+  { label: '10+', value: '10+', isRadio: true, isRadioButton: true },
+];
+
+const skillOptions = [
+  { label: '1', value: '1', isRadio: true, isRadioButton: true },
+  { label: '2', value: '2', isRadio: true, isRadioButton: true },
+  { label: '3', value: '3', isRadio: true, isRadioButton: true },
+  { label: '4', value: '4', isRadio: true, isRadioButton: true },
+  { label: '5', value: '5', isRadio: true, isRadioButton: true },
+  { label: '6', value: '6', isRadio: true, isRadioButton: true },
+  { label: '7', value: '7', isRadio: true, isRadioButton: true },
+  { label: '8', value: '8', isRadio: true, isRadioButton: true },
+  { label: '9', value: '9', isRadio: true, isRadioButton: true },
+  { label: '10', value: '10', isRadio: true, isRadioButton: true },
+];
+
 const ExperienceP2 = (): JSX.Element => (
   <div className={clsx(styles.screen, styles.experience)}>
     <h1 className={styles.title}>Prior Experience</h1>
-    <Select name="programmingYears" options={programmingYearsOptions} placeholder="How many years have you been programming?" />
-    <Select name="programmingAbility" options={abilityOptions} placeholder="On a scale from 1 to 5, how do you rate your programming ability?" />
-    {/* <Select name="hasInternship" options={internshipOptions} placeholder="Do you have an internship or full-time position this summer?" /> */}
+    <p className={styles.text}>How many years have you been programming?</p>
+    <Checkboxes
+      className={styles.checkboxes}
+      name="race"
+      options={yearOptions}
+    />
+    <p className={styles.text}>How would you rate your programming ability?</p>
+    <Checkboxes
+      className={styles.checkboxes}
+      name="race"
+      options={skillOptions}
+    />
   </div>
 );
 
