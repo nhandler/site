@@ -29,7 +29,6 @@ export const registrationSchema = z.object({
 export type RegistrationSchema = z.infer<typeof registrationSchema>;
 
 export const errorMap: z.ZodErrorMap = (error, ctx) => {
-  console.log(error);
   if (error.message) return { message: error.message };
 
   if (error.code === z.ZodIssueCode.too_small && error.type === 'string') {

@@ -17,7 +17,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {
     // Only for debugging:
     sessionStorage.setItem('token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhNzM1M0Bob3RtYWlsLmNvbSIsImV4cCI6MTY3NDI4Njk5MCwiaWQiOiJnaXRodWI1NjA3NjAxMSIsInJvbGVzIjpbIlVzZXIiXX0.53C1msQTpAnjMQDpCN6xYoxd6wXh6MARFe1TyqPkutY');
-    console.log('App');
   }, []);
 
   useEffect(() => {

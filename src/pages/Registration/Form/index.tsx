@@ -97,13 +97,13 @@ const Form = ({ formIndex, setFormIndex }: FormProps): JSX.Element => {
   }, []); // deliberately not including `methods`
 
   const onSubmit: SubmitHandler<RegistrationSchema> = (data) => {
-    console.log(data);
     console.log("data");
+    console.log(data);
 
     setIsLoading(true);
     return register(isEditing, 'attendee', convertToAPI(data)).then(() => {
       setFormIndex(postSubmitPageIndex);
-      refreshToken(); // token changes after registration, so need to refetch
+      // refreshToken(); // token changes after registration, so need to refetch
     }).catch(() => {
       alert('There was an error while submitting. If this error persists, please email contact@hackillinois.org');
     }).finally(() => {
@@ -112,11 +112,11 @@ const Form = ({ formIndex, setFormIndex }: FormProps): JSX.Element => {
   };
 
   const onError: SubmitErrorHandler<RegistrationSchema> = (errorData) => {
-    console.log("error")
     console.log(errorData);
     for (let i = 0; i < fields.length; i += 1) {
+      console.log(fields[i]);
       if (fields[i].some((field) => errorData[field])) {
-        console.log(methods.getValues());
+        console.log(i);
         setFormIndex(i);
         return;
       }

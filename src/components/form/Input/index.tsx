@@ -8,25 +8,21 @@ import styles from './styles.module.scss';
 
 type PropTypes = {
   name: string,
-  value: string,
   multiline?: boolean;
   helpLink?: string;
   linkColor?: string;
-  //value: string;
   [key: string]: unknown;
 };
 
-const Input = ({ value, name, multiline, helpLink, linkColor = 'white', ...props }: PropTypes): JSX.Element => {
+const Input = ({ name, multiline, helpLink, linkColor = 'white', ...props }: PropTypes): JSX.Element => {
   const { register } = useFormContext();
-  // value = "div"
-  console.log(name)
-  value="b"
-  console.log(value)
-  
+
   return (
     <>
       <div className={styles.inputContainer}>
-        <StyledInput type="text" value={value} name={name} multiline={multiline} {...props} {...register} />
+        <StyledInput type="text" multiline={multiline} {...props} 
+        {...register(name, { required: true })}
+        />
         {helpLink && (
           <a className={styles.helpLink} href={helpLink} target="_blank" rel="noreferrer" title="Where can I find my Discord username?">
             <HelpIcon color={linkColor} />
