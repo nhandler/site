@@ -254,12 +254,22 @@
     }
   }
 
+  .headline {
+    color: #F99557;
+    width: 100%;
+    text-align: center;
+    font-size: 60px;
+    font-weight: 700;
+  }
+
   .text {
     text-align: center;
     color: #F6F4D4;
+    font-size: 1.5em;;
+    transform: translateY(-20px);
 
     a {
-      color: greenyellow;
+      color: #F99557;
     }
   }
 

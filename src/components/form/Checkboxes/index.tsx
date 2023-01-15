@@ -7,8 +7,8 @@ import StyledCheckbox from './StyledCheckbox';
 import StyledInput from '../Input/StyledInput';
 
 export type CheckboxOption = {
-  label: string,
-  value: string,
+  label: string | number,
+  value: string | number,
 
   // `isRadio: true` indicates that this specific checkbox will act like a radio button
   // (i.e. if this is checked, then no other checkbox may be also checked)
@@ -38,7 +38,7 @@ const Checkboxes = ({ name, options = [], hideErrors, className, style, ...props
   const { control } = useFormContext();
   const { field } = useController({ name, control });
 
-  const selectedValues: string[] = field.value;
+  const selectedValues: any[] = field.value;
 
   // if we can't find an option the desired value, then we assume the user chose the "Other" option
   const findOptionWithValue = (value: string): CheckboxOption | undefined => (
@@ -65,7 +65,7 @@ const Checkboxes = ({ name, options = [], hideErrors, className, style, ...props
 
   // `checked: true` indicates that option should be selected, `checked: false` indicates should be unselected
   const handleSelect = (checked: boolean, { value, isRadio, isOther }: CheckboxOption) => {
-    let newSelectedValues: string[] = [];
+    let newSelectedValues: any[] = [];
 
     // if checked === true and the option isn't already selected, select it
     if (checked && !selectedValues.includes(value)) {
@@ -112,7 +112,7 @@ const Checkboxes = ({ name, options = [], hideErrors, className, style, ...props
           />
           {option.isOther && isChecked(option) && (
             <StyledInput
-              placeholder={option.otherPlaceholder || 'If selected \'Other\', please specify below'}
+              placeholder={option.otherPlaceholder || 'If selected \'Other\', then please specify here'}
               value={getOtherValue()}
               onChange={handleChangeOther}
             />

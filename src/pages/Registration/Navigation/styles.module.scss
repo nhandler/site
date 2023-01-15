@@ -14,7 +14,8 @@
   transform: translateX(-50%);
 
   @media (max-width: 1200px) {
-    display: none;
+    // display: none;
+    min-width: 90vw;
   }
 
   @media (max-height: 850px) {

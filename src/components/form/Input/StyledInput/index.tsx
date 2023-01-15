@@ -6,6 +6,7 @@ import styles from './styles.module.scss';
 type PropTypes = {
   className?: string;
   multiline?: boolean;
+  value: string;
   [key: string]: unknown;
 };
 
@@ -17,7 +18,15 @@ const adjustHeight = (textarea: HTMLTextAreaElement|null) => {
   }
 };
 
-const StyledInput = forwardRef<HTMLInputElement|HTMLTextAreaElement, PropTypes>(({ className, multiline = false, ...props }: PropTypes, ref): JSX.Element => {
+
+
+const StyledInput = forwardRef<HTMLInputElement|HTMLTextAreaElement, PropTypes>(({ value, className, multiline = false, ...props }: PropTypes, ref): JSX.Element => {
+  const handleChange = (event) => {
+    value = event.target.value;
+  }
+  value="a"
+  console.log(value)
+
   if (multiline) {
     return (
       <textarea
@@ -36,7 +45,7 @@ const StyledInput = forwardRef<HTMLInputElement|HTMLTextAreaElement, PropTypes>(
     );
   }
 
-  return <input className={clsx(styles.input, className)} {...props} {...ref as React.Ref<HTMLInputElement>} />;
+  return <input className={clsx(styles.input, className)} {...props} {...ref as React.Ref<HTMLInputElement>} onChange={handleChange}/>;
 });
 
 export default StyledInput;

@@ -24,7 +24,7 @@ const EventP2 = (): JSX.Element => (
     <p className={styles.text}>How did you hear of HackIllinois?</p>
     <Checkboxes
       className={styles.checkboxes}
-      name="interests"
+      name="outreachSurvey"
       options={learnOptions}
     />
     <br />

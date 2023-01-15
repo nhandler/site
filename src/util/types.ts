@@ -6,11 +6,19 @@ export type FileType = 'resume' | 'photo' | 'blobstore';
 export type RegistrationType = {
   firstName: string;
   lastName: string;
-  timezone: string;
+  // timezone: string;
+  gender: string;
   email: string;
-  location: string;
-  gender?: string;
   race: string[];
+  ageMin: string[];
+  selfTransport: 
+  | 'YES'
+  | 'NO';
+  chicagoPurdueTransport:
+  | 'CHICAGO'
+  | 'PURDUE'
+  | 'N/A';
+  location: string;
   degreePursued:
   | 'ASSOCIATES'
   | 'BACHELORS'
@@ -18,15 +26,17 @@ export type RegistrationType = {
   | 'PHD'
   | 'GRADUATED'
   | 'OTHER';
-  graduationYear: number;
   school: string;
   major: string;
-  programmingYears: number;
-  programmingAbility: number;
+  graduationYear: number;
+  resumeFilename: string;
+  whyHack: string;
+  programmingYears: number[];//number;
+  programmingAbility: number[];//number;
   // hasInternship?: 'YES' | 'NO';
-  resumeFilename?: string;
   interests: string[];
-  outreachSurvey: string;
+  outreachSurvey: string[];
+  dietary: string[];
 };
 
 export type RegistrationRole = 'attendee' | 'mentor';

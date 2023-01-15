@@ -22,7 +22,7 @@ const EventP3 = (): JSX.Element => (
     <p className={styles.text}>What food restrictions or allergies do you have?</p>
     <Checkboxes
       className={styles.checkboxes}
-      name="interests"
+      name="dietary"
       options={foodOptions}
     />
     <br />

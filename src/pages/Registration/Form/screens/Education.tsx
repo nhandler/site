@@ -36,7 +36,7 @@ const Education = (): JSX.Element => (
   <div className={clsx(styles.screen, styles.education)}>
     <h1 className={styles.title}>Education</h1>
     <p className={styles.text}>What state/country are you currently residing in?</p>
-    <Input className={styles.input} name="residence" placeholder="Type your response here" />
+    <Input className={styles.input} name="location" placeholder="Type your response here" />
     <Select name="degreePursued" options={degreeOptions} placeholder="What degree are you currently pursuing?" />
     <Select name="major" options={majorOptions} placeholder="What is your major?" menuPlacement="top" creatable />
     {/* <Select name="graduationYear" options={graduationYearOptions} placeholder="Graduation Year (Enter N/A if not applicable)" /> */}

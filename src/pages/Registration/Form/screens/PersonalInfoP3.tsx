@@ -7,17 +7,17 @@ import Select from 'components/form/Select';
 import styles from './styles.module.scss';
 
 const ageOptions = [
-  { label: 'Yes', value: 'Yes', isRadio: true, isRadioButton: true },
+  { label: 'Yes', value: 'YES', isRadio: true, isRadioButton: true },
 ];
 
 const transportation = [
-  { label: 'Yes', value: 'Yes', isRadio: true, isRadioButton: true },
-  { label: 'No', value: 'No', isRadio: true, isRadioButton: true },
+  { label: 'Yes', value: 'YES', isRadio: true, isRadioButton: true },
+  { label: 'No', value: 'NO', isRadio: true, isRadioButton: true },
 ];
 
 const chicagoPurdueTransportation = [
-  { label: 'Chicago', value: 'Chicago', isRadio: true, isRadioButton: true },
-  { label: 'Purdue', value: 'Purdue', isRadio: true},
+  { label: 'Chicago', value: 'CHICAGO', isRadio: true, isRadioButton: true },
+  { label: 'Purdue', value: 'PURDUE', isRadio: true},
   { label: 'N/A', value: 'N/A', isRadio: true, isRadioButton: true },
 ];
 
@@ -27,7 +27,7 @@ const PersonalInfoP3 = (): JSX.Element => (
     <p className={styles.text}>Are you aware you have to be 18 by the start of our event (February 24th, 2023)?</p>
     <Checkboxes
       className={styles.checkboxes}
-      name="race"
+      name="ageMin"
       options={ageOptions}
     />
     <p className={styles.text}>Are you aware that this event will be in person and that you will be responsible for transportation (We will have buses from Chicago and Purdue in limited quantity)?</p>

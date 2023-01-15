@@ -32,13 +32,17 @@ type FormProps = {
 };
 
 const fields: (keyof RegistrationSchema)[][] = [
-  [],
-  ['name', 'email', 'location', 'timezone', 'gender'],
+  ['name', 'gender', 'email'],
   ['race'],
-  ['degreePursued', 'graduationYear', 'school', 'major'],
-  ['programmingYears', 'programmingAbility', 'resumeFilename'],
-  ['interests', 'outreachSurvey'],
-  [],
+  ['ageMin','selfTransport','chicagoPurdueTransport'],
+  ['location', 'degreePursued', 'school', 'major'],
+  ['graduationYear', 'resumeFilename'],
+  ['whyHack'],
+  ['programmingYears', 'programmingAbility'],
+  ['interests'],
+  ['outreachSurvey'],
+  ['dietary'],
+  []
 ];
 
 // const pages = [Welcome, PersonalInfo, PersonalInfoP2, PersonalInfoP3, Education, EducationP2, Experience, ExperienceP2, Event, EventP2, EventP3, Finish]; //With Welcome Page
@@ -108,6 +112,7 @@ const Form = ({ formIndex, setFormIndex }: FormProps): JSX.Element => {
   };
 
   const onError: SubmitErrorHandler<RegistrationSchema> = (errorData) => {
+    console.log("error")
     console.log(errorData);
     for (let i = 0; i < fields.length; i += 1) {
       if (fields[i].some((field) => errorData[field])) {
