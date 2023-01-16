@@ -13,7 +13,7 @@ const customStyles: StylesConfig<Record<string, unknown>, true | false> = {
   valueContainer: (base) => ({
     ...base,
     paddingLeft: 0,
-    overflow: 'visible',
+    overflow: 'scroll',
   }),
   placeholder: (base) => ({
     ...base,
@@ -87,6 +87,10 @@ const customStyles: StylesConfig<Record<string, unknown>, true | false> = {
     background: menuBackgroundColor,
     borderRadius: 20,
     padding: '0 15px',
+    overflow: 'visible',
+
+    // transform: 'translateX(-26.7vw)',
+    // width: base.width,
   }),
   menuList: (base) => ({
     ...base,

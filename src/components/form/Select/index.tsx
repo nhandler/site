@@ -91,7 +91,7 @@ const Select = ({ name, options = [], creatable, isMulti = false, className, ...
         isMulti={isMulti}
         blurInputOnSelect={!isMulti}
         closeMenuOnSelect={!isMulti}
-        menuPosition="fixed"
+        menuPosition="absolute"
         menuPlacement="auto"
         // menuPortalTarget={document.body}
         menuShouldBlockScroll

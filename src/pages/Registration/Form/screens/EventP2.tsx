@@ -15,6 +15,7 @@ const learnOptions = [
   { label: 'Reddit', value: 'Reddit' },
   { label: 'Word of Mouth', value: 'Word of Mouth' },
   { label: 'CS Department Email', value: 'CS Department Email' },
+  { label: 'Posters/Flyers on UIUC Campus', value: 'Posters/Flyers on UIUC Campus'},
   { label: 'Other', value: 'Other', isOther: true },
 ];
 

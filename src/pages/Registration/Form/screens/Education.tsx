@@ -7,6 +7,8 @@ import clsx from 'clsx';
 import majors from 'data/majors.json';
 import schools from 'data/schools.json';
 import styles from './styles.module.scss';
+import states from 'data/states.json';
+import countries from 'data/countries.json';
 
 const degreeOptions: OptionType[] = [
   { value: 'ASSOCIATES', label: 'Associates Degree' },
@@ -32,15 +34,22 @@ const majorOptions: OptionType[] = firstMajors
   .concat('N/A')
   .map((major) => ({ value: major, label: major }));
 
+const locationOptions = states
+  .concat(countries)
+  .filter((place) => place !== 'United States') // removing US because we want people in the US to pick a state
+  .concat('Other')
+  .map((place) => ({ value: place, label: place }));
+
 const Education = (): JSX.Element => (
   <div className={clsx(styles.screen, styles.education)}>
     <h1 className={styles.title}>Education</h1>
-    <p className={styles.text}>What state/country are you currently residing in?</p>
-    <Input className={styles.input} name="location" placeholder="Type your response here" />
-    <Select name="degreePursued" options={degreeOptions} placeholder="What degree are you currently pursuing?" />
+    {/* <p className={styles.text}>What state/country are you currently residing in?</p> */}
+    {/* <Input className={styles.input} name="location" placeholder="Type your response here" /> */}
+    <Select name="location" options={locationOptions} placeholder="What state/country are you currently residing in?"/>
+    <Select name="degreePursued" options={degreeOptions} placeholder="What degree are you currently pursuing?" menuPlacement="bottom" />
     <Select name="major" options={majorOptions} placeholder="What is your major?" menuPlacement="top" creatable />
     {/* <Select name="graduationYear" options={graduationYearOptions} placeholder="Graduation Year (Enter N/A if not applicable)" /> */}
-    <Select name="school" options={schoolOptions} placeholder="School (Enter N/A if not applicable)" creatable />
+    <Select name="school" options={schoolOptions} placeholder="What university do you attend?" menuPlacement="top" creatable />
   </div>
 );
 
