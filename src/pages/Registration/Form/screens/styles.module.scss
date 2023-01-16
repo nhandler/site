@@ -142,7 +142,7 @@
   }
 
   .checkboxes {
-    width: 60%;
+    width: 20%;
     // color: white;
     color: #F6F4D4;
     @include registration-floating-screen {
@@ -155,6 +155,54 @@
       font-size: .9em;
       --checkbox-margin: min(max(12px, calc(13/210 * (100vh - 650px) + 12px)), 25px);
     }
+  }
+  .fixNoteLeft {
+    text-align: right;
+    left: 0;
+    bottom: 30%;
+    position: static;
+    height: fit-content;
+    width: 10%;
+    color: #C9D2E5;
+    font-size: 0.6rem;
+    @media (max-height: 750px) {
+      visibility: hidden;
+    }
+    @media (max-width: 600px) {
+      visibility: hidden;
+    }
+  }
+  .fixNoteRight {
+    text-align: center;
+    transform: translateX(40vw) translateY(-6vh);
+    left: auto;
+    // right: 0%;
+    bottom: 30%;
+    position: static;
+    height: fit-content;
+    width: 15%;
+    color: #C9D2E5;
+    font-size: 0.6rem;
+    top: 30vh;
+    @media (max-width: 1200px) {
+      transform: translateX(600px) translateY(-73px);
+    }
+    @media (max-height: 1100px) {
+      transform: translateX(550%) translateY(-7vh);
+    }
+    @media (max-height: 750px) {
+      visibility: hidden;
+    }
+    @media (max-width: 800px) {
+      transform: translateX(50vw) translateY(-90px);
+    }
+    @media (max-width: 600px) {
+      visibility: hidden;
+    }
+
+    // @media (max-height: 500px) {
+    //   top: 40vh;
+    // }
   }
 }
 

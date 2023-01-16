@@ -80,11 +80,13 @@ const ExperienceP2 = (): JSX.Element => (
       options={programmingYearsOptions}
     />
     <p className={styles.text}>How would you rate your programming ability?</p>
+    <p className={styles.fixNoteLeft}>what’s... code?</p>
     <Checkboxes
       className={styles.checkboxes}
       name="programmingAbility"
       options={abilityOptions}
     />
+    <p className={styles.fixNoteRight}>I eat code for breakfast</p>
   </div>
 );
 

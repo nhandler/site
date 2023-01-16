@@ -36,18 +36,34 @@
     border: 3px solid #FEA3AA;
     outline: 3px solid #1D2644;
     outline-offset: -5px;
-    transform: translateY(16px) translateX(3vw);
-    @media (max-width: 700px) {
-      transform: translateY(16px) translateX(6vw);
+    transform: translateY(16px) translateX(230%);
+    @media (max-width: 1200px) {
+      transform: translateY(16px) translateX(220%);
+    }
+    @media (max-width: 900px) {
+      transform: translateY(16px) translateX(210%);
+    }
+    @media (max-width: 800px) {
+      transform: translateY(16px) translateX(4.3vw);
+    }
+    @media (max-width: 600px) {
+      transform: translateY(16px) translateX(5.3vw);
+    }
+    @media (max-width: 450px) {
+      transform: translateY(16px) translateX(37px);
+      margin-left: -10px;
     }
   }
 
   &.radio {
     max-width: 10%;
     text-align: center;
-    @media (max-width: 1200px) {
-      text-align: left;
-      margin-left: -10px;
+    margin-left: -10px;
+    @media (max-width: 600px) {
+      margin-left: -5px;
+    }
+    @media (max-width: 450px) {
+      text-align: right;
     }
   }
 
