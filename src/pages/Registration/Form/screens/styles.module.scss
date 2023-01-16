@@ -6,8 +6,9 @@
   position: relative;
   flex: 1;
 
-  @media (max-height: 740px) {
-    margin-top: -15px;
+  @media (max-height: 750px) {
+    margin-top: 18px;
+    font-size: 0.75em;
   }
 
   @include registration-floating-screen {
@@ -25,8 +26,10 @@
     font-size: 36px;
     line-height: 44px;
 
-    @media screen and (max-height: 700px) {
+    @media screen and (max-height: 750px) {
       margin-bottom: -20px;
+      font-size: 2.125em;
+      transform: translateY(15%);
     }
 
     @include registration-floating-screen {
@@ -82,7 +85,7 @@
       font-size: 1.125em;
     }
 
-    @media (max-height: 740px) {
+    @media (max-height: 750px) {
       margin-top: 20px;
     }
 
@@ -103,6 +106,7 @@
 .personalInfo, .education, .experience, .eventQuestions {
   // overflow: hidden !important;
   // overflow: auto;
+  // overflow: hidden !important;
   min-width: 100%;
 
   .title {
@@ -164,9 +168,9 @@
   //   display: none;
   // }
   // @include registration-floating-screen {
-    overflow: hidden !important;
+    overflow: auto !important;
     .scrollbox {
-      overflow: scroll !important;
+      overflow-y: scroll !important;
     }
   // }
 
@@ -237,7 +241,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   box-sizing: border-box;
-  overflow: visible;
+  overflow: scroll;
 
   // @media (max-height: 800px) {
   //   transform: translateY(50px);

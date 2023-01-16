@@ -11,9 +11,11 @@ type PropTypes = {
 const ErrorMessage = ({ name, hideErrors = false }: PropTypes): JSX.Element | null => {
   const {formState:{ errors }} = useForm();
 
-  // if (!hideErrors && errors[name]) {
-  //   return <div className={styles.errorMessage}>{errors}</div>;
-  // }
+  if (!hideErrors && errors[name]) {
+    console.log(name)
+    console.log(errors[name])
+    return <div className={styles.errorMessage}>{errors[name]}</div>;
+  }
   //https://react-hook-form.com/api/useformstate/errormessage
   return null;
 };

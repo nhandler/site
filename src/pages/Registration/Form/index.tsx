@@ -114,9 +114,7 @@ const Form = ({ formIndex, setFormIndex }: FormProps): JSX.Element => {
   const onError: SubmitErrorHandler<RegistrationSchema> = (errorData) => {
     console.log(errorData);
     for (let i = 0; i < fields.length; i += 1) {
-      console.log(fields[i]);
       if (fields[i].some((field) => errorData[field])) {
-        console.log(i);
         setFormIndex(i);
         return;
       }
@@ -135,8 +133,11 @@ const Form = ({ formIndex, setFormIndex }: FormProps): JSX.Element => {
             // eslint-disable-next-line react/no-array-index-key
             <div className={clsx(styles.screenContainer, formIndex === i && styles.visible)} key={i}>
               <Page />
-
-              {formIndex !== postSubmitPageIndex && ( // last page does not have any buttons
+            </div>
+          ))}
+        </form>
+      </FormProvider>
+      {formIndex !== postSubmitPageIndex && ( // last page does not have any buttons
                 <div className={styles.buttons}>
                   {/* {(formIndex !== 0) && <Button arrow="right" onClick={nextPage}>Previous</Button>} */}
                   <Button arrow="left" hidden={formIndex === 0} onClick={previousPage}>Back</Button>
@@ -146,10 +147,7 @@ const Form = ({ formIndex, setFormIndex }: FormProps): JSX.Element => {
                   {(!isLoading && formIndex === submitPageIndex) && <Button type="submit">Submit</Button>}
                 </div>
               )}
-            </div>
-          ))}
-        </form>
-      </FormProvider>
+      
       <FormNavigation setFormIndex={setFormIndex} formIndex={formIndex}></FormNavigation>
       
     </div>

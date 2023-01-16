@@ -38,8 +38,6 @@ const EducationP2 = (): JSX.Element => (
     <Select name="graduationYear" options={graduationYearOptions} placeholder="What is your graduation year?" />
     <br/>
     <br/>
-    <br/>
-    <br/>
     <p className={styles.text}>Please submit a copy of your resume, it will be shared with our sponsors</p>
     <FileUpload
       className={styles['resume-upload']}
