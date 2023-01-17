@@ -10,7 +10,7 @@ export type RegistrationType = {
   gender: string;
   email: string;
   race: string[];
-  ageMin: string[];
+  // ageMin: string[];
   selfTransport: 
   | 'YES'
   | 'NO';
@@ -31,8 +31,8 @@ export type RegistrationType = {
   graduationYear: number;
   resumeFilename: string;
   whyHack: string;
-  programmingYears: number[];//number;
-  programmingAbility: number[];//number;
+  programmingYears: number;//number;
+  programmingAbility: number;//number;
   // hasInternship?: 'YES' | 'NO';
   interests: string[];
   outreachSurvey: string[];

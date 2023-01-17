@@ -51,7 +51,7 @@ const submitPageIndex = 9;
 const postSubmitPageIndex = submitPageIndex + 1;
 
 const convertToAPI = (data: RegistrationSchema): RegistrationType => {
-  const { name, gender: possibleGender, race: possibleRace, ...registration } = data;
+  const { name, gender: possibleGender, race: possibleRace, programmingYears: yearsArray, programmingAbility: abiltyArray, ageMin: overEighteen, ...registration } = data;
   const [firstName, ...remainingWords] = name.split(' ');
   const lastName = remainingWords.join(' ') || ' ';
 
@@ -59,14 +59,25 @@ const convertToAPI = (data: RegistrationSchema): RegistrationType => {
   // when they come back to edit registration, they'll see the prefer not to answer option selected
   const gender = possibleGender || 'Prefer Not to Answer';
   const race = possibleRace.length === 0 ? ['Prefer Not to Answer'] : possibleRace;
+  const programmingYears = (yearsArray.at(0) || 0);
+  const programmingAbility = (abiltyArray.at(0) || 0);
+  if (overEighteen[0] != "YES") {
+    alert("Please ensure that you are aware that you have to be 18 by the start of our event")
+  }
 
-  return { ...registration, firstName, lastName, gender, race };
+  console.log(registration, firstName, lastName, gender, race, programmingYears, programmingAbility )
+  return { ...registration, firstName, lastName, gender, race, programmingYears, programmingAbility };
 };
 
 const convertFromAPI = (registration: RegistrationType): RegistrationSchema => {
-  const { firstName, lastName, ...remaining } = registration;
+  const { firstName, lastName, programmingYears: year, programmingAbility: ability, ...remaining } = registration;
   const name = firstName ? (`${firstName} ${lastName}`).trim() : '';
-  return { ...remaining, name };
+  const programmingYears = [year];
+  const programmingAbility = [ability];
+  const ageMin = ["YES"]
+ 
+
+  return { ...remaining, name, programmingYears, programmingAbility, ageMin};
 };
 
 const Form = ({ formIndex, setFormIndex }: FormProps): JSX.Element => {
@@ -112,8 +123,10 @@ const Form = ({ formIndex, setFormIndex }: FormProps): JSX.Element => {
   };
 
   const onError: SubmitErrorHandler<RegistrationSchema> = (errorData) => {
+    console.log("error");
     console.log(errorData);
     for (let i = 0; i < fields.length; i += 1) {
+      console.log(fields[i]);
       if (fields[i].some((field) => errorData[field])) {
         setFormIndex(i);
         return;
@@ -135,18 +148,19 @@ const Form = ({ formIndex, setFormIndex }: FormProps): JSX.Element => {
               <Page />
             </div>
           ))}
+          
         </form>
       </FormProvider>
       {formIndex !== postSubmitPageIndex && ( // last page does not have any buttons
-                <div className={styles.buttons}>
-                  {/* {(formIndex !== 0) && <Button arrow="right" onClick={nextPage}>Previous</Button>} */}
-                  <Button arrow="left" hidden={formIndex === 0} onClick={previousPage}>Back</Button>
-                  <div className={styles.spacer} />
-                  {isLoading && <Button loading>Loading...</Button>}
-                  {(!isLoading && formIndex !== submitPageIndex) && <Button arrow="right" onClick={nextPage}>Next</Button>}
-                  {(!isLoading && formIndex === submitPageIndex) && <Button type="submit">Submit</Button>}
-                </div>
-              )}
+        <div className={styles.buttons}>
+          {/* {(formIndex !== 0) && <Button arrow="right" onClick={nextPage}>Previous</Button>} */}
+          <Button arrow="left" hidden={formIndex === 0} onClick={previousPage}>Back</Button>
+          <div className={styles.spacer} />
+          {isLoading && <Button loading>Loading...</Button>}
+          {(!isLoading && formIndex !== submitPageIndex) && <Button arrow="right" onClick={nextPage}>Next</Button>}
+          {(!isLoading && formIndex === submitPageIndex) && <Button type="submit" onClick={handleSubmit(onSubmit, onError)}>Submit</Button>}
+        </div>
+      )}
       
       <FormNavigation setFormIndex={setFormIndex} formIndex={formIndex}></FormNavigation>
       

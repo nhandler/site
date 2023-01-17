@@ -16,12 +16,12 @@ export const registrationSchema = z.object({
   graduationYear: z.number().int(),
   resumeFilename: z.string(),
   whyHack: z.string().min(1),
-  programmingYears: z.number().array().min(1),//z.number().int().min(1).max(10),
-  programmingAbility:z.number().array().min(1),//z.number().int().min(1).max(10),
+  programmingYears: z.number().array().min(1),//.int().min(0).max(10),
+  programmingAbility: z.number().array().min(1),//.int().min(1).max(10),
   // hasInternship: z.enum(['YES', 'NO']).optional(),
   interests: z.string().array(),
   outreachSurvey: z.string().array(),
-  dietary: z.string().array().min(1)
+  dietary: z.string().array()
 
   // terms: z.boolean().refine((val: boolean) => val),
 });
@@ -29,6 +29,7 @@ export const registrationSchema = z.object({
 export type RegistrationSchema = z.infer<typeof registrationSchema>;
 
 export const errorMap: z.ZodErrorMap = (error, ctx) => {
+  console.log(error);
   if (error.message) return { message: error.message };
 
   if (error.code === z.ZodIssueCode.too_small && error.type === 'string') {
