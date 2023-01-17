@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Moles from './Moles';
+import Moles from './moles';
 
 type Props = {
   setFormIndex: React.Dispatch<React.SetStateAction<number>>,

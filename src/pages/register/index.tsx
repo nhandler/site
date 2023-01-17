@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
-import Background from './Background';
-import Navigation from './Navigation';
-import Form from './Form';
+import Background from '../../components/register/background';
+import Navigation from '../../components/register/navigation';
+import Form from '../../components/register/form';
 
 import { authenticate, isAuthenticated } from 'util/api';
 

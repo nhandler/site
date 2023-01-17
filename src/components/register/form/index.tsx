@@ -8,21 +8,21 @@ import { getRegistration, getRoles, refreshToken, register } from 'util/api';
 import MOLEMACHINE from 'assets/registration/whack_a_mole_machine.svg';
 import Button from 'components/form/Button';
 import { registrationSchema, RegistrationSchema, errorMap, defaultValues } from '../validation';
-import Welcome from './screens/Welcome';
-import PersonalInfoP1 from './screens/PersonalInfo';
-import PersonalInfoP2 from './screens/PersonalInfoP2';
-import PersonalInfoP3 from './screens/PersonalInfoP3';
-import Education from './screens/Education';
-import EducationP2 from './screens/EducationP2';
-import Experience from './screens/Experience';
-import ExperienceP2 from './screens/ExperienceP2';
-import Event from './screens/Event';
-import EventP2 from './screens/EventP2';
-import EventP3 from './screens/EventP3';
-import Finish from './screens/Finish';
+import Welcome from './screens/welcome';
+import PersonalInfoP1 from './screens/personal-info-p1';
+import PersonalInfoP2 from './screens/personal-info-p2';
+import PersonalInfoP3 from './screens/personal-info-p3';
+import Education from './screens/education-p1';
+import EducationP2 from './screens/education-p2';
+import Experience from './screens/experience-p1';
+import ExperienceP2 from './screens/experience-p2';
+import Event from './screens/event-p1';
+import EventP2 from './screens/event-p2';
+import EventP3 from './screens/event-p3';
+import Finish from './screens/finish';
 
 import styles from './styles.module.scss';
-import FormNavigation from './FormNavigation';
+import FormNavigation from './form-navigation';
 
 
 
