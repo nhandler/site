@@ -75,7 +75,7 @@ const Moles = ({ setFormIndex, formIndex }: Props): JSX.Element => {
   return (
     <div className={styles.ovenLights}>
       {lights.map(([name], i) => (
-        <div className={clsx(styles.lightGroup, isDisabled(i) && styles.disabled)} onClick={() => !isDisabled(i)}>
+        <div key={i} className={clsx(styles.lightGroup, isDisabled(i) && styles.disabled)} onClick={() => !isDisabled(i)}>
           {formIndex >= personalInfoScreenIndex && formIndex < educationScreenIndex && i == 0 ? (
             <img className={styles.activeMole} src={mole1} onClick={() => setFormIndex(personalInfoScreenIndex)} alt="" />
           ) : formIndex >= educationScreenIndex && formIndex < experienceScreenIndex && i === 1 ? (
