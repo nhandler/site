@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import Background from '../../components/register/background';
 import Navigation from '../../components/register/navigation';
 import Form from '../../components/register/form';
+// import ErrorDataProvider from "../../components/contexts/error-data-provider";
 
 import { authenticate, isAuthenticated } from 'util/api';
 

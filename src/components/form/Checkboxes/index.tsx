@@ -5,6 +5,7 @@ import { useController, useFormContext } from 'react-hook-form';
 import styles from './styles.module.scss';
 import StyledCheckbox from './StyledCheckbox';
 import StyledInput from '../Input/StyledInput';
+import ErrorMessage from '../ErrorMessage';
 
 export type CheckboxOption = {
   label: string | number,
@@ -119,6 +120,7 @@ const Checkboxes = ({ name, options = [], hideErrors, className, style, ...props
           )}
         </React.Fragment>
       ))}
+      <ErrorMessage name={name} />
     </div>
   );
 };

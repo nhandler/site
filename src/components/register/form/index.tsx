@@ -88,7 +88,7 @@ const Form = ({ formIndex, setFormIndex }: FormProps): JSX.Element => {
     resolver: zodResolver(registrationSchema, { errorMap }),
     defaultValues,
   });
-  const { handleSubmit } = methods;
+  const { handleSubmit, setError, clearErrors, formState: { errors } } = methods;
 
   useEffect(() => {
     getRoles().then((roles) => {
@@ -123,13 +123,17 @@ const Form = ({ formIndex, setFormIndex }: FormProps): JSX.Element => {
   };
 
   const onError: SubmitErrorHandler<RegistrationSchema> = (errorData) => {
-    console.log("error");
     console.log(errorData);
+    clearErrors();
+    let inputName: keyof typeof errorData;
+    for (inputName in errorData) {
+      setError(inputName, { type: "required", message: errorData[inputName]?.message });
+    }
+
     for (let i = 0; i < fields.length; i += 1) {
-      console.log(fields[i]);
       if (fields[i].some((field) => errorData[field])) {
         setFormIndex(i);
-        return;
+        break;
       }
     }
   };

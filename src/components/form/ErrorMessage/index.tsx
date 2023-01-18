@@ -1,5 +1,5 @@
 import React from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, useFormContext } from 'react-hook-form';
 
 import styles from './styles.module.scss';
 
@@ -9,12 +9,12 @@ type PropTypes = {
 };
 
 const ErrorMessage = ({ name, hideErrors = false }: PropTypes): JSX.Element | null => {
-  const {formState:{ errors }} = useForm();
+  const { formState: { errors } } = useFormContext();
 
   if (!hideErrors && errors[name]) {
-    console.log(name)
-    console.log(errors[name])
-    return <div className={styles.errorMessage}>{errors[name]}</div>;
+    let errorMessage = errors[name]?.message;
+    if (typeof errorMessage === 'string')
+      return <div className={styles.errorMessage}>{errorMessage}</div>;
   }
   //https://react-hook-form.com/api/useformstate/errormessage
   return null;
