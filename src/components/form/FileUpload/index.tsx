@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useController, useFormContext } from 'react-hook-form';
 
 import { uploadFile } from 'util/api';
-import { FileType } from 'util/types';
+import { FileType } from '../../../util/types';
 
 import styles from './styles.module.scss';
 
