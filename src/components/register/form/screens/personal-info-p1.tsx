@@ -31,9 +31,10 @@ const PersonalInfo = (): JSX.Element => (
       name="gender"
       options={genderOptions}
       placeholder="Gender"
-      menuPlacement="top"
+      menuPlacement="auto"
       // creatable
     />
+    <br></br>
     <i className={styles.note}><b>Note:</b> In light of recent events, we are collecting this information in order to determine what our current attendee demographics are and how we can work on increasing diversity. However, we understand if you prefer not to answer.</i>
     <p className={styles.text}>What is your email address?</p>
     <Input className={styles.input} name="email" placeholder="Type your response here" />

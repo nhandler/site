@@ -120,7 +120,7 @@ const Checkboxes = ({ name, options = [], hideErrors, className, style, ...props
           )}
         </React.Fragment>
       ))}
-      <ErrorMessage name={name} />
+      <ErrorMessage name={name} type="checkbox" />
     </div>
   );
 };

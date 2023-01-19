@@ -45,9 +45,9 @@ const Education = (): JSX.Element => (
     <h1 className={styles.title}>Education</h1>
     {/* <p className={styles.text}>What state/country are you currently residing in?</p> */}
     {/* <Input className={styles.input} name="location" placeholder="Type your response here" /> */}
-    <Select name="location" options={locationOptions} placeholder="What state/country are you currently residing in?"/>
-    <Select name="degreePursued" options={degreeOptions} placeholder="What degree are you currently pursuing?" menuPlacement="bottom" />
-    <Select name="major" options={majorOptions} placeholder="What is your major?" menuPlacement="top" creatable />
+    <Select name="location" options={locationOptions} placeholder="What state/country are you currently residing in?" menuPlacement="bottom"/>
+    <Select name="degreePursued" options={degreeOptions} placeholder="What degree are you currently pursuing?" menuPlacement="auto" />
+    <Select name="major" options={majorOptions} placeholder="What is your major?" menuPlacement="auto" creatable />
     {/* <Select name="graduationYear" options={graduationYearOptions} placeholder="Graduation Year (Enter N/A if not applicable)" /> */}
     <Select name="school" options={schoolOptions} placeholder="What university do you attend?" menuPlacement="top" creatable />
   </div>

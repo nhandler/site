@@ -50,6 +50,7 @@ const FileUpload = ({ name, type, text, accept, className, ...props }: PropTypes
 
       <span className={styles.filename}>{field.value || 'No file chosen'}</span>
     </div>
+    
   );
 };
 

@@ -9,7 +9,7 @@
   width: 100%;
   padding: 10px 0;
   background-color: transparent;
-  color: #FFFFFF !important;
+  color: #FFFFFF;
 
   &::placeholder {
     color: #FFFFFF;
@@ -32,4 +32,8 @@
   line-height: 17px;
   background-color: #C9D2E5;
 
+  &::placeholder {
+    color: #1D2644;
+    font-size: 0.9em;
+  }
 }

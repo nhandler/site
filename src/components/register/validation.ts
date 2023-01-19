@@ -14,14 +14,14 @@ export const registrationSchema = z.object({
   school: z.string().min(1),
   major: z.string().min(1),
   graduationYear: z.number().int(),
-  resumeFilename: z.string(),
+  resumeFilename: z.string().min(1),
   whyHack: z.string().min(1),
   programmingYears: z.number().array().min(1),//.int().min(0).max(10),
   programmingAbility: z.number().array().min(1),//.int().min(1).max(10),
   // hasInternship: z.enum(['YES', 'NO']).optional(),
-  interests: z.string().array(),
-  outreachSurvey: z.string().array(),
-  dietary: z.string().array()
+  interests: z.string().array().min(1),
+  outreachSurvey: z.string().array().min(1),
+  dietary: z.string().array().min(1)
 
   // terms: z.boolean().refine((val: boolean) => val),
 });
