@@ -4,6 +4,7 @@ import { useController, useFormContext } from 'react-hook-form';
 
 import styles from './styles.module.scss';
 import StyledCheckbox from './StyledCheckbox';
+import RadioButton from './RadioButton';
 import StyledInput from '../Input/StyledInput';
 import ErrorMessage from '../ErrorMessage';
 
@@ -103,14 +104,25 @@ const Checkboxes = ({ name, options = [], hideErrors, className, style, ...props
     <div className={clsx(styles.checkboxes, className)} style={style} {...props}>
       {options.map((option) => (
         <React.Fragment key={option.value}>
-          <StyledCheckbox
-            value={option.value}
-            label={option.label}
-            checked={isChecked(option)}
-            radio = {option.isRadioButton}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => handleSelect(e.target.checked, option)}
-            style={(option.isOther && isChecked(option)) ? { marginBottom: 10 } : {}}
-          />
+          { option.isRadioButton ? (
+            <RadioButton
+              value={option.value}
+              label={option.label}
+              checked={isChecked(option)}
+              radio = {option.isRadioButton}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => handleSelect(e.target.checked, option)}
+              style={(option.isOther && isChecked(option)) ? { marginBottom: 10 } : {}}
+            />
+          ) : (
+            <StyledCheckbox
+              value={option.value}
+              label={option.label}
+              checked={isChecked(option)}
+              radio = {option.isRadioButton}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => handleSelect(e.target.checked, option)}
+              style={(option.isOther && isChecked(option)) ? { marginBottom: 10 } : {}}
+            />
+          )}
           {option.isOther && isChecked(option) && (
             <StyledInput
               placeholder={option.otherPlaceholder || 'If selected \'Other\', then please specify here'}

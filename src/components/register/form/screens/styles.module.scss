@@ -156,53 +156,44 @@
       --checkbox-margin: min(max(12px, calc(13/210 * (100vh - 650px) + 12px)), 25px);
     }
   }
-  .fixNoteLeft {
-    text-align: right;
-    left: 0;
-    bottom: 30%;
-    position: static;
-    height: fit-content;
-    width: 10%;
-    color: #C9D2E5;
-    font-size: 0.7rem;
-    @media (max-height: 750px) {
-      visibility: hidden;
-    }
-    @media (max-width: 600px) {
-      visibility: hidden;
-    }
-  }
-  .fixNoteRight {
-    text-align: center;
-    transform: translateX(40vw) translateY(-6vh);
-    left: auto;
-    // right: 0%;
-    bottom: 30%;
-    position: static;
-    height: fit-content;
-    width: 15%;
-    color: #C9D2E5;
-    font-size: 0.7rem;
-    top: 30vh;
-    @media (max-width: 1200px) {
-      transform: translateX(600px) translateY(-73px);
-    }
-    @media (max-height: 1100px) {
-      transform: translateX(550%) translateY(-7vh);
-    }
-    @media (max-height: 750px) {
-      visibility: hidden;
-    }
-    @media (max-width: 800px) {
-      transform: translateX(50vw) translateY(-90px);
-    }
-    @media (max-width: 600px) {
-      visibility: hidden;
-    }
+  
+}
 
-    // @media (max-height: 500px) {
-    //   top: 40vh;
-    // }
+.fixNoteLeft {
+  text-align: center;
+  left: 0;
+  top: 280px;
+  position: absolute;
+  height: fit-content;
+  width: fit-content;
+  color: #C9D2E5;
+  font-size: 0.7rem;
+  @media (max-height: 750px) {
+    top: 220px
+  }
+  @media (max-width: 600px) and (min-height: 750px) {
+    top: 350px
+  }
+}
+.fixNoteRight {
+  text-align: center;
+  // transform: translateX(40vw) translateY(-6px);
+  left: auto;
+  right: 10%;
+  top: 280px;
+  position: absolute;
+  height: fit-content;
+  width: 10%;
+  color: #C9D2E5;
+  font-size: 0.7rem;
+  // top: 30vh;
+  @media (max-height: 750px) {
+    top: 220px;
+    width: fit-content;
+  }
+  @media (max-width: 600px) and (min-height: 750px) {
+    top: 350px;
+    width: fit-content;
   }
 }
 

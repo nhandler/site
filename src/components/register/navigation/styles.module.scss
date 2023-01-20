@@ -16,9 +16,10 @@
 
   @media (max-width: 1200px) {
     // display: none;
-    min-width: 90vw;
+    min-width: 100vw;
+    background-color: #FCDC8F;
     // transform: translateY(0.1vh);
-    top: 74vh;
+    bottom: 0vh;
   }
 
   @media (max-height: 550px) {

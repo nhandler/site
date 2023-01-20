@@ -14,7 +14,7 @@ type PropTypes = {
 };
 
 const StyledCheckbox = ({ value, label, checked, className, radio, style, ...props }: PropTypes): JSX.Element => (
-  <label className={clsx(styles.checkboxLabel, checked && styles.checked, className)} style={style}>
+  <label className={clsx(styles.checkboxLabel, checked && styles.checked, radio && styles.radio, className)} style={style}>
     <input
       type="checkbox"
       className={styles.checkbox}

@@ -18,9 +18,11 @@ const ErrorMessage = ({ name, type, hideErrors = false }: PropTypes): JSX.Elemen
       return (
         <div>
         { type == "checkbox" ? (
-          <div className={styles.errorMessage}> {errorMessage}</div>
-        ) : (
           <div className={styles.errorMessageCheckbox}> {errorMessage}</div>
+        ) : type == "radiobox" ? (
+          <div className={styles.errorMessageRadiobox}> {errorMessage}</div>
+        ) : (
+          <div className={styles.errorMessage}> {errorMessage}</div>
         )};
       </div>
       )};

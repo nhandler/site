@@ -2,7 +2,7 @@
   position: absolute;
   transform: translateY(5px);
   
-  font-size: .85em;
+  font-size: 1.15em;
   font-weight: 500;
   color: red;
 
@@ -13,7 +13,16 @@
   position: absolute;
   transform: translateY(5px);
   
-  font-size: .85em;
+  font-size: 1.15em;
+  font-weight: 500;
+  color: red;
+}
+
+.errorMessageRadiobox {
+  position: absolute;
+  transform: translateY(5px);
+  
+  font-size: 1.15em;
   font-weight: 500;
   color: red;
 }

@@ -7,7 +7,7 @@ import Select from 'components/form/Select';
 import styles from './styles.module.scss';
 
 const ageOptions = [
-  { label: 'Yes', value: 'YES', isRadio: true, isRadioButton: true },
+  { label: 'Yes', value: 'YES', isRadio: true, isRadioButton: false },
 ];
 
 const transportation = [
@@ -16,9 +16,9 @@ const transportation = [
 ];
 
 const chicagoPurdueTransportation = [
-  { label: 'Chicago', value: 'CHICAGO', isRadio: true, isRadioButton: true },
+  { label: 'Chicago', value: 'CHICAGO', isRadio: true },
   { label: 'Purdue', value: 'PURDUE', isRadio: true},
-  { label: 'N/A', value: 'N/A', isRadio: true, isRadioButton: true },
+  { label: 'N/A', value: 'N/A', isRadio: true },
 ];
 
 const PersonalInfoP3 = (): JSX.Element => (
