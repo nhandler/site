@@ -22,7 +22,7 @@
     transform: translateY(0px);
   }
 
-  @media (max-height: 550px) {
+  @media (max-height: 600px) {
     top: 10%;
     // bottom: 10px;
     transform: scale(1.28,1.28);
@@ -75,13 +75,13 @@
       top: 10%;
     }
 
-    @media (max-width: 1200px) {
+    @media (max-width: 1100px) {
       height: 50%;
       min-width: 70%;
       top: 10%;
     }
 
-    @media (min-width: 1200px) {
+    @media (min-width: 1100px) {
       height: 50%;
       max-width: 50%;
       top: 10%;
@@ -141,13 +141,18 @@
     width: 70%;
     left: 15%;
   }
-  @media (max-height: 750px) {
-    bottom: 25%;
+  @media (max-height: 600px) {
+    bottom: 30%;
   }
+  
   @media (max-width: 350px) {
-    width: 100%;
+    width: 85%;
     left: auto;
 
+  }
+  @media (max-height: 750px) and (min-width: 1200) {
+    width: 60%;
+    left: auto;
   }
 
   .spacer {
@@ -170,7 +175,7 @@
   column-gap: auto;
   justify-content: center;
   bottom: 30%;
-  @media (max-height: 750px) {
+  @media (max-height: 600px) {
     bottom: 25%;
   }
 }

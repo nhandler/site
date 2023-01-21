@@ -6,13 +6,13 @@ import Checkboxes from 'components/form/Checkboxes';
 import styles from './styles.module.scss';
 
 const raceOptions = [
-  { label: 'American Indian or Alaskan Native', value: 'American Indian or Alaskan Native' },
-  { label: 'Asian', value: 'Asian' },
-  { label: 'Black or African American', value: 'Black or African American' },
-  { label: 'Native Hawaiian or Pacific Islander', value: 'Native Hawaiian or Pacific Islander' },
-  { label: 'Hispanic or Latino or Spanish Origin', value: 'Hispanic or Latino or Spanish Origin' },
-  { label: 'White', value: 'White' },
-  { label: 'Other', value: 'Other', isOther: true },
+  { label: 'American Indian or Alaska Native', value: 'American Indian or Alaska Native', isRadio: true },
+  { label: 'Asian', value: 'Asian', isRadio: true },
+  { label: 'Black or African American', value: 'Black or African American', isRadio: true },
+  { label: 'Native Hawaiian or Other Pacific Islander', value: 'Native Hawaiian or Other Pacific Islander', isRadio: true },
+  { label: 'Hispanic or Latino', value: 'Hispanic or Latino', isRadio: true },
+  { label: 'White', value: 'White', isRadio: true },
+  { label: 'Biracial/Multiracial', value: 'Biracial/Multiracial', isRadio: true },
   { label: 'Prefer Not to Answer', value: 'Prefer Not to Answer', isRadio: true },
 ];
 

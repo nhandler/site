@@ -16,7 +16,7 @@ const transportation = [
 ];
 
 const chicagoPurdueTransportation = [
-  { label: 'Chicago', value: 'CHICAGO', isRadio: true },
+  // { label: 'Chicago', value: 'CHICAGO', isRadio: true },
   { label: 'Purdue', value: 'PURDUE', isRadio: true},
   { label: 'N/A', value: 'N/A', isRadio: true },
 ];
@@ -30,7 +30,7 @@ const PersonalInfoP3 = (): JSX.Element => (
       name="ageMin"
       options={ageOptions}
     />
-    <p className={styles.text}>Are you aware that this event will be in person and that you will be responsible for transportation (We will have buses from Chicago and Purdue in limited quantity)?</p>
+    <p className={styles.text}>Are you aware that this event will be in person and that you will be responsible for transportation (We will have a bus from West Lafayette in limited quantity)?</p>
     <Select
       className={styles.select}
       name="selfTransport"
@@ -39,7 +39,7 @@ const PersonalInfoP3 = (): JSX.Element => (
       menuPlacement="top"
       // creatable
     />
-    <p className={styles.text}>Will you require transportation from either Chicago or West Lafayette? (We cannot guarantee spots on the bus, we will send information about buses closer to the event)?</p>
+    <p className={styles.text}>Will you require transportation from West Lafayette? (We cannot guarantee spots on the bus, we will send information about buses closer to the event)?</p>
     <Select
       className={styles.select}
       name="chicagoPurdueTransport"
