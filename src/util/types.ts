@@ -29,7 +29,7 @@ export type RegistrationType = {
   school: string;
   major: string;
   graduationYear: number;
-  resumeFilename: string;
+  resumeFilename?: string | undefined;
   whyHack: string;
   programmingYears: number;//number;
   programmingAbility: number;//number;

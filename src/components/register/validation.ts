@@ -14,7 +14,7 @@ export const registrationSchema = z.object({
   school: z.string().min(1),
   major: z.string().min(1),
   graduationYear: z.number().int(),
-  resumeFilename: z.string(),
+  resumeFilename: z.string().optional(),
   whyHack: z.string().min(1),
   programmingYears: z.number().array().min(1),//.int().min(0).max(10),
   programmingAbility: z.number().array().min(1),//.int().min(1).max(10),

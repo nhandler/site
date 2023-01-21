@@ -8,7 +8,7 @@ import { DateTime } from 'luxon';
 
 import LOGO_LARGE from 'assets/registration/finishLogo.svg';
 import MOLEMACHINE from 'assets/registration/whacked_mole_machine.svg';
-import DISCORD_HELP from 'assets/registration/discord_username_how_to.png';
+import DISCORD_HELP from 'assets/registration/oven.svg'; //discord_username_how_to.png';
 import Input from 'components/form/Input';
 import Button from 'components/form/Button';
 import Constant from 'components/form/Constant';
@@ -78,7 +78,7 @@ const Form = (): JSX.Element => {
     setIsLoading(true);
     try {
       await Promise.all([
-        rsvp(isEditing, { isAttending: true }).then(() => refreshToken()),
+        // rsvp(isEditing, { isAttending: true }).then(() => refreshToken()),
         createProfile(isEditing, data),
       ]);
       setFinished(true);
