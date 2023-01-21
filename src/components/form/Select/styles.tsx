@@ -13,7 +13,7 @@ const customStyles: StylesConfig<Record<string, unknown>, true | false> = {
   valueContainer: (base) => ({
     ...base,
     paddingLeft: 0,
-    overflow: 'scroll',
+    overflow: 'visible',
   }),
   placeholder: (base) => ({
     ...base,
@@ -81,6 +81,7 @@ const customStyles: StylesConfig<Record<string, unknown>, true | false> = {
   menuPortal: (base) => ({
     ...base,
     zIndex: 100,
+    maxHeight: '10vh'
   }),
   menu: (base) => ({
     ...base,
@@ -88,6 +89,7 @@ const customStyles: StylesConfig<Record<string, unknown>, true | false> = {
     borderRadius: 20,
     padding: '0 15px',
     overflow: 'visible',
+    maxHeight: '15vh'
 
     // transform: 'translateX(-26.7vw)',
     // width: base.width,
@@ -97,6 +99,7 @@ const customStyles: StylesConfig<Record<string, unknown>, true | false> = {
     padding: '16px 0',
     scrollbarColor: `${menuHighlightColor} transparent`,
     scrollbarWidth: 'thin',
+    maxHeight: '15vh',
     '&::-webkit-scrollbar': {
       WebkitAppearance: 'none',
     },
@@ -119,6 +122,7 @@ const customStyles: StylesConfig<Record<string, unknown>, true | false> = {
       backgroundColor: shouldColor ? menuHighlightColor : menuBackgroundColor,
       color: shouldColor ? 'white' : 'black',
       fontSize: '.95em',
+      // maxHeight: '10vh',
     };
 
     if (state.isDisabled) {

@@ -7,6 +7,7 @@ import styles from './styles.module.scss';
 
 const Finish = (): JSX.Element => (
   <div className={clsx(styles.screen, styles.finish)}>
+    <br></br>
     <a className={styles.logo} href="/">
       <img src={LOGO_LARGE} alt="HackIllinois" />
     </a>
