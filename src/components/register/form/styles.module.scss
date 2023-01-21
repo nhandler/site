@@ -168,6 +168,20 @@
   
 }
 
+.button {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  align-self: center;
+  z-index: 5;
+  position: absolute;
+  // width: 50%;
+  // margin: 10 auto;
+  // left: 25%;
+  bottom: 0%;
+}
+
 .formProgress {
   z-index: 5;
   position: absolute;
