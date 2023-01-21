@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import Scrollbars from 'react-custom-scrollbars-2';
 import { useForm, SubmitHandler, SubmitErrorHandler, FormProvider } from 'react-hook-form';
-import { Navigate } from 'react-router-dom';
+import Router, { useRouter } from 'next/router';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { DateTime } from 'luxon';
 
@@ -97,7 +97,8 @@ const Form = (): JSX.Element => {
   return (
     <div className={styles.container} style={{ backgroundImage: `url("${MOLEMACHINE}")` }}>
       {!isLoading && (registration === null ? (
-        <Navigate to={{ pathname: '/register' }} />
+        // const router = useRouter()
+        <div/>
       ) : (
         <FormProvider {...methods}>
           <form onSubmit={handleSubmit(onSubmit, onError)} className={styles.form}>
