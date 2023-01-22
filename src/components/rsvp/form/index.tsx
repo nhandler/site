@@ -8,7 +8,7 @@ import { DateTime } from 'luxon';
 
 import LOGO_LARGE from 'assets/registration/finishLogo.svg';
 import MOLEMACHINE from 'assets/registration/whacked_mole_machine.svg';
-import DISCORD_HELP from 'assets/registration/oven.svg'; //discord_username_how_to.png';
+import DISCORD_HELP from 'assets/registration/discord_username_how_to.png';
 import Input from 'components/form/Input';
 import Button from 'components/form/Button';
 import Constant from 'components/form/Constant';
@@ -49,9 +49,8 @@ const Form = (): JSX.Element => {
       if (roles.includes('Applicant')) {
         const registrationData = await getRegistration('attendee');
         setRegistration(registrationData);
-
+        setIsEditing(true);
         if (roles.includes('Attendee')) {
-          setIsEditing(true);
           const { points, ...profileData } = await getProfile();
           setProfile(profileData);
         }
@@ -111,7 +110,7 @@ const Form = (): JSX.Element => {
                     <Constant name="lastName" value={registration?.lastName} />
                     <Constant name="timezone" value={DateTime.local().toFormat('ZZZZ', { locale: 'en-US' })} />
                     <Random name="avatarUrl" seed={registration?.id} min={0} max={NUM_PROFILE_PICTURES} generateValue={getProfilePicture} />
-                    <Input name="discord" placeholder="Discord Username *" helpLink={DISCORD_HELP} linkColor="#F6F4D4" />
+                    <Input name="discord" placeholder="Please Enter your Discord Username *" helpLink={DISCORD_HELP} linkColor="#F6F4D4" />
                   </Scrollbars>
 
                   <div className={styles.button}>
