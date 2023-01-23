@@ -127,3 +127,21 @@
     }
   }
 }
+
+.leftAlign {
+  width: 10%;
+  top: 5%;
+  position: relative;
+  left: 85%;
+  right: 5%;
+  z-index: 5;
+  @media screen and (max-width: 600px) {
+    width:100%;
+    display: flex;
+    justify-content: center;
+    left: auto;
+    right: auto;
+    top: 38%;
+    
+  }
+}
