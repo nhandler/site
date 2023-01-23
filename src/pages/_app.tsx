@@ -15,10 +15,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   }, []);
 
   useEffect(() => {
-    console.log('App');
-  }, []);
-
-  useEffect(() => {
     reportWebVitals();
   }, []);
 

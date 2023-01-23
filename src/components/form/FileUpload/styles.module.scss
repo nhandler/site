@@ -1,0 +1,29 @@
+.fileUpload {
+  // margin-top: var(--field-margin, 40px);
+
+  label {
+    border: 2px solid #FCDC8F;
+    border-radius: 50ch;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    margin-right: 8px;
+    padding: 5px 12px;
+    color: #FCDC8F;
+
+  }
+
+  .filename {
+    color: #FCDC8F;
+    font-size: .875em;
+  }
+
+  input {
+    display: none;
+  }
+
+  p {
+    color: #FFFFFF;
+    font-style: italic;
+  }
+}
