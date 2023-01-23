@@ -20,13 +20,6 @@ const Registration: React.FC = () => {
       authenticate(`${process.env.NEXT_PUBLIC_REACT_APP_URL}${router.pathname}`);
     }
   }, []);
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     if (!isAuthenticated()) {
-  //       authenticate(`${process.env.NEXT_PUBLIC_REACT_APP_URL}${router.pathname}`);
-  //     }
-  //   }, 5000);
-  // }, []);
 
   return (
     <div className={styles.registration}>
