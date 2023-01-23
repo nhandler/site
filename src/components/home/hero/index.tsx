@@ -4,16 +4,19 @@ import FERRIS_WHEEL_LARGE from 'assets/home/hero/ferris_wheel_large.svg';
 import FERRIS_WHEEL_SMALL from 'assets/home/hero/ferris_wheel_small.svg';
 import BANNER from 'assets/home/hero/banner.svg';
 import LINES from 'assets/home/hero/lines.svg';
+import LOGO from 'assets/home/hero/logo.svg'
 import router, { useRouter } from 'next/router';
 import Button from 'components/form/Button';
 import styles from './styles.module.scss';
-import buttonStyles from '../../../components/form/Button/styles.module.scss'
 
 const Section: React.FC = () => (
   <section className={styles.hero}>
-    <div className={styles.heroBackground}>
+    <div className={styles.heroBackground}>\
+      <div className={styles.rightAlign}>
+        <img className={styles.logo} src={LOGO} />
+      </div>
       <div className={styles.leftAlign}>
-        <button className={buttonStyles.button} type="button" onClick={() => router.push('/register')}>Register</button>
+        <button className={styles.button} type="button" onClick={() => router.push('/register')}>Registration</button>
       </div>
       <div className={styles.topHeader}>
         <h2>Welcome to</h2>

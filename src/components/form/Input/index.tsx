@@ -24,7 +24,7 @@ const Input = ({ name, multiline, helpLink, linkColor = 'white', ...props }: Pro
         {...register(name, { required: true })}
         />
         {helpLink && (
-          <a className={styles.helpLink} href={""} target="_blank" rel="noreferrer" title="Please add your Discord Username (Ex. yourusername#0123)">
+          <a className={styles.helpLink} href={"https://2022.hackillinois.org/static/media/discord_username_how_to.bfc75d98.png"} target="_blank" rel="noreferrer" title="Please add your Discord Username (Ex. yourusername#0123)">
             <HelpIcon color={linkColor} />
           </a>
         )}

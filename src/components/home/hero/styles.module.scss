@@ -129,19 +129,54 @@
 }
 
 .leftAlign {
-  width: 10%;
+  width: fit-content;
   top: 5%;
-  position: relative;
-  left: 85%;
-  right: 5%;
+  position: absolute;
+  left: 80%;
+  right: auto;
   z-index: 5;
-  @media screen and (max-width: 600px) {
-    width:100%;
-    display: flex;
-    justify-content: center;
+  @media screen and (max-width: 800px) {
+    right: 10%;
     left: auto;
+  }
+}
+
+.rightAlign {
+  width: fit-content;
+  top: 5%;
+  position: absolute;
+  right: auto;
+  left: 5%;
+  z-index: 5;
+  @media screen and (max-width: 800px) {
+    left: 10vw;
     right: auto;
-    top: 38%;
-    
+  }
+}
+
+.button {
+  background-color: transparent;
+  color: #C9D2E5;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 34px;
+  letter-spacing: 0em;
+  text-align: right;
+  border-style: none;
+  cursor: pointer;
+  @media screen and (max-width: 800px) {
+    font-size: 0.9rem;
+    max-width: 20vw;
+  }
+
+}
+
+.logo {
+  position: absolute;
+  
+
+  @media screen and (max-width: 800px) {
+    max-width: 20vw;
   }
 }
