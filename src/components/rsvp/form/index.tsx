@@ -49,8 +49,8 @@ const Form = (): JSX.Element => {
       if (roles.includes('Applicant')) {
         const registrationData = await getRegistration('attendee');
         setRegistration(registrationData);
-        setIsEditing(true);
         if (roles.includes('Attendee')) {
+          setIsEditing(true);
           const { points, ...profileData } = await getProfile();
           setProfile(profileData);
         }
@@ -77,7 +77,7 @@ const Form = (): JSX.Element => {
     setIsLoading(true);
     try {
       await Promise.all([
-        // rsvp(isEditing, { isAttending: true }).then(() => refreshToken()),
+        rsvp(isEditing, { isAttending: true }),//.then(() => refreshToken()),
         createProfile(isEditing, data),
       ]);
       setFinished(true);
