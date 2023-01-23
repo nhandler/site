@@ -7,7 +7,7 @@ export const registrationSchema = z.object({
   race: z.string().array().min(1),
   ageMin: z.string().array().min(1),
   selfTransport: z.enum(['YES', 'NO']),
-  chicagoPurdueTransport: z.enum(['CHICAGO', 'PURDUE', 'N/A']),
+  purdueTransport: z.enum(['YES', 'NO', 'N/A']),
   // timezone: z.string().min(1),
   location: z.string().min(1),
   degreePursued: z.enum(['ASSOCIATES', 'BACHELORS', 'MASTERS', 'PHD', 'GRADUATED', 'OTHER']),

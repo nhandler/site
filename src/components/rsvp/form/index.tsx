@@ -96,7 +96,7 @@ const Form = (): JSX.Element => {
   return (
     <div className={styles.container} style={{ backgroundImage: `url("${MOLEMACHINE}")` }}>
       {!isLoading && (registration === null ? (
-        <button className={styles.button} type="button" onLoad={() => router.push('/register')}>Finish Registration First</button>
+        <div onLoad={() => router.push('/register')}>Finish Registration First</div>
         // const router = useRouter()
         // <div/>
       ) : (

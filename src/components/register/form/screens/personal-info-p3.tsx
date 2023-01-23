@@ -15,10 +15,10 @@ const transportation = [
   { label: 'No', value: 'NO', isRadio: true, isRadioButton: true },
 ];
 
-const chicagoPurdueTransportation = [
+const purdueTransportation = [
   // { label: 'Chicago', value: 'CHICAGO', isRadio: true },
-  { label: 'Purdue', value: 'PURDUE', isRadio: true},
-  { label: 'N/A', value: 'N/A', isRadio: true },
+  { label: 'Yes', value: 'YES', isRadio: true},
+  { label: 'No', value: 'NO', isRadio: true },
 ];
 
 const PersonalInfoP3 = (): JSX.Element => (
@@ -42,8 +42,8 @@ const PersonalInfoP3 = (): JSX.Element => (
     <p className={styles.text}>Will you require transportation from West Lafayette? (We cannot guarantee spots on the bus, we will send information about buses closer to the event)?</p>
     <Select
       className={styles.select}
-      name="chicagoPurdueTransport"
-      options={chicagoPurdueTransportation}
+      name="purdueTransport"
+      options={purdueTransportation}
       placeholder="Choose an Answer"
       menuPlacement="top"
       // creatable

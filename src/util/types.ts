@@ -14,9 +14,9 @@ export type RegistrationType = {
   selfTransport: 
   | 'YES'
   | 'NO';
-  chicagoPurdueTransport:
-  | 'CHICAGO'
-  | 'PURDUE'
+  purdueTransport:
+  | 'YES'
+  | 'NO'
   | 'N/A';
   location: string;
   degreePursued:
