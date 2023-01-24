@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Hero from '../components/Hero';
- import EventInfo from '../components/EventInfo';
+import EventInfo from '../components/EventInfo';
 // import FAQs from './FAQs';
 // import Sponsors from './Sponsors';
 // import Speakers from './Speakers';
