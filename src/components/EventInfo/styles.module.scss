@@ -1,48 +1,70 @@
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    background: linear-gradient(to bottom, #14518a, #196795);
-    position: relative;
+.eventInfo {
+    // background-image: linear-gradient(to bottom, #14518a, #196795);
+    margin-top: -2vw;
+    z-index: -1;
     margin-bottom: 0;
+    position: relative;
+
+    .group {
+        width: 100%;
+        margin-bottom: -200px;
+        margin-bottom: -15vw;
+    }
+
+    .textWrapper {
+        padding: 20px 250px 250px 250px;
+
+        @media screen and (max-width: 1100px) {
+            padding: 20px 150px 150px 150px;
+        }
+
+        @media screen and (max-width: 800px) {
+            padding: 20px 50px 50px 50px;
+        }
+    }
 
     .event-section {
         margin-bottom: 20px;
     }
 
-    h1 {
-        font-family: Montserrat, sans-serif;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 48px;
-        line-height: 59px;
-        margin-bottom: 10px;
-
-        color: #fcdc8f;
-    }
-
-    h2 {
-        font-family: Montserrat, sans-serif;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 30px;
-        line-height: 35px;
-        margin-bottom: 10px;
-
-        /* or 140% */
-
-        color: #ffffff;
-    }
-
-    p {
-        font-size: 25px;
-        margin-bottom: 20px;
-        font-weight: 400;
-        line-height: 35px;
-        font-family: Montserrat, sans-serif;
-        color: #ffffff;
-    }
-
     a {
         color: inherit;
+    }
+
+    .firework {
+        position: absolute;
+        z-index: -2;
+        opacity: 0.9;
+
+        &.firework1 {
+            right: 2.5%;
+            top: 20%;
+
+            @media screen and (max-width: 1100px) {
+                width: 50%;
+            }
+        }
+
+        &.firework2 {
+            left: 0;
+            top: 45%;
+
+            @media screen and (max-width: 1100px) {
+                width: 55%;
+            }
+        }
+
+        &.firework3 {
+            right: 0;
+            bottom: 0;
+
+            @media screen and (max-width: 1100px) {
+                width: 50%;
+            }
+
+            @media screen and (max-width: 500px) {
+                bottom: 10%;
+            }
+        }
     }
 }

@@ -11,7 +11,7 @@ const Section: React.FC = () => (
   <section className={styles.hero}>
     <div className={styles.heroBackground}>
       <div className={styles.topHeader}>
-        <h2>Welcome to</h2>
+        <div className={styles.welcomeTo}>Welcome to</div>
         <h1>HackIllinois</h1>
       </div>
       <img className={styles.ferrisWheelLarge} src={FERRIS_WHEEL_LARGE} />
