@@ -13,16 +13,18 @@ const Section = () => {
             <img className={styles.group} src={GROUP} />
             <div className={styles.textWrapper}>
                 <h2 className={styles.h1}>The Event</h2>
-                <p>HackIllinois is University of Illinois at Urbana-Champaign’s premiere collegiate hackathon. In recent years, we have run our first fully virtual hackathon as well as our very new Open Source Fellowship.</p>
-                <p>This year, only groups who work on an open source contribution and add a license will be eligible to win prizes. Contribute to a useful open source tool that you use, an open source project of your own, or join a team led by an open source mentor!</p>
+                <p>HackIllinois is University of Illinois at Urbana-Champaign’s premiere collegiate hackathon.This year, we’re celebrating our 10th Hackiversary!</p>
+                <p>Join us <strong>in-person</strong> on February 24th to February 26th at <a href="https://www.google.com/maps/place/Thomas+M.+Siebel+Center+for+Computer+Science/@40.1138028,-88.2270939,17z/data=!3m1!5s0x880cd76a5762dfb7:0xcf6a023935717398!4m5!3m4!1s0x880cd76baa8479a9:0x4e9f01d40d359630!8m2!3d40.1138028!4d-88.2249052">Siebel Center for Computer Science</a> and <a href="https://www.google.com/maps/place/Thomas+M.+Siebel+Center+for+Computer+Science/@40.1138028,-88.2270939,17z/data=!3m1!5s0x880cd76a5762dfb7:0xcf6a023935717398!4m5!3m4!1s0x880cd76baa8479a9:0x4e9f01d40d359630!8m2!3d40.1138028!4d-88.2249052">CIF</a>! Participants can work individually or in teams to submit projects to a specific track for a chance to win prizes. Let’s make memories!</p>
                 <h2>Join Us</h2>
-                <p>Follow us on Twitter <a href="https://twitter.com/hackillinois?lang=en" target="_blank">(@HackIllinois)</a> and Instagram  <a href="https://www.instagram.com/hackillinois/?hl=en" target="_blank">(@HackIllinois)</a> to be notified of our event updates! There will be regular content and posts.</p>
-                <h3>Discord</h3>
-                <p>Our discord server will be the main hub for our event. You’ll use this to find and communicate with teammates and other attendees, access our workshops and company events, and get help from mentors—all through one centralized platform.</p>
-                <h3>Twitter</h3>
-                <p>This is where we’ll be posting main updates with regards to our schedule, additions to our event, and other things we come up with! We’ll also be using it during the event to make updates with any schedule changes and send out reminders for workshops and other mini-events starting out!</p>
+                <p>Follow us on Twitter (<a href="https://twitter.com/hackillinois?lang=en" target="_blank">@HackIllinois</a>) and Instagram  (<a href="https://www.instagram.com/hackillinois/?hl=en" target="_blank">@HackIllinois</a>) to be notified of our event updates! There will be regular content and posts.</p>
+                <h3>Mobile Apps</h3>
+                <p>All attendees will need to download the HackIllinois app to check in, collect points, get event notifications, and view the leaderboard. We’ll be using it during the event to make updates with any schedule changes and send out reminders for food, workshops, and other mini-events!</p>
                 <h3>Instagram</h3>
                 <p>This is where we’ll be posting more of the fun, behind-the-scenes aspects of our event! You’ll get an opportunity to see the work that goes into making the event a possibility through insights from teams and profiles of staff members.</p>
+                <h3>Twitter</h3>
+                <p>This is where we’ll be posting updates with regard to our schedule, additions to our event, and other things we come up with!</p>
+                <h3>Discord</h3>
+                <p>Our discord server will be the secondary hub for our event. You can use this to communicate with attendees and company representatives, get help from mentors, and receive event reminders.</p>
             </div>
             <img className={clsx(styles.firework, styles.firework1)} src={FIREWORK_1} />
             <img className={clsx(styles.firework, styles.firework2)} src={FIREWORK_2} />
