@@ -7,6 +7,10 @@
             test: /\.svg$/i,
             type: 'asset'
         });
+        config.module.rules.push({
+            test: /\.png/,
+            type: 'asset/resource'
+        });
 
         return config;
     },
