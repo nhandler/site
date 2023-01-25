@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 
  import BALLOON_DURING from 'assets/home/faqs/balloon_during.svg'
  import BALLOON_AFTER from 'assets/home/faqs/balloon_after.svg'
@@ -13,7 +13,7 @@ import React, { useState, useRef, useEffect } from 'react';
    const balloonStates = [BALLOON_DURING, BALLOON_BEFORE, BALLOON_AFTER];
 
    return (
-     <section className={styles.eventInfo}>
+     <section className={styles.faq}>
        <div className={styles.faqContainer}>
          <div className={styles.faqContainerItem1}>
            <img className={styles.balloons} src={balloonStates[faqSectionIndex]} alt=""/>

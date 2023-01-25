@@ -3,7 +3,7 @@ import Head from 'next/head';
 
 import Hero from '../components/home/hero';
 import EventInfo from '../components/event-info';
-import FAQs from './FAQs';
+import FAQs from '../components/faqs';
 // import Sponsors from './Sponsors';
 // import Speakers from './Speakers';
 // import OurTeam from './OurTeam';
@@ -19,9 +19,7 @@ const Home: React.FC = () => (
     <div className={styles.home}>
       <Hero />
       <EventInfo />
-      {/* <Hero/> */}
-      { /*<EventInfo /> */ }
-      {/* <FAQs /> */}
+      <FAQs />
       {/* <Speakers /> */}
       {/* <OurTeam /> */}
       {/* <Sponsors /> */}

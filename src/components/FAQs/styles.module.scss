@@ -4,8 +4,8 @@
   font-weight: 500;
 }
 
-section.eventInfo {
-  background-image: linear-gradient(to bottom, #14518A, #196795);
+.faq {
+  background-image: linear-gradient(to bottom, #0d387c, #196795);
   position: relative;
   min-height: 100vh;
   z-index: 2;
@@ -79,7 +79,7 @@ section.eventInfo {
     column-gap: 20px;
     margin-left: 50px;
     margin-right: 50px;
-    margin-bottom: 50px;
+    padding-bottom: 50px;
     @media (max-width: 900px) {
       display: inline;
       flex-direction: column;
