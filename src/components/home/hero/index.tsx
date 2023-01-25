@@ -10,7 +10,7 @@ import styles from './styles.module.scss';
 
 const Section: React.FC = () => (
   <section className={styles.hero}>
-    <div className={styles.heroBackground}>\
+    <div className={styles.heroBackground}>
       <div className={styles.rightAlign}>
         <img className={styles.logo} src={LOGO} />
       </div>
