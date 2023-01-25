@@ -21,7 +21,7 @@ const PersonalInfoP2 = (): JSX.Element => (
     <h1 className={styles.title}>Personal Information</h1>
     <p className={styles.text}>Race/Ethnicity</p>
     <p className={styles.note}>
-      <i><b>Note:</b> Note: In light of recent events, we are collecting this information in order to determine what our current attendee demographics are and how we can work on increasing diversity. However, we understand if you prefer not to answer. </i>
+      <i><b>Note:</b> In light of recent events, we are collecting this information in order to determine what our current attendee demographics are and how we can work on increasing diversity. However, we understand if you prefer not to answer. </i>
     </p>
     <Checkboxes
       className={styles.checkboxes}

@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 import Background from '../../components/register/background';
 import Navigation from '../../components/register/navigation';
 import Form from '../../components/register/form';
-// import ErrorDataProvider from "../../components/contexts/error-data-provider";
 
 import { authenticate, isAuthenticated } from 'util/api';
 
@@ -22,11 +22,16 @@ const Registration: React.FC = () => {
   }, []);
 
   return (
-    <div className={styles.registration}>
-      <Background />
-      <Navigation setFormIndex={setFormIndex} formIndex={formIndex} />
-      <Form setFormIndex={setFormIndex} formIndex={formIndex} />
-    </div>
+    <>
+      <Head>
+        <title>HackIllinois | Register</title>
+      </Head>
+      <div className={styles.registration}>
+        <Background />
+        <Navigation setFormIndex={setFormIndex} formIndex={formIndex} />
+        <Form setFormIndex={setFormIndex} formIndex={formIndex} />
+      </div>
+    </>
   );
 };
 

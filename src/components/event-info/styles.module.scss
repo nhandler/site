@@ -1,0 +1,76 @@
+.eventInfo {
+    // background-image: linear-gradient(to bottom, #14518a, #196795);
+    margin-top: -8vw;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 9;
+
+    .group {
+        width: 100%;
+        margin-bottom: -200px;
+        margin-bottom: -15vw;
+    }
+
+    .textWrapper {
+        padding: 20px 250px 250px 250px;
+
+        @media screen and (max-width: 1100px) {
+            padding: 20px 150px 150px 150px;
+        }
+
+        @media screen and (max-width: 800px) {
+            padding: 20px 50px 50px 50px;
+        }
+    }
+
+    .event-section {
+        margin-bottom: 20px;
+    }
+
+    a {
+        color: inherit;
+    }
+
+    .outgoingLinkIcon {
+        height: 32px;
+        vertical-align: middle;
+        margin-left: 10px;
+    }
+
+    .firework {
+        position: absolute;
+        z-index: -2;
+        opacity: 0.9;
+
+        &.firework1 {
+            right: 2.5%;
+            top: 20%;
+
+            @media screen and (max-width: 1100px) {
+                width: 50%;
+            }
+        }
+
+        &.firework2 {
+            left: 0;
+            top: 45%;
+
+            @media screen and (max-width: 1100px) {
+                width: 55%;
+            }
+        }
+
+        &.firework3 {
+            right: 0;
+            bottom: 0;
+
+            @media screen and (max-width: 1100px) {
+                width: 50%;
+            }
+
+            @media screen and (max-width: 500px) {
+                bottom: 10%;
+            }
+        }
+    }
+}
