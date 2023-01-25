@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 
 import Hero from '../components/home/hero';
 import EventInfo from '../components/event-info';
@@ -11,17 +12,22 @@ import EventInfo from '../components/event-info';
 import styles from './styles.module.scss';
 
 const Home: React.FC = () => (
-  <div className={styles.home}>
-    <Hero />
-    <EventInfo />
-    {/* <Hero/> */}
-    { /*<EventInfo /> */ }
-    {/* <FAQs /> */}
-    {/* <Speakers /> */}
-    {/* <OurTeam /> */}
-    {/* <Sponsors /> */}
-    {/* <Footer /> */}
-  </div>
+  <>
+    <Head>
+      <title>HackIllinois</title>
+    </Head>
+    <div className={styles.home}>
+      <Hero />
+      <EventInfo />
+      {/* <Hero/> */}
+      { /*<EventInfo /> */ }
+      {/* <FAQs /> */}
+      {/* <Speakers /> */}
+      {/* <OurTeam /> */}
+      {/* <Sponsors /> */}
+      {/* <Footer /> */}
+    </div>
+  </>
 );
 
 export default Home;
