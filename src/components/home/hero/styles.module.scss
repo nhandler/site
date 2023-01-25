@@ -6,6 +6,46 @@
   @media screen and (max-width: 800px) {
     height: 80vh;
   }
+
+  nav {
+    padding: 25px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media screen and (max-width: 800px) {
+      padding: 25px 25px;
+    }
+
+    .logo {
+      @media screen and (max-width: 800px) {
+        width: 100px;
+      }
+    }
+
+    ul {
+      display: flex;
+    }
+
+    li {
+      list-style: none;
+
+      &:not(:last-child) {
+        margin-right: 35px;
+      }
+    }
+
+    a {
+      color: #C9D2E5;
+      font-size: 28px;
+      font-weight: 500;
+      text-decoration: none;
+
+      @media screen and (max-width: 800px) {
+        font-size: 18px;
+      }
+    }
+  }
 }
 
 .heroBackground{
@@ -57,7 +97,7 @@
     top: 5%;
 
     @media screen and (max-width: 800px) {
-      top: 10%;
+      top: 15%;
     }
   }
 
@@ -125,58 +165,5 @@
     @media screen and (max-width: 800px) {
       transform: translateY(-100%);
     }
-  }
-}
-
-.leftAlign {
-  width: fit-content;
-  top: 5%;
-  position: absolute;
-  left: 80%;
-  right: auto;
-  z-index: 5;
-  @media screen and (max-width: 800px) {
-    right: 10%;
-    left: auto;
-  }
-}
-
-.rightAlign {
-  width: fit-content;
-  top: 5%;
-  position: absolute;
-  right: auto;
-  left: 5%;
-  z-index: 5;
-  @media screen and (max-width: 800px) {
-    left: 10vw;
-    right: auto;
-  }
-}
-
-.button {
-  background-color: transparent;
-  color: #C9D2E5;
-  font-family: Montserrat;
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 34px;
-  letter-spacing: 0em;
-  text-align: right;
-  border-style: none;
-  cursor: pointer;
-  @media screen and (max-width: 800px) {
-    font-size: 0.9rem;
-    max-width: 20vw;
-  }
-
-}
-
-.logo {
-  position: absolute;
-  
-
-  @media screen and (max-width: 800px) {
-    max-width: 20vw;
   }
 }
