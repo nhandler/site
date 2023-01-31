@@ -7,13 +7,19 @@ import React from 'react';
       {
         question: 'How do I participate?',
         answer: [
-          <p key={0}>You must apply in order to participate in HackIllinois. We have an Early Application deadline due on February 3rd and Late Application deadline due February 12th. Admissions will be based on a weighted lottery, and applying early will increase your chances of admission. Decisions will be released shortly after both application deadlines, and if you’re accepted, there will be a limited time to RSVP before we reallocate your spot to another student.</p>,
+          <p key={0}>You must apply in order to participate in HackIllinois. We have an Early Application deadline due on <b>February 3rd at 1:59 PM CST</b> and Late Application deadline due on <b>February 12th at 11:59 PM CST.</b> Admissions will be based on a weighted lottery, and applying early will increase your chances of admission. Decisions will be released shortly after both application deadlines, and if you’re accepted, there will be a limited time to RSVP before we reallocate your spot to another student.</p>,
         ],
      },
      {
       question: 'How can I stay updated with what is going on at the event?',
       answer: [
         <p key={0}>Please download the HackIllinois app (available shortly before the event on the App Store and Play Store)! Our website will also be continually updated with new information throughout the year. We will also be sending out reminders for various workshops and events through our mobile apps and Discord.</p>,
+      ],
+    },
+    {
+      question: 'Who can register',
+      answer: [
+        <p key={0}>Anyone 18 years or older and enrolled in a high school, college, or university (or left school during the current school year) can register!</p>,
       ],
     },
        {
@@ -96,9 +102,9 @@ import React from 'react';
         ],
       },
       {
-        question: 'How can I stay updated with what is going on at the event?',
+        question: 'How can I stay updated during the event?',
         answer: [
-          <p key={0}>Please download our mobile apps beforehand! Our website will also be continually updated with new information throughout the year.</p>,
+          <p key={0}>Please download our mobile apps beforehand and check Discord for notifications!</p>,
         ],
       },
      ],
