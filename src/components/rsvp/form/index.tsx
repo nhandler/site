@@ -13,7 +13,7 @@ import Input from 'components/form/Input';
 import Button from 'components/form/Button';
 import Constant from 'components/form/Constant';
 import Random from 'components/form/Random';
-import { createProfile, getRegistration, refreshToken, rsvp, getRoles, getProfile, APIError } from 'util/api';
+import { createProfile, getRegistration, refreshToken, rsvp, getRoles, getProfile, APIError, authenticate, isAuthenticated } from 'util/api';
 import { ProfileType, RegistrationType, WithId } from '../../../util/types';
 
 
@@ -42,6 +42,12 @@ const Form = (): JSX.Element => {
 
   const [registration, setRegistration] = useState<WithId<RegistrationType> | null>(null);
   const [profile, setProfile] = useState<WithId<ProfileType> | null>(null);
+
+  useEffect(() => {
+    if (!isAuthenticated()) {
+      authenticate(`${process.env.NEXT_PUBLIC_REACT_APP_URL}${router.pathname}`);
+    }
+  }, []);
 
   useEffect(() => {
     const initialize = async () => {
