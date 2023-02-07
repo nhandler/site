@@ -13,7 +13,7 @@ import Input from 'components/form/Input';
 import Button from 'components/form/Button';
 import Constant from 'components/form/Constant';
 import Random from 'components/form/Random';
-import { createProfile, getRegistration, refreshToken, rsvp, getRoles, getProfile, APIError, authenticate, isAuthenticated } from 'util/api';
+import { createProfile, getRegistration, getDecision, getRSVP, refreshToken, rsvp, getRoles, getProfile, APIError, authenticate, isAuthenticated } from 'util/api';
 import { ProfileType, RegistrationType, WithId } from '../../../util/types';
 
 
@@ -38,6 +38,8 @@ const preProcessData = (data: RSVPSchema) => {
 const Form = (): JSX.Element => {
   const [isLoading, setIsLoading] = useState(true);
   const [isEditing, setIsEditing] = useState(false);
+  const [isAccepted, setIsAccepted] = useState(false);
+  const [appStatus, setAppStatus] = useState("pending")
   const [finished, setFinished] = useState(false);
 
   const [registration, setRegistration] = useState<WithId<RegistrationType> | null>(null);
@@ -57,6 +59,17 @@ const Form = (): JSX.Element => {
         if (registrationData == null) {
           router.replace('/register');
         }
+        const decisionData = await getDecision();
+        if (decisionData.status == "ACCEPTED") {
+          setIsAccepted(true);
+          const rsvpData = await getRSVP();
+          if (rsvpData.isAttending) {
+            setAppStatus("accepted")
+          } else {
+            setAppStatus("declined")
+          }
+        }
+
         setRegistration(registrationData);
         if (roles.includes('Attendee')) {
           setIsEditing(true);
@@ -98,6 +111,26 @@ const Form = (): JSX.Element => {
     }
   };
 
+  const onReject: SubmitHandler<RSVPSchema> = async (data) => {
+    console.log("Rejected Acceptance Offer")
+    preProcessData(data);
+    setIsLoading(true);
+    try {
+      await Promise.all([
+        rsvp(isEditing, { isAttending: false }).then(() => refreshToken()),
+        createProfile(isEditing, data),
+      ]);
+      setFinished(true);
+    } catch (e) {
+      const err = e as APIError;
+      alert(`There was an error while submitting. If this error persists, please email contact@hackillinois.org\n\nError: ${err.message}`);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+
+
   const onError: SubmitErrorHandler<RSVPSchema> = (errors) => {
     console.log('error', errors);
   };
@@ -115,17 +148,22 @@ const Form = (): JSX.Element => {
                 <>
                   <Scrollbars>
                     <div className={styles.title}>RSVP</div>
+                    <div className={styles.text}>Your RSVP status is {appStatus}</div>
                     <Constant name="firstName" value={registration?.firstName} />
                     <Constant name="lastName" value={registration?.lastName} />
                     <Constant name="timezone" value={DateTime.local().toFormat('ZZZZ', { locale: 'en-US' })} />
                     <Random name="avatarUrl" seed={registration?.id} min={0} max={NUM_PROFILE_PICTURES} generateValue={getProfilePicture} />
-                    <Input name="discord" placeholder="Please Enter your Discord Username *" helpLink={DISCORD_HELP} linkColor="#F6F4D4" />
+                    <Input name="discord" placeholder="Please Enter your Discord Username *" helpLink={DISCORD_HELP} disabled={!isAccepted} linkColor="#F6F4D4" />
                   </Scrollbars>
-
-                  <div className={styles.button}>
+                  <br></br>
+                  <br></br>
+                  <div className={styles.buttons}>
                     {isLoading && <Button loading>Loading...</Button>}
-                    {!isLoading && <Button type="submit">Submit</Button>}
+                    {!isLoading && <Button type="submit" disabled={!isAccepted}>Accept</Button>}
+                    <div className={styles.spacer} />
+                    {!isLoading && <Button onClick={handleSubmit(onReject, onError)} disabled={!isAccepted}>Reject</Button>}
                   </div>
+
                 </>
               ) : (
                 <div className={clsx(styles.screen, styles.finish)}>
