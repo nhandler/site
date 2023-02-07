@@ -150,7 +150,7 @@ const Form = (): JSX.Element => {
                 <>
                   <Scrollbars>
                     <div className={styles.title}>RSVP</div>
-                    <div className={styles.text}>Your RSVP status is {appStatus}</div>
+                    <div className={styles.text}>Your RSVP status is {appStatus}.</div>
                     <Constant name="firstName" value={registration?.firstName} />
                     <Constant name="lastName" value={registration?.lastName} />
                     <Constant name="timezone" value={DateTime.local().toFormat('ZZZZ', { locale: 'en-US' })} />
