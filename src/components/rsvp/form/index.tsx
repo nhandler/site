@@ -56,6 +56,8 @@ const Form = (): JSX.Element => {
         } else {
           router.replace('/register');
         }
+      } else {
+        router.replace('/register');
       }
     };
 
