@@ -48,11 +48,13 @@ const Form = (): JSX.Element => {
       const roles = await getRoles();
       if (roles.includes('Applicant')) {
         const registrationData = await getRegistration('attendee');
-        setRegistration(registrationData);
         if (roles.includes('Attendee')) {
+          setRegistration(registrationData);
           setIsEditing(true);
           const { points, ...profileData } = await getProfile();
           setProfile(profileData);
+        } else {
+          router.replace('/register');
         }
       }
     };
@@ -93,12 +95,11 @@ const Form = (): JSX.Element => {
     console.log('error', errors);
   };
 
+
   return (
     <div className={styles.container} style={{ backgroundImage: `url("${MOLEMACHINE}")` }}>
       {!isLoading && (registration === null ? (
-        // <div onLoad={() => router.push('/register')}>Finish Registration First</div>
-        // const router = useRouter()
-        <div/>
+        <div />
       ) : (
         <FormProvider {...methods}>
           <form onSubmit={handleSubmit(onSubmit, onError)} className={styles.form}>
