@@ -54,16 +54,15 @@ const Form = (): JSX.Element => {
       const roles = await getRoles();
       if (roles.includes('Applicant')) {
         const registrationData = await getRegistration('attendee');
+        if (registrationData == null) {
+          router.replace('/register');
+        }
+        setRegistration(registrationData);
         if (roles.includes('Attendee')) {
-          setRegistration(registrationData);
           setIsEditing(true);
           const { points, ...profileData } = await getProfile();
           setProfile(profileData);
-        } else {
-          router.replace('/register');
         }
-      } else {
-        router.replace('/register');
       }
     };
 
