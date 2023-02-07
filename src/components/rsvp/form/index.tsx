@@ -13,6 +13,7 @@ import Input from 'components/form/Input';
 import Button from 'components/form/Button';
 import Constant from 'components/form/Constant';
 import Random from 'components/form/Random';
+
 import { createProfile, getRegistration, getDecision, getRSVP, refreshToken, rsvp, getRoles, getProfile, APIError, authenticate, isAuthenticated } from 'util/api';
 import { ProfileType, RegistrationType, WithId } from '../../../util/types';
 
@@ -59,6 +60,7 @@ const Form = (): JSX.Element => {
         if (registrationData == null) {
           router.replace('/register');
         }
+
         const decisionData = await getDecision();
         if (decisionData.status == "ACCEPTED") {
           setIsAccepted(true);
