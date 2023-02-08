@@ -22,7 +22,7 @@
 }
 
 .buttons {
-  margin-bottom: 20px;
+  // margin-bottom: 20px;
   display: flex;
   justify-content: flex-start;
   align-content: center;
@@ -30,9 +30,9 @@
   z-index: 5;
   position: absolute;
   width: 50%;
-  margin: 10 auto;
+  // margin: 10 auto;
   left: 25%;
-  bottom: 3.5%;
+  bottom: -10%;
 
   @media (max-width: 1100px) {
     width: 70%;
@@ -40,7 +40,7 @@
   }
 
   @media (max-height: 600px) {
-    bottom: 10%;
+    bottom: -20%;
   }
 
   @media (max-width: 350px) {

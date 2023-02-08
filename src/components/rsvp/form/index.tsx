@@ -115,6 +115,15 @@ const Form = (): JSX.Element => {
         ]);
       } catch (e) {
         const err = e as APIError;
+        if (err.message.includes("Could not create an RSVP for the user")) {
+          try {
+            await Promise.all([
+              createProfile(true, data),
+            ]);
+          } catch (error) {
+            alert(`There was an error while submitting. If this error persists, please email contact@hackillinois.org\n\nError: ${err.message}`);
+          }
+        }
         alert(`There was an error while submitting. If this error persists, please email contact@hackillinois.org\n\nError: ${err.message}`);
       } finally {
         setIsLoading(false);
