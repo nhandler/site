@@ -60,6 +60,7 @@ const Form = (): JSX.Element => {
         if (registrationData == null) {
           router.replace('/register');
         }
+        setRegistration(registrationData);
 
         const decisionData = await getDecision();
         if (decisionData.status == "ACCEPTED") {
@@ -72,7 +73,7 @@ const Form = (): JSX.Element => {
           }
         }
 
-        setRegistration(registrationData);
+
         if (roles.includes('Attendee')) {
           setIsEditing(true);
           const { points, ...profileData } = await getProfile();
@@ -102,12 +103,23 @@ const Form = (): JSX.Element => {
     try {
       await Promise.all([
         rsvp(isEditing, { isAttending: true }).then(() => refreshToken()),
-        // createProfile(isEditing, data),
       ]);
-      setFinished(true);
+
     } catch (e) {
       const err = e as APIError;
-      alert(`There was an error while submitting. If this error persists, please email contact@hackillinois.org\n\nError: ${err.message}`);
+
+      if (err.message.includes("Could not create an RSVP for the user")) {
+        try {
+          await Promise.all([
+            rsvp(!isEditing, { isAttending: true }).then(() => refreshToken()),
+          ]);
+        } catch (error) {
+          alert(`There was an error while submitting. If this error persists, please email contact@hackillinois.org\n\nError: ${err.message}`);
+        }
+      } else {
+        alert(`There was an error while submitting. If this error persists, please email contact@hackillinois.org\n\nError: ${err.message}`);
+      }
+
     } finally {
       try {
         await Promise.all([
@@ -115,17 +127,21 @@ const Form = (): JSX.Element => {
         ]);
       } catch (e) {
         const err = e as APIError;
-        if (err.message.includes("Could not create an RSVP for the user")) {
+        if (err.message.includes("User already has a profile with profile id")) {
           try {
             await Promise.all([
-              createProfile(true, data),
+              createProfile(!isEditing, data),
             ]);
           } catch (error) {
             alert(`There was an error while submitting. If this error persists, please email contact@hackillinois.org\n\nError: ${err.message}`);
           }
+        } else {
+          alert(`There was an error while submitting. If this error persists, please email contact@hackillinois.org\n\nError: ${err.message}`);
         }
-        alert(`There was an error while submitting. If this error persists, please email contact@hackillinois.org\n\nError: ${err.message}`);
+
+
       } finally {
+        setFinished(true);
         setIsLoading(false);
       }
     }
@@ -145,6 +161,7 @@ const Form = (): JSX.Element => {
       const err = e as APIError;
       alert(`There was an error while submitting. If this error persists, please email contact@hackillinois.org\n\nError: ${err.message}`);
     } finally {
+      setFinished(true);
       setIsLoading(false);
     }
   };

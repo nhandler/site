@@ -20,8 +20,8 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   useEffect(() => {
     // Only for debugging:
-    sessionStorage.setItem('token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN0YWZmQGhhY2tpbGxpbm9pcy5vcmciLCJleHAiOjE2NzY0MDIyMDQsImlkIjoiZ2l0aHViODIwNjQ4MjYiLCJyb2xlcyI6WyJVc2VyIiwiU3RhZmYiLCJBcHBsaWNhbnQiLCJBdHRlbmRlZSJdfQ.Hn0xafIARvRyvdiOuckpQWPCfVxrEL6qhVRVecg_p4I');
-    // sessionStorage.setItem('token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhNzM1M0Bob3RtYWlsLmNvbSIsImV4cCI6MTY3NjMzODI4MiwiaWQiOiJnaXRodWI1NjA3NjAxMSIsInJvbGVzIjpbIlVzZXIiLCJBcHBsaWNhbnQiXX0.VuVaf2m5sMKwV0sYOI9C1CMvNNbhkkUHZ2ImQgBAvQo');
+    // sessionStorage.setItem('token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN0YWZmQGhhY2tpbGxpbm9pcy5vcmciLCJleHAiOjE2NzY0MDIyMDQsImlkIjoiZ2l0aHViODIwNjQ4MjYiLCJyb2xlcyI6WyJVc2VyIiwiU3RhZmYiLCJBcHBsaWNhbnQiLCJBdHRlbmRlZSJdfQ.Hn0xafIARvRyvdiOuckpQWPCfVxrEL6qhVRVecg_p4I');
+    sessionStorage.setItem('token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhNzM1M0Bob3RtYWlsLmNvbSIsImV4cCI6MTY3NjMzODI4MiwiaWQiOiJnaXRodWI1NjA3NjAxMSIsInJvbGVzIjpbIlVzZXIiLCJBcHBsaWNhbnQiXX0.VuVaf2m5sMKwV0sYOI9C1CMvNNbhkkUHZ2ImQgBAvQo');
   }, []);
 
   return (
