@@ -102,14 +102,23 @@ const Form = (): JSX.Element => {
     try {
       await Promise.all([
         rsvp(isEditing, { isAttending: true }).then(() => refreshToken()),
-        createProfile(isEditing, data),
+        // createProfile(isEditing, data),
       ]);
       setFinished(true);
     } catch (e) {
       const err = e as APIError;
       alert(`There was an error while submitting. If this error persists, please email contact@hackillinois.org\n\nError: ${err.message}`);
     } finally {
-      setIsLoading(false);
+      try {
+        await Promise.all([
+          createProfile(isEditing, data),
+        ]);
+      } catch (e) {
+        const err = e as APIError;
+        alert(`There was an error while submitting. If this error persists, please email contact@hackillinois.org\n\nError: ${err.message}`);
+      } finally {
+        setIsLoading(false);
+      }
     }
   };
 
