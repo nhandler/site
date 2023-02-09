@@ -66,9 +66,10 @@ const Form = (): JSX.Element => {
         if (decisionData.status == "ACCEPTED") {
           setIsAccepted(true);
           const rsvpData = await getRSVP();
-          if (rsvpData.isAttending) {
+          // console.log(rsvpData.isAttending)
+          if (rsvpData.isAttending == true) {
             setAppStatus("accepted")
-          } else {
+          } else if (rsvpData.isAttending == false) {
             setAppStatus("declined")
           }
         }
@@ -185,7 +186,7 @@ const Form = (): JSX.Element => {
                 <>
                   <Scrollbars>
                     <div className={styles.title}>RSVP</div>
-                    <div className={styles.text}>Your RSVP status is {appStatus}.</div>
+                    <div className={styles.text}>{isAccepted ? `You have been accepted to HackIllinois. Your RSVP status is ${appStatus}.` : "Your HackIllinois application status is pending. RSVP is unavailable."}</div>
                     <Constant name="firstName" value={registration?.firstName} />
                     <Constant name="lastName" value={registration?.lastName} />
                     <Constant name="timezone" value={DateTime.local().toFormat('ZZZZ', { locale: 'en-US' })} />
