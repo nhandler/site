@@ -40,17 +40,19 @@ const Form = (): JSX.Element => {
   const [isLoading, setIsLoading] = useState(true);
   const [isEditing, setIsEditing] = useState(false);
   const [isAccepted, setIsAccepted] = useState(false);
-  const [appStatus, setAppStatus] = useState("pending")
+  const [appStatus, setAppStatus] = useState(false)
+  const [decisionStatus, setDecisionStatus] = useState("pending. RSVP is unavailable.");
   const [finished, setFinished] = useState(false);
+  const [firstTimeAccept, setFirstTimeAccept] = useState("ACCEPT")
 
   const [registration, setRegistration] = useState<WithId<RegistrationType> | null>(null);
   const [profile, setProfile] = useState<WithId<ProfileType> | null>(null);
 
-  useEffect(() => {
-    if (!isAuthenticated()) {
-      authenticate(`${process.env.NEXT_PUBLIC_REACT_APP_URL}${router.pathname}`);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (!isAuthenticated()) {
+  //     authenticate(`${process.env.NEXT_PUBLIC_REACT_APP_URL}${router.pathname}`);
+  //   }
+  // }, []);
 
   useEffect(() => {
     const initialize = async () => {
@@ -65,13 +67,26 @@ const Form = (): JSX.Element => {
         const decisionData = await getDecision();
         if (decisionData.status == "ACCEPTED") {
           setIsAccepted(true);
-          const rsvpData = await getRSVP();
-          // console.log(rsvpData.isAttending)
-          if (rsvpData.isAttending == true) {
-            setAppStatus("accepted")
-          } else if (rsvpData.isAttending == false) {
-            setAppStatus("declined")
+
+          try {
+            const rsvpData = await getRSVP();
+            console.log(rsvpData.isAttending)
+            if (rsvpData.isAttending == true) {
+              // setAppStatus(true)
+              setIsAccepted(false)
+              setDecisionStatus("accepted and your RSVP has been registered.")
+              // setFirstTimeAccept("UPDATE")
+            } else if (rsvpData.isAttending == false) {
+              // setAppStatus(false)
+              setIsAccepted(false)
+              setDecisionStatus("self-declined. RSVP is unavailable.")
+            }
+          } catch (error) {
+
           }
+
+        } else if (decisionData.status == "WAITLISTED") {
+          setDecisionStatus("waitlisted. Please check your email as we may release more acceptances closer to the event start")
         }
 
 
@@ -99,8 +114,12 @@ const Form = (): JSX.Element => {
   }, [reset, profile]);
 
   const onSubmit: SubmitHandler<RSVPSchema> = async (data) => {
+    if (!window.confirm("Do you want to confirm your RSVP? You cannot revert this decision and it will be marked as final.")) {
+      return;
+    }
     preProcessData(data);
     setIsLoading(true);
+
     try {
       await Promise.all([
         rsvp(isEditing, { isAttending: true }).then(() => refreshToken()),
@@ -142,6 +161,7 @@ const Form = (): JSX.Element => {
 
 
       } finally {
+        setAppStatus(true)
         setFinished(true);
         setIsLoading(false);
       }
@@ -149,21 +169,55 @@ const Form = (): JSX.Element => {
   };
 
   const onReject: SubmitHandler<RSVPSchema> = async (data) => {
-    console.log("Rejected Acceptance Offer")
+    if (!window.confirm("Do you really want to reject your RSVP? You cannot revert this decision and it will be marked as final.")) {
+      return;
+    }
     preProcessData(data);
     setIsLoading(true);
     try {
       await Promise.all([
         rsvp(isEditing, { isAttending: false }).then(() => refreshToken()),
-        createProfile(isEditing, data),
       ]);
-      setFinished(true);
+
     } catch (e) {
       const err = e as APIError;
-      alert(`There was an error while submitting. If this error persists, please email contact@hackillinois.org\n\nError: ${err.message}`);
+
+      if (err.message.includes("Could not create an RSVP for the user")) {
+        try {
+          await Promise.all([
+            rsvp(!isEditing, { isAttending: false }).then(() => refreshToken()),
+          ]);
+        } catch (error) {
+          alert(`There was an error while submitting. If this error persists, please email contact@hackillinois.org\n\nError: ${err.message}`);
+        }
+      } else {
+        alert(`There was an error while submitting. If this error persists, please email contact@hackillinois.org\n\nError: ${err.message}`);
+      }
+
     } finally {
-      setFinished(true);
-      setIsLoading(false);
+      try {
+        await Promise.all([
+          createProfile(isEditing, data),
+        ]);
+      } catch (e) {
+        const err = e as APIError;
+        if (err.message.includes("User already has a profile with profile id")) {
+          try {
+            await Promise.all([
+              createProfile(!isEditing, data),
+            ]);
+          } catch (error) {
+            alert(`There was an error while submitting. If this error persists, please email contact@hackillinois.org\n\nError: ${err.message}`);
+          }
+        } else {
+          alert(`There was an error while submitting. If this error persists, please email contact@hackillinois.org\n\nError: ${err.message}`);
+        }
+
+
+      } finally {
+        setFinished(true);
+        setIsLoading(false);
+      }
     }
   };
 
@@ -186,7 +240,7 @@ const Form = (): JSX.Element => {
                 <>
                   <Scrollbars>
                     <div className={styles.title}>RSVP</div>
-                    <div className={styles.text}>{isAccepted ? `You have been accepted to HackIllinois. Your RSVP status is ${appStatus}.` : "Your HackIllinois application status is pending. RSVP is unavailable."}</div>
+                    <div className={styles.text}>{isAccepted ? `You have been accepted to HackIllinois.` : `Your HackIllinois application status is ${decisionStatus}`}</div>
                     <Constant name="firstName" value={registration?.firstName} />
                     <Constant name="lastName" value={registration?.lastName} />
                     <Constant name="timezone" value={DateTime.local().toFormat('ZZZZ', { locale: 'en-US' })} />
@@ -197,7 +251,7 @@ const Form = (): JSX.Element => {
                   <br></br>
                   <div className={styles.buttons}>
                     {isLoading && <Button loading>Loading...</Button>}
-                    {!isLoading && <Button type="submit" disabled={!isAccepted}>Accept</Button>}
+                    {!isLoading && <Button type="submit" disabled={!isAccepted}>{firstTimeAccept}</Button>}
                     <div className={styles.spacer} />
                     {!isLoading && <Button onClick={handleSubmit(onReject, onError)} disabled={!isAccepted}>Reject</Button>}
                   </div>
