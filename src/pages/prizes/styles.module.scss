@@ -6,6 +6,12 @@
     padding-top: 40px;
     position: relative;
 
+    .bubbles {
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+    }
+
     .booth {
         transform: scaleX(1.1);
         position: absolute;
@@ -27,6 +33,7 @@
 
     .prizeList {
         padding-top: 20%;
+        z-index: 4;
 
         .prizeColumn {
             padding-bottom: 5%;
@@ -39,6 +46,7 @@
     
             @media  screen and (max-width: 500px) {
                 flex-direction: column;   
+                gap: 25px;
             }
     
     
@@ -50,11 +58,11 @@
                 display: flex;
                 justify-content: center;
                 flex-direction: column;
+                z-index: 5;
     
                 @media  screen and (max-width: 500px) {
-                    width: 80%; 
-                    margin: auto;
-                
+                    width: 90%; 
+                    margin: auto;   
                 }
     
                 .logo {

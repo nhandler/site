@@ -4,10 +4,12 @@ import BOOTH from "../../assets/prizes/booth.svg";
 import HACKLOGO from '../../assets/prizes/hacklogo.svg';
 import GITHUB from '../../assets/prizes/githubprize.svg';
 import BALLOONS from '../../assets/prizes/balloons.svg';
+import BUBBLES from '../../assets/prizes/bubbles.svg';
 
 const Prizes: React.FC = () => {
     return (
         <div className={styles.prizesMain}>
+            <img src={BUBBLES} className={styles.bubbles} />
             <img src={BOOTH} className={styles.booth} />
             <div className={styles.prizeList}>
                 <div className={styles.prizeColumn}>
