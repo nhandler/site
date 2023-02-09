@@ -1,0 +1,83 @@
+.prizesMain {
+    width: 100vw;
+    overflow: hidden !important;
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom, #FE7098, #088BC1);
+    padding-top: 40px;
+    position: relative;
+
+    .booth {
+        transform: scaleX(1.1);
+        position: absolute;
+        overflow: hidden !important;
+        width: 100vw;
+        margin: auto;
+        z-index: 4;
+    }
+
+    .balloons {
+        z-index: 2;
+        width: 98%;
+        position: relative;
+        bottom: 0;
+        padding: 0;
+        margin: 0;
+        transform: translateY(50px);
+    }
+
+    .prizeList {
+        padding-top: 20%;
+
+        .prizeColumn {
+            padding-bottom: 5%;
+            margin: auto;
+            width: 80vw;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+    
+            @media  screen and (max-width: 500px) {
+                flex-direction: column;   
+            }
+    
+    
+            .prize {
+                background-color: #FFFFFF;
+                width: 30%;
+                border-radius: 20px;
+                padding: 15px;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+    
+                @media  screen and (max-width: 500px) {
+                    width: 80%; 
+                    margin: auto;
+                
+                }
+    
+                .logo {
+                    margin: auto;
+                    text-align: center;
+                }
+    
+                h3 {
+                    color: #233C79;
+                    text-align: center;
+                    // line-height: 30px;
+                    font-size: x-large;
+                    
+                }
+    
+                p {
+                    text-align: center;
+                    color: #233C79;
+                    line-height: 8px;
+                }
+                
+            }
+        }
+    }
+}
+
