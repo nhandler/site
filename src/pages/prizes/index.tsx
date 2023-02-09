@@ -26,7 +26,7 @@ const Prizes: React.FC = () => {
                     <div className={styles.prize}>
                         <img src={GITHUB} className={styles.logo} />
                         <h3>Best Use of Student Devloper Pack</h3>
-                        <h3>(Sponsered by GitHub)</h3>
+                        <h3>(Sponsored by GitHub)</h3>
                         <br />
                         <p>First Place:</p>
                         <p>$500</p>
