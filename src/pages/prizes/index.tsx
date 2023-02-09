@@ -38,14 +38,7 @@ const Prizes: React.FC = () => {
                 </div>
                 <div className={styles.prizeColumn}>
                     <div className={styles.prize}>
-                        <img src={HACKLOGO} className={styles.logo} />
-                        <h3>Beginner Track</h3>
-                        <h3>(Staff Pick)</h3>
-                        <br />
-                        <p>First Place:</p>
-                        <p>$500</p>
-                        <p>Second Place</p>
-                        <p>$250</p>
+                    <h3>To Be Announced!</h3>
                     </div>
                     <div className={styles.prize}>
                     <h3>To Be Announced!</h3>
