@@ -1,4 +1,5 @@
 import styles from "./styles.module.scss";
+import Navbar from "components/Navbar";
 
 import BOOTH from "../../assets/prizes/booth.svg";
 import HACKLOGO from '../../assets/prizes/hacklogo.svg';
@@ -9,6 +10,7 @@ import BUBBLES from '../../assets/prizes/bubbles.svg';
 const Prizes: React.FC = () => {
     return (
         <div className={styles.prizesMain}>
+            <Navbar path="/prizes"/>
             <img src={BUBBLES} className={styles.bubbles} />
             <img src={BOOTH} className={styles.booth} />
             <div className={styles.prizeList}>
