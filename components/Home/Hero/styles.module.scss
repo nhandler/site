@@ -1,3 +1,84 @@
+@use "/app/colors" as *;
+
 .heroMain {
+    height: 100vh;
+    background-image: linear-gradient(0deg, #fff 0%, #6ae4ff 100%);
+}
+
+.heroContainer {
+    // max-width: 456px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 48px;
+    width: fit-content;
+    margin-top: 48px;
+}
+
+.heroImageWrapper {
+    z-index: 1;
+    width: 852px;
+    height: 352px;
     position: relative;
+    img {
+        object-fit: contain;
+    }
+}
+
+.heroButtonWrapper {
+    z-index: 1;
+    width: fit-content;
+    height: 110px;
+    $shift: 8px;
+    &:hover {
+        transform: translateY($shift);
+        .heroButton {
+            background-color: rgba(217, 147, 27);
+        }
+        .heroButton::after {
+            top: 8px - $shift;
+        }
+    }
+}
+
+.heroButton {
+    width: 390px;
+    height: 90px;
+    border-radius: 32px;
+    background-color: $logo-secondary;
+    border: solid 8px $logo-primary;
+    position: relative;
+
+    color: $logo-primary;
+    font-size: 24px;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 390px;
+        height: 90px;
+
+        border-radius: 32px;
+        background-color: $logo-thirdary;
+
+        z-index: -1;
+        position: absolute;
+        left: -8px;
+        top: 8px;
+    }
+}
+
+.villageWrapper {
+    position: absolute;
+    bottom: 48px;
+
+    width: 100vw;
+    height: 900px;
+
+    img {
+        object-fit: cover;
+        width: 100vw;
+        height: auto;
+    }
 }

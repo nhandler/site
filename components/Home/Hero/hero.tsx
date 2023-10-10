@@ -2,15 +2,35 @@ import React from "react";
 
 import styles from "./styles.module.scss";
 
+import Image from "next/image";
+import Navbar from "../Navbar/Navbar";
 
 const Hero: React.FC = () => {
-
-    return(
-        <div className={styles.heroMain}>
-            Hello!
-        </div>
+    return (
+        <section className={styles.heroMain}>
+            <Navbar />
+            <div className={styles.heroContainer}>
+                <div className={styles.heroImageWrapper}>
+                    <Image
+                        alt="Hack n Slash Logo"
+                        src="/home/hero/logo.svg"
+                        fill={true}
+                    />
+                </div>
+                <div className={styles.heroButtonWrapper}>
+                    <button className={styles.heroButton}>Register now</button>
+                </div>
+            </div>
+            <div className={styles.villageWrapper}>
+                <Image
+                    alt="Village Background"
+                    src="/home/hero/village.svg"
+                    width={0}
+                    height={0}
+                />
+            </div>
+        </section>
     );
-
 };
 
 export default Hero;
