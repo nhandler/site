@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar/Navbar";
 import "./globals.scss";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
@@ -6,7 +7,8 @@ const inter = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "HackIllinois",
-    description: "The official website of the University of Illinois at Urbana-Champaign's Premiere Hackathon!"
+    description:
+        "The official website of the University of Illinois at Urbana-Champaign's Premiere Hackathon!"
 };
 
 export default function RootLayout({
@@ -16,7 +18,10 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className={inter.className}>{children}</body>
+            <body className={inter.className}>
+                <Navbar />
+                {children}
+            </body>
         </html>
     );
 }
