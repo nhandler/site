@@ -3,12 +3,12 @@ import React from "react";
 import styles from "./styles.module.scss";
 
 import Image from "next/image";
-import Navbar from "../Navbar/Navbar";
+
+import Village from "@/public/home/hero/village.svg";
 
 const Hero: React.FC = () => {
     return (
         <section className={styles.heroMain}>
-            <Navbar />
             <div className={styles.heroContainer}>
                 <div className={styles.heroImageWrapper}>
                     <Image
@@ -22,12 +22,7 @@ const Hero: React.FC = () => {
                 </div>
             </div>
             <div className={styles.villageWrapper}>
-                <Image
-                    alt="Village Background"
-                    src="/home/hero/village.svg"
-                    width={0}
-                    height={0}
-                />
+                <Image alt="Village Background" src={Village} />
             </div>
         </section>
     );
