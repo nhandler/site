@@ -12,9 +12,13 @@
         width: 228px;
         height: 75px;
 
-        @media screen and (max-width: 1152px) {
+        @media screen and (max-width: 1440px) {
+            width: 182.4px;
+            height: 60px;
         }
         @media screen and (max-width: 960px) {
+            width: 152px;
+            height: 50px;
         }
         @media screen and (max-width: 640px) {
             width: 121.6px;
