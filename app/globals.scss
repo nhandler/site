@@ -83,7 +83,6 @@ html,
 body {
     max-width: 100vw;
     overflow-x: hidden;
-    position: relative;
 }
 
 button {
@@ -91,13 +90,9 @@ button {
 }
 
 body {
+    position: relative;
     color: rgb(var(--foreground-rgb));
-    background: linear-gradient(
-            to bottom,
-            transparent,
-            rgb(var(--background-end-rgb))
-        )
-        rgb(var(--background-start-rgb));
+    background-color: #6ae4ff;
 }
 
 a {
