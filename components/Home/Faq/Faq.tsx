@@ -9,8 +9,8 @@ import Image from "next/image";
 
 import faqs from "./questions";
 
-import FaqHeader from "@/public/home/faq/faq.svg";
-import FaqCloud from "@/public/home/faq/right cloud.svg";
+import FaqHeader from "@/public/home/faq/faqHeader.svg";
+import FaqCloud from "@/public/home/faq/cloud.svg";
 import ClickedSword from "@/public/home/faq/clickedSword.svg";
 import Sword from "@/public/home/faq/sword.svg";
 import Flames from "@/public/home/faq/faqFlames.svg";
@@ -46,43 +46,56 @@ const Faq: React.FC = () => {
             <div className={styles.faqContainer}>
                 <div className={styles.faqContainerItem1}>
                     <Image className={styles.faqHeader} alt="faq header" src={FaqHeader} />
-                    <Image className={styles.faqCloud} alt="faq cloud" src={FaqCloud} />
+                    <Image className={styles.faqCloud} alt="cloud" src={FaqCloud} />
                 </div>
                 <div className={styles.faqContainerItem2}>
-                    <h2>General</h2>
-                    <Image 
-                        className={styles.swords} 
-                        alt="general sword" 
-                        onClick={() => handleClick("general")}
-                        src={generalClicked ? ClickedSword : Sword} />
-                    <h2>Before</h2>
-                    <Image 
-                        className={styles.swords} 
-                        alt="before sword" 
-                        onClick={() => handleClick("before")}
-                        src={beforeClicked ? ClickedSword : Sword} />
-
-                    <h2>During</h2>
-                    <Image 
-                        className={styles.swords} 
-                        alt="during sword"
-                        onClick={() => handleClick("during")}
-                        src={duringClicked ? ClickedSword : Sword} />
-
-
-                    
-                    <Image className={styles.faqFlames} alt="faq flames" src={Flames} />
-                </div>
-                <div className={styles.faqContainerItem3}>
-                    <div className={styles.faqContent}>
-                        {faqs[faqSectionIndex].sectionFaqs.map(({ question, answer }, i) => (
-                        <div key={i} className={styles.faqContentColumn}>
-                            <h3>{question}</h3>
-                            {answer}
+                    <div className={styles.faqSwordContainer}>
+                        <div className={styles.faqSwordandHeader}>
+                            <h2>General</h2>
+                            <Image 
+                                className={styles.swords} 
+                                alt="general sword" 
+                                onClick={() => handleClick("general")}
+                                src={generalClicked ? ClickedSword : Sword} />
                         </div>
-                        ))}
+                        
+                        <div className={styles.faqSwordandHeader}>
+                            <h2>Before</h2>
+                            <Image 
+                                className={styles.swords} 
+                                alt="before sword" 
+                                onClick={() => handleClick("before")}
+                                src={beforeClicked ? ClickedSword : Sword} />
+                        </div>
+                        
+                        <div className={styles.faqSwordandHeader}>
+                            <h2>During</h2>
+                            <Image 
+                                className={styles.swords} 
+                                alt="during sword"
+                                onClick={() => handleClick("during")}
+                                src={duringClicked ? ClickedSword : Sword} />
+                        </div>
+                    </div>
+                    
+
+                    <div className={styles.faqQuestionsandAnswers}>
+                        <div className={styles.faqContent}>
+                            {faqs[faqSectionIndex].sectionFaqs.map(({ question, answer }, i) => (
+                            <div key={i} className={styles.faqContentColumn}>
+                                <h3>{question}</h3>
+                                {answer}
+                            </div>
+                            ))}
+                        </div>
+                    </div>
+                    
+                    <div className={styles.flamesContainer}>
+                        <Image className={styles.faqFlames} alt="flames" src={Flames} />
+                        
                     </div>
                 </div>
+                
                 
             </div>
         </section>
