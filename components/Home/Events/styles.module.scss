@@ -1,0 +1,229 @@
+@use "/app/colors" as *;
+
+$nail-size: 24px;
+
+.eventsMain {
+    // height: max(100vh, 60vw);
+    // max-height: 100vh;
+    // max-height: -webkit-fill-available;
+    background-color: $events-bg-primary;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: calc(48px - 15px + min(72px, calc(100vw / (1912 / 179)))) 48px;
+    @media screen and (max-width: 640px) {
+        padding: calc(32px - 15px + min(72px, calc(100vw / (1912 / 179)))) 32px;
+    }
+}
+
+.sheet {
+    background-color: $events-bg-secondary;
+    width: 100%;
+
+    padding: 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    position: relative;
+
+    @media screen and (max-width: 1152px) {
+        padding: 56px 48px;
+    }
+    @media screen and (max-width: 640px) {
+        padding: 48px 32px;
+    }
+}
+
+.eventsLabel {
+    color: $logo-primary;
+    font-size: 60px;
+    @media screen and (max-width: 1152px) {
+        font-size: 40px;
+    }
+    @media screen and (max-width: 640px) {
+        font-size: 26px;
+    }
+}
+
+.eventsDescription {
+    color: black;
+    font-size: 26px;
+    @media screen and (max-width: 1152px) {
+        font-size: 18px;
+    }
+    @media screen and (max-width: 640px) {
+        font-size: 14px;
+    }
+}
+
+.brFoldWrapper {
+    background-color: $events-bg-primary;
+
+    $h: 40px;
+    width: (66 / 70) * $h;
+    height: $h;
+
+    img {
+        object-fit: contain;
+    }
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    @media screen and (max-width: 1152px) {
+        width: 32px;
+        height: 32px;
+    }
+    @media screen and (max-width: 640px) {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+.tlFoldWrapper {
+    background-color: $events-bg-primary;
+
+    $h: 40px;
+    width: (61 / 65) * $h;
+    height: $h;
+
+    img {
+        object-fit: contain;
+    }
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @media screen and (max-width: 1152px) {
+        width: 32px;
+        height: 32px;
+    }
+    @media screen and (max-width: 640px) {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+.trFoldWrapper {
+    $h: 40px;
+    $free-w: calc(100vw - 32px - 60px);
+    width: min($free-w, calc((1086 / 118) * $h));
+    height: min(calc($free-w / (1086 / 118)), $h);
+    @media screen and (max-width: 640px) {
+        width: min($free-w, calc((1086 / 118) * 30px));
+        height: min(calc($free-w / (1086 / 118)), 30px);
+    }
+
+    transform: translate(1px, -2px);
+
+    img {
+        object-fit: contain;
+    }
+
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.topPlankWrapper {
+    transform: translateY(-15px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: min(72px, calc(100vw / (1912 / 179)));
+}
+
+.bottomPlankWrapper {
+    transform: translateY(15px);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: min(72px, calc(100vw / (1912 / 179)));
+}
+
+.leftNail {
+    width: $nail-size;
+    height: $nail-size;
+    position: absolute;
+    top: calc(30%);
+    left: 20px;
+
+    @media screen and (max-width: 640px) {
+        width: $nail-size / 2;
+        height: $nail-size / 2;
+    }
+}
+
+.rightNail {
+    width: $nail-size;
+    height: $nail-size;
+    position: absolute;
+    top: calc(45%);
+    right: 30px;
+
+    @media screen and (max-width: 640px) {
+        width: $nail-size / 2;
+        height: $nail-size / 2;
+    }
+}
+
+.butterflyWrapper {
+    $ratio: (223 / 237);
+    $h: 130px;
+    height: $h;
+    width: $h * $ratio;
+    position: absolute;
+    top: -$h + 25px;
+    @media screen and (max-width: 1152px) {
+        height: 90px;
+        width: 90px * $ratio;
+        top: -90px + 25px;
+    }
+    @media screen and (max-width: 640px) {
+        height: 80px;
+        width: 80px * $ratio;
+        top: -80px + 25px;
+    }
+    left: 3%;
+}
+.caterpillarWrapper {
+    $ratio: (257 / 208);
+    $h: 120px;
+    height: $h;
+    width: $h * $ratio;
+    position: absolute;
+    top: -$h + 5px;
+    right: 30%;
+    @media screen and (max-width: 1152px) {
+        height: 80px;
+        width: 80px * $ratio;
+        top: -80px + 5px;
+    }
+    @media screen and (max-width: 640px) {
+        height: 60px;
+        width: 60px * $ratio;
+        top: -60px + 5px;
+    }
+}
+.ladybugWrapper {
+    $ratio: (74 / 76);
+    $h: 36px;
+    height: $h;
+    width: $h * $ratio;
+    position: absolute;
+    top: 15%;
+    right: 15%;
+    @media screen and (max-width: 640px) {
+        height: 24px;
+        width: 24px * $ratio;
+    }
+}
