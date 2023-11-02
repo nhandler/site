@@ -79,20 +79,17 @@ const Faq: React.FC = () => {
                     </div>
                     
 
-                    <div className={styles.faqQuestionsandAnswers}>
-                        <div className={styles.faqContent}>
-                            {faqs[faqSectionIndex].sectionFaqs.map(({ question, answer }, i) => (
-                            <div key={i} className={styles.faqContentColumn}>
-                                <h3>{question}</h3>
-                                {answer}
-                            </div>
-                            ))}
+                    <div className={styles.faqContent}>
+                        {faqs[faqSectionIndex].sectionFaqs.map(({ question, answer }, i) => (
+                        <div key={i} className={styles.faqContentColumn}>
+                            <h3>{question}</h3>
+                            {answer}
                         </div>
+                        ))}
                     </div>
                     
                     <div className={styles.flamesContainer}>
                         <Image className={styles.faqFlames} alt="flames" src={Flames} />
-                        
                     </div>
                 </div>
                 

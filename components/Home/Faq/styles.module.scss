@@ -5,7 +5,8 @@
 }
 
 .faq {
-  background-image: linear-gradient(to bottom, #a3cfde, #dbfdfd);
+  // background-image: linear-gradient(to bottom, #a3cfde, #dbfdfd);
+  background-image: transparent;
   position: relative;
   min-height: 100vh;
   z-index: 2;
@@ -56,9 +57,8 @@
       height: fit-content;
 
       @media (max-width: 912px) {
-        
         top: 5vh;
-        width: 50vw;
+        width: 60vw;
       }
     }
 
@@ -69,9 +69,10 @@
   }
 
   .faqContainerItem2 {
-    flex-grow: 1;
+    flex-grow: 2;
     display: flex;
     margin: 80px 0 20px 0;
+    width: 100%;
 
     @media (max-width: 912px) {
       text-align: center;
@@ -79,6 +80,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin: 40px 0 20px 0;
 
     }
   }
@@ -103,12 +105,12 @@
       flex-grow: 1;
     }
     h2 {
-      left: 6vw;
+      left: 5vw;
       position: relative;
-      font-size: 1.7vw;
+      font-size: 1.5vw;
       font-weight: 800;
       line-height: 34px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       color: #0A4042;
       height: fit-content;
       
@@ -123,7 +125,7 @@
     .swords {
       cursor: pointer;
       position: relative;
-      width: 18vw;
+      width: 16vw;
       height: fit-content;
       margin-bottom: 50px;    
 
@@ -131,78 +133,75 @@
         position: relative;
         width: 27vw;
         height: fit-content;
+        margin-bottom: 0px;
       }
     }
   }
 
-  .faqQuestionsandAnswers {
-    flex-grow: 2;
-    max-width: 80%;
-    display: block;
-    
-    .faqContent {
-      display: flex;
-      flex-wrap: wrap;
-      white-space: pre-wrap;
-  
-      .faqContentColumn {
-        flex: 1 0 30%;
-        color: #000000;
-        font-size: 22px;
-        font-weight: 500;
-        line-height: 38px;
-        
-        margin-left: 3vw;
-        margin-right: 3vw;
-  
-        @media (max-width: 1200px) {
-          font-size: 20px;
-          margin: 20px 0 5px 0;
-          line-height: 24px;
-        }
-  
-        @media (max-width: 912px) {
-          font-size: 16px;
-          margin: 20px 5px 5px 5px;
-        }
-  
-        h3 {
-          margin: 25px 0 30px 0;
-          color: #000000;
-          font-size: 34px;
-          font-weight: 800;
-          line-height: 34px;
-  
-          @media (max-width: 1200px) {
-            font-size: 24px;
-            margin: 20px 0 5px 0;
-            line-height: 30px;
-          }
-  
-          @media (max-width: 912px) {
-            font-size: 20px;
-            margin: 20px 0 5px 0;
-            line-height: 26px;
-          }
-        }
-      }
-  
-      @media (max-width: 1300px) {
-        flex-direction: column;
+  .faqContent {
+    display: flex;
+    flex-wrap: wrap;
+    white-space: pre-wrap;
+
+    .faqContentColumn {
+      flex: 1 0 43%;
+      color: #000000;
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 28px;
+      
+      margin-left: 2vw;
+      margin-right: 2vw;
+
+      @media (max-width: 1200px) {
+        font-size: 24px;
+        margin: 20px 20px 5px 0;
+        line-height: 24px;
       }
 
       @media (max-width: 912px) {
-        flex-direction: column;
+        font-size: 20px;
+        margin: 20px 5px 5px 5px;
+      }
+
+      h3 {
+        margin: 20px 0 5px 0;
+        color: #000000;
+        font-size: 22px;
+        font-weight: 800;
+        line-height: 34px;
+
+        @media (max-width: 1200px) {
+          font-size: 24px;
+          margin: 20px 0 5px 0;
+          line-height: 30px;
+        }
+
+        @media (max-width: 912px) {
+          font-size: 20px;
+          margin: 10px 0 5px 0;
+          line-height: 26px;
+        }
+      }
+      p {
+        font-size: 18px;
+    
+        @media (max-width: 912px) {
+          font-size: 18px;
+        }
+        
       }
     }
 
-    @media (max-width: 912px) {
-      text-align: center;
-      max-width: 90%;
-      display: block;
-    }
 
+    @media (max-width: 912px) {
+      flex-direction: column;
+      margin: 10px 10px;
+    }
   }
+
+
+  
 
   .flamesContainer {
     display: flex;
@@ -210,7 +209,7 @@
     position: relative;
 
     .faqFlames {
-      width: 10vw;
+      width: 8vw;
       height: fit-content; 
       transform: translateX(50px);      
       @media (max-width: 912px) {
@@ -220,13 +219,6 @@
   }
   
 
-  p {
-    font-size: 28px;
-
-    @media (max-width: 912px) {
-      font-size: 18px;
-    }
-    
-  }
+  
 
 }
