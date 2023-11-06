@@ -11,10 +11,12 @@
     "clsx": "^1.2.1",
     "emailjs-com": "^3.2.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-next": "^14.0.1",
+    "husky": "^8.0.3",
     "lottie-react": "^2.4.0",
     "lottie-web": "^5.9.6",
     "luxon": "^3.0.1",
-    "next": "^12.3.4",
+    "next": "^14.0.1",
     "query-string": "^7.1.1",
     "react": "^18.2.0",
     "react-ace": "^10.1.0",
@@ -32,7 +34,11 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export"
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "npx prettier . --write",
+    "prepare": "husky install"
   },
   "browserslist": {
     "production": [
