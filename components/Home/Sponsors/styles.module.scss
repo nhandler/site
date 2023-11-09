@@ -1,8 +1,14 @@
+.sponsorsContainer {
+    position: relative;
+    max-height: 100vh;
+}
+
 .sponsorsMain {
     height: auto;
     max-height: 100vh;
     overflow: hidden;
     position: relative;
+    z-index: -2;
 
     .sponsorsBackground {
         position: absolute;
@@ -18,7 +24,7 @@
             height: auto;
             transform: translateY(5px) scaleX(1.001);
 
-            @media screen and (max-width: 900px) {
+            @media screen and (max-width: 700px) {
                 height: 70vh;
             }
         }
@@ -37,7 +43,7 @@
                 font-size: 2rem;
             }
             @media screen and (max-width: 640px) {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
             }
         }
     }
@@ -48,5 +54,25 @@
         @media screen and (max-width: 1152px) {
             height: 70vh;
         }
+        @media screen and (max-width: 900px) {
+            padding-top: 15%;
+            height: 50vh;
+        }
+    }
+
+}
+
+.cloudsWrapper {
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    z-index: 10;
+    
+    .backgroundClouds {
+        z-index: 10;
+        object-fit: cover;
+        width: 100vw;
+        height: auto;
+        transform: translateY(45%);
     }
 }

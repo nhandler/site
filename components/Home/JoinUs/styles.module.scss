@@ -2,8 +2,10 @@
     background-image: transparent;
     min-height: fit-content;
     z-index: 10;
+    position: relative;
     display: block;
     margin-bottom: 4em;
+    padding-top: 12vh;
 
 
     @media (max-width: 500px) {
