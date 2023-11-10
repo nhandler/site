@@ -1,14 +1,15 @@
-'use client';
+"use client";
 
 import Lottie from "lottie-react";
-import dragon from '@/public/home/dave/dragon.json';
-import styles from './DaveHome.module.scss';
+import dragon from "@/public/home/dave/dragon.json";
+import styles from "./DaveHome.module.scss";
 
 const DaveHome = () => {
     return (
         <div className={styles.container}>
             <div className={styles.background}>
-                <img src='/home/dave/background.svg' className={styles.image} />
+                {/* eslint-disable-next-line */}
+                <img src="/home/dave/background.svg" className={styles.image} />
             </div>
             <Lottie
                 className={styles.dave}
@@ -17,6 +18,6 @@ const DaveHome = () => {
             />
         </div>
     );
-}
+};
 
 export default DaveHome;

@@ -5,6 +5,7 @@ import styles from "./styles.module.scss";
 import Image from "next/image";
 
 import Village from "@/public/home/hero/village.svg";
+import { button_text } from "@/modules/HeroData";
 
 const Hero: React.FC = () => {
     return (
@@ -18,7 +19,7 @@ const Hero: React.FC = () => {
                     />
                 </div>
                 <div className={styles.heroButtonWrapper}>
-                    <button className={styles.heroButton}>Coming Soon</button>
+                    <button className={styles.heroButton}>{button_text}</button>
                 </div>
             </div>
             <div className={styles.villageWrapper}>

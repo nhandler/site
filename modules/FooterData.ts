@@ -1,4 +1,4 @@
-export const socials_data = [
+export const socials = [
     {
         id: 1,
         name: "Facebook",

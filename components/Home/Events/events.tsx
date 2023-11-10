@@ -11,6 +11,7 @@ import Nail from "@/public/home/events/nail.svg";
 import Butterfly from "@/public/home/events/butterfly.svg";
 import Caterpillar from "@/public/home/events/caterpillar.svg";
 import Ladybug from "@/public/home/events/ladybug.svg";
+import { event_description } from "@/modules/EventsData";
 
 const Hero: FC = () => {
     return (
@@ -43,16 +44,10 @@ const Hero: FC = () => {
             <div className={styles.sheet}>
                 <h1 className={styles.eventsLabel}>{"The Event"}</h1>
                 <p className={styles.eventsDescription}>
-                    {`HackIllinois is University of Illinois at Urbana-Champaign's
-                    premiere collegiate hackathon. This year, we're celebrating
-                    our 10th Hackiversary!`}
+                    {event_description.description_1}
                 </p>
                 <p className={styles.eventsDescription}>
-                    {`Join us in-person on February 24th to February 26th at the
-                    Siebel Center for Computer Science and CIF! Participants can
-                    work individually or in teams to submit projects to a
-                    specific track for a chance to win prizes. Let's make
-                    memories!`}
+                    {event_description.description_2}
                 </p>
                 <div className={styles.brFoldWrapper}>
                     <Image
