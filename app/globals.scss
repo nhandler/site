@@ -85,10 +85,6 @@ body {
     overflow-x: hidden;
 }
 
-button {
-    font-family: inherit;
-}
-
 body {
     position: relative;
     color: rgb(var(--foreground-rgb));
@@ -105,6 +101,23 @@ a {
     html {
         color-scheme: dark;
     }
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 1 */
+    line-height: 1.15; /* 1 */
+    margin: 0; /* 2 */
+}
+
+button,
+input {
+    /* 1 */
+    overflow: visible;
 }
 
 // @media screen and (max-width: 640px) {
