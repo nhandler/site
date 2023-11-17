@@ -46,8 +46,8 @@ const JoinUs = () => {
                 <div className={styles.joinusContainerItem3}>
 
                     <div className={styles.infoContainer}>
-                        Follow us on <b>Twitter</b> (@<a target="_blank" href="https://www.twitter.com/hackillinois">HackIllinois</a>)  
-                        and <b>Instagram</b> (@<a target="_blank" href="https://www.instagram.com/hackillinois">HackIllinois</a>)
+                        Follow us on Twitter (@<a target="_blank" href="https://www.twitter.com/hackillinois">HackIllinois</a>)  
+                        and Instagram (@<a target="_blank" href="https://www.instagram.com/hackillinois">HackIllinois</a>)
                         to be notified of our event updates! There will be regular content and posts.
                     </div>
                         
