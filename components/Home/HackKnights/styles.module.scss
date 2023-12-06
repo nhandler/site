@@ -47,42 +47,7 @@
                 background: none;
                 border: none;
                 margin-top: 1vh;
-                // background: #FFB23E;
-
-                // border: none;
-                // border-radius: 65px;
-                // padding: 30px 40px;
-                // font-weight: 800;
-                // font-size: 40px;
-                // color: #A61E00;
-                // cursor: pointer;
-                // margin-top: 30px;
-
-                // @media screen and (max-width: 1024px) {
-                //     padding: 25px 35px;
-                //     // font-size: 10px;
-                // }
-
-                // @media screen and (max-width: 768px) {
-                //     border-radius: 70px;
-                //     // font-size: 20px;
-                //     padding: 20px 30px;
-
-                // }
-
-                // @media screen and (max-width: 550px) {
-                //     margin-top: 10px;
-                //     border-radius: 75px;
-                //     padding: 10px 20px;
-                //     font-size: 10px;
-                // }
-
-                // @media screen and (max-width: 350px) {
-                //     margin-top: 5px;
-                //     border-radius: 80px;
-                //     padding: 5px 10px;
-                //     font-size: 8px;
-                // }
+                
 
                 &:hover {
                     filter: brightness(0.9);
@@ -94,9 +59,19 @@
             .hkLearnMoreButton {
                 width: 80%;
             }
-            
+        }
+    }
 
-            
+    .hkDividerContainer {
+        display: flex;
+        width: 100vw;
+        height: fit-content;
+        justify-content: center;
+        align-items: center;
+
+        .hkDivider {
+            width: 100vw;
+            transform:  scaleX(1.3);
 
         }
     }
