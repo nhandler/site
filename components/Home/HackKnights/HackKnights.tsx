@@ -6,7 +6,7 @@ import { useState } from "react";
 import styles from "./styles.module.scss";
 import Background from "@/public/home/hackknights/knights_background.svg"
 import Mascots from "@/public/home/hackknights/hackknights_mascots.svg"
-import LearnMoreButton from "@/public/home/hackknights/learnmore (1).svg"
+import LearnMoreButton from "@/public/home/hackknights/learnmore.svg"
 import Image from "next/image";
 
 const HackKnights: React.FC = () => {
