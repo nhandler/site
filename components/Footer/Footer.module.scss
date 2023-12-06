@@ -1,5 +1,5 @@
 .footerContainer {
-    background-color: #b3d689;
+    background-color: #004561;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -12,18 +12,18 @@
     flex-direction: column;
     row-gap: 3rem;
     width: 100%;
-    background-color: #b3d689;
+    background-color: #004561;
     padding: 7.5rem 7.5%;
 }
 
 .title {
     display: block;
-    font-size: 36px;
+    font-size: 2.25rem;
     @media screen and (max-width: 640px) {
-        font-size: 24px;
+        font-size: 1.5rem;
     }
     font-weight: 600;
-    color: #753317;
+    color: #FFFFFF;
     text-align: center;
 }
 
@@ -46,7 +46,7 @@
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        background-color: #fbaa1d;
+        background-color: #FAA91D;
         padding: 1rem;
         border-radius: 9999px;
 
@@ -69,14 +69,15 @@
 
 .newsletterTitle {
     display: block;
-    font-size: 28px;
+    font-size: 1.75rem;
     @media screen and (max-width: 640px) {
-        font-size: 20px;
+        font-size: 1.25rem;
     }
     font-weight: 600;
-    color: #753317;
+    color: #FFFFFF;
     text-align: center;
     margin-bottom: 2rem;
+
     // white-space: nowrap;
 }
 
