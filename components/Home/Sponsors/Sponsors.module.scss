@@ -1,7 +1,7 @@
 .container {
     // background: url('/home/sponsors/background.svg') no-repeat center;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
 }
 
 .background {
@@ -14,13 +14,19 @@
 
 .art {
     grid-area: 1/1;
-    display: grid;
-    grid-template-rows: 1fr 2fr 1fr;
+    display: flex;
+    height: 100%;
+    align-content: space-evenly;
+    // display: grid;
+    // grid-template-rows: 1fr 2fr 1fr;
 
-    // .gizmo {
-    //     grid-area: 1/2;
-    //     > img {
-    //         max-width: 100%;
-    //     }
-    // }
+    .gizmo {
+        transform: translateY(-10%);
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        > img {
+            max-width: 75%;
+        }
+    }
 }
