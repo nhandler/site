@@ -1,0 +1,125 @@
+.faq {
+    position: relative;
+    min-height: 200vh;
+    .faqContainer {
+        display: flex;
+        flex-direction: column;
+        // align-items: center;
+        // justify-content: center;
+    }
+    .faqItemContainer1 {
+        .faqHeader {
+            position: absolute;
+            width: 30vw;
+            height: fit-content;
+            margin-left: 7vw;
+
+            // @media (max-width: 912px) {
+            //     top: 5vh;
+            //     width: 60vw;
+            // }
+        }
+    }
+
+    .faqItemContainer2 {
+        display: flex;
+        flex-direction: column;
+        
+
+        
+        .faqBook {
+            position: absolute;
+            width: 100vw;
+            height: fit-content;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+
+    .buttonContainer {
+        z-index: 1;
+        position: absolute;
+        display: flex;
+        gap: 2vw;
+        left: 8vw;
+        top: 43vh;
+        h3 {
+            font-size: 1.5vw;
+            font-weight: 600;
+        }
+        
+        .generalButton {
+            border: none;
+            background-color: #DD5740;
+            padding: 1vw 2vw;
+        }
+        .beforeButton {
+            border: none;
+            background-color: #C9345A;
+            padding: 2vw 2vw;
+        }
+        .afterButton {
+            border: none;
+            background-color: #3C7C31;
+            padding: 1vw 3vw;
+        }
+        
+    }
+
+    .faqContent {
+        position: absolute;
+        z-index: 100;
+        display: flex;
+        flex-wrap: wrap;
+        white-space: pre-wrap;
+
+        .faqContentColumn {
+            flex: 1 0 30%;
+            color: #000000;
+            font-weight: 500;
+            line-height: 24px;
+            
+            margin-left: 2vw;
+            margin-right: 2vw;
+
+            @media (max-width: 1200px) {
+                margin: 20px 20px 5px 0;
+                line-height: 24px;
+            }
+
+            @media (max-width: 912px) {
+                margin: 10px 5px 0px 5px;
+            }
+
+            h3 {
+                margin: 20px 0 8px 0;
+                color: #000000;
+                font-size: 30px;
+                font-weight: 800;
+
+                @media (max-width: 1200px) {
+                    margin: 0px 0 5px 0;
+                }
+
+                @media (max-width: 912px) {
+                    font-size: 16px;
+                    margin: 10px 0 5px 0;
+                }
+            }
+
+            p {
+                font-size: 26px;
+                @media (max-width: 912px) {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        @media (max-width: 912px) {
+            flex-direction: column;
+            margin: 10px 10px;
+        }
+    }
+    
+}

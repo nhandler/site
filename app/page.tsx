@@ -8,6 +8,7 @@ import JoinUs from "@/components/Home/JoinUs/JoinUs";
 import Sponsors from "@/components/Home/Sponsors/sponors";
 import Footer from "@/components/Footer/Footer";
 import DaveHome from "@/components/Home/DaveHome/DaveHome";
+import NewFAQ from "@/components/Home/New_Faq/NewFAQ";
 
 
 const Home: React.FC = () => {
@@ -18,6 +19,7 @@ const Home: React.FC = () => {
             <Sponsors />
             <JoinUs />
             <Faq />
+            <NewFAQ />
             <DaveHome />
             <Footer />
         </main>
