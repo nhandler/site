@@ -8,7 +8,7 @@ import JoinUs from "@/components/Home/JoinUs/JoinUs";
 import Sponsors from "@/components/Home/Sponsors/sponors";
 import Footer from "@/components/Footer/Footer";
 import DaveHome from "@/components/Home/DaveHome/DaveHome";
-
+import HackKnights from "@/components/Home/HackKnights/HackKnights";
 
 const Home: React.FC = () => {
     return (
@@ -17,6 +17,8 @@ const Home: React.FC = () => {
             <Events />
             <Sponsors />
             <JoinUs />
+            <HackKnights />
+
             <Faq />
             <DaveHome />
             <Footer />

@@ -1,0 +1,105 @@
+.hackknights {
+
+    .hackknightsContainer {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        .hkBackground {
+            height: fit-content;
+            width: 100vw;
+        }
+    }
+    .overlappingContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        gap: 0.5em;
+        z-index: 100;
+        .hkMascotsContainer {
+            width: 55vw;
+            .hkMascots {
+                width: 100%;
+                height: 90vh;
+
+            }
+        }
+        .hkLearnMoreContainer {
+            width: 40vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1vh;
+            h3 {
+                font-size: 4vw;
+                text-align: center;
+                font-weight: 700;
+                letter-spacing: 1px;
+                .introducing {
+                    font-weight: 550;
+                }
+            }
+            .hkButton {
+                width: 100%;
+                background: none;
+                border: none;
+                margin-top: 1vh;
+                // background: #FFB23E;
+
+                // border: none;
+                // border-radius: 65px;
+                // padding: 30px 40px;
+                // font-weight: 800;
+                // font-size: 40px;
+                // color: #A61E00;
+                // cursor: pointer;
+                // margin-top: 30px;
+
+                // @media screen and (max-width: 1024px) {
+                //     padding: 25px 35px;
+                //     // font-size: 10px;
+                // }
+
+                // @media screen and (max-width: 768px) {
+                //     border-radius: 70px;
+                //     // font-size: 20px;
+                //     padding: 20px 30px;
+
+                // }
+
+                // @media screen and (max-width: 550px) {
+                //     margin-top: 10px;
+                //     border-radius: 75px;
+                //     padding: 10px 20px;
+                //     font-size: 10px;
+                // }
+
+                // @media screen and (max-width: 350px) {
+                //     margin-top: 5px;
+                //     border-radius: 80px;
+                //     padding: 5px 10px;
+                //     font-size: 8px;
+                // }
+
+                &:hover {
+                    filter: brightness(0.9);
+                    cursor: pointer;
+                }
+                
+            }
+
+            .hkLearnMoreButton {
+                width: 80%;
+            }
+            
+
+            
+
+        }
+    }
+
+    
+}
