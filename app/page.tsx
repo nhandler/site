@@ -16,9 +16,8 @@ const Home: React.FC = () => {
             <Hero />
             <Events />
             <Sponsors />
-            <JoinUs />
             <HackKnights />
-
+            <JoinUs />
             <Faq />
             <DaveHome />
             <Footer />
