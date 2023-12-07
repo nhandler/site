@@ -31,7 +31,7 @@ const Sponsors: React.FC = () => {
                     <img src="/home/sponsors/potions/bottle-purple.svg" />
                 </div>
                 <div className={styles.gizmo}>
-                    {/* <img src="/home/sponsors/gizmo.svg" /> */}
+                    <img src="/home/sponsors/gizmo.svg" />
                 </div>
             </div>
         </section>
