@@ -1,6 +1,6 @@
 "use client"
 import styles from './styles.module.scss'
-import Book from '@/public/home/new_faq/book (4).svg'
+import Book from '@/public/home/new_faq/book (5).svg'
 import FAQHeader from '@/public/home/new_faq/faq header.svg'
 import faqs from "../../../modules/FaqData";
 import Image from 'next/image'
@@ -8,6 +8,29 @@ import { useState } from 'react';
 
 const NewFAQ = () => {
     const [faqSectionIndex, setFaqSectionIndex] = useState(0);
+    const [generalClicked, setGeneralClicked] = useState(true);
+    const [beforeClicked, setBeforeClicked] = useState(false);
+    const [duringClicked, setDuringClicked] = useState(false);
+    
+    const handleClick = (id: string) => {
+        if (id === "general") {
+            setFaqSectionIndex(0);
+            setGeneralClicked(true);
+            setBeforeClicked(false);
+            setDuringClicked(false);
+        } else if (id === "before") {
+            setFaqSectionIndex(1);
+            setGeneralClicked(false);
+            setBeforeClicked(true);
+            setDuringClicked(false);
+        } else {
+            setFaqSectionIndex(2);
+            setGeneralClicked(false);
+            setBeforeClicked(false);
+            setDuringClicked(true);
+        }
+    };
+
     return ( 
         <section className={styles.faq}>
             <div className={styles.faqContainer}>
@@ -16,31 +39,35 @@ const NewFAQ = () => {
 
                 </div>
 
-                 
-
                 <div className={styles.faqItemContainer2}>
-                    {/* <div className={styles.buttonContainer}>
-                        <button className={styles.generalButton}>
+                    <Image src={Book} alt="Book" className={styles.faqBook} />
+                    <div className={styles.buttonContainer}>
+                        <button 
+                        onClick={() => handleClick("general")} 
+                        className={generalClicked ? styles.generalClicked : styles.generalButton}>
                             <h3>
                                 GENERAL
                             </h3>
                         </button>
 
-                        <button className={styles.beforeButton}>
+                        <button 
+                        onClick={() => handleClick("before")} 
+                        className={beforeClicked ? styles.beforeClicked : styles.beforeButton}>
                             <h3>
                                 BEFORE
                             </h3>
                         </button>
 
-                        <button className={styles.afterButton}>
+                        <button 
+                        onClick={() => handleClick("during")} 
+                        className={duringClicked ? styles.afterClicked : styles.afterButton}>
                             <h3>
                                 AFTER
                             </h3>
                         </button>
-                    </div>  */}
-                    
+                    </div> 
         
-                    <Image src={Book} alt="Book" className={styles.faqBook} />
+                    
                     
                     <div className={styles.faqTextContainer}>
                         <div className={styles.faqContent}>
