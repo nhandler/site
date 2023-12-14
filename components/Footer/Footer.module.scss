@@ -1,29 +1,40 @@
 .footerContainer {
-    background-color: #004561;
-    width: 100%;
     display: flex;
     justify-content: center;
-    padding: 2rem 7.5%;
+    width: 100%;
+    padding: 0 10%;
+    background-color: #004561;
 }
 
 .footer {
-    max-width: 900px;
     display: flex;
     flex-direction: column;
     row-gap: 3rem;
     width: 100%;
     background-color: #004561;
-    padding: 7.5rem 7.5%;
+    padding: min(15vh, 15rem) 0;
+
+    > div:nth-child(1) {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+        max-width: max(90%, calc(100vw / (1920 / 1220)));
+    }
 }
 
 .title {
     display: block;
-    font-size: 2.25rem;
+    font-size: 3rem;
+    @media screen and (max-width: 1280px) {
+        font-size: 3rem;
+    }
     @media screen and (max-width: 640px) {
         font-size: 1.5rem;
     }
     font-weight: 600;
-    color: #FFFFFF;
+    color: #ffffff;
     text-align: center;
 }
 
@@ -31,24 +42,28 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    column-gap: 5%;
-    row-gap: 1.5rem;
     margin-top: 2rem;
+    column-gap: 4rem;
+    // max-width: min(75%, 100vw / (1920/1201));
+    // column-gap: 5%;
+    // row-gap: 1.5rem;
 
-    @media screen and (max-width: 576px) {
-        max-width: 200px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+    // @media screen and (max-width: 576px) {
+    //     max-width: 200px;
+    //     margin-left: auto;
+    //     margin-right: auto;
+    // }
     .icon {
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        background-color: #FAA91D;
-        padding: 1rem;
+        background-color: #faa91d;
+        // padding: min(1vw, 1rem);
         border-radius: 9999px;
+        width: 5rem;
+        height: 5rem;
 
         &:hover {
             cursor: pointer;
@@ -56,27 +71,26 @@
         }
 
         .image {
-            width: 2.75vw;
-            height: 2.75vw;
-           
-            @media screen and (max-width: 576px) {
-                width: 4vw;
-                height: 4vw;
-            }
+            width: 50%;
+            height: 50%;
         }
     }
 }
 
 .newsletterTitle {
     display: block;
-    font-size: 1.75rem;
+    font-size: 2.5rem;
+    @media screen and (max-width: 1280px) {
+        font-size: 2.5rem;
+    }
     @media screen and (max-width: 640px) {
         font-size: 1.25rem;
     }
     font-weight: 600;
-    color: #FFFFFF;
+    color: #ffffff;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+    margin-top: 3rem;
 
     // white-space: nowrap;
 }
