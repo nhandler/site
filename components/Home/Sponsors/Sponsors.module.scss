@@ -5,10 +5,14 @@
 }
 
 .text {
-    font-size: 4rem;
     font-weight: 800;
     color: #fff;
     text-transform: uppercase;
+    font-size: 4rem;
+
+    @media screen and ((min-width: 1280px) and (max-width: 1919px)) {
+        font-size: 3rem;
+    }
 }
 
 .background {
@@ -97,10 +101,18 @@
 
         > :nth-child(2n-1) {
             height: min(50vh, 30rem);
+
+            @media screen and ((min-width: 1280px) and (max-width: 1919px)) {
+                height: min(45vh, 30rem);
+            }
         }
 
         > :nth-child(2n-2) {
             width: min(30vw, 30rem);
+
+            @media screen and ((min-width: 1280px) and (max-width: 1919px)) {
+                width: min(25vw, 25rem);
+            }
         }
 
         > img {
@@ -114,6 +126,11 @@
         justify-content: center;
         width: 100%;
         margin-top: (calc(-100% / 2.25));
+
+        @media screen and ((min-width: 1280px) and (max-width: 1919px)) {
+            margin-top: (calc(-100% / 2.75));
+        }
+
         > img {
             overflow: hidden;
             width: min(750%, calc(100vw / (1920 / 1208)));
