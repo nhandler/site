@@ -3,13 +3,13 @@
     flex-direction: row;
     justify-content: center;
     flex-wrap: nowrap;
-    column-gap: 1rem;
+    column-gap: 5%;
 
     .input {
         color: #ffffff;
-        width: 100%;
+        width: 60%;
         padding: 1rem;
-        border-radius: 1rem;
+        border-radius: 0.75rem;
         background-color: #0a697f;
         border: 0;
         font-size: 1.5rem;
@@ -29,10 +29,10 @@
     .button {
         background-color: #faa91d;
         color: #ffffff;
-        border-radius: 1rem;
-        padding: 0.5rem 3.5rem;
+        border-radius: 0.75rem;
+        padding: 0.25rem 2.5rem;
         border: 0;
-        font-size: 3.75rem;
+        font-size: 2.5rem;
         font-weight: 600;
         text-transform: uppercase;
 
