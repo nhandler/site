@@ -2,12 +2,10 @@
     // background: url('/home/sponsors/background.svg') no-repeat center;
     display: grid;
     grid-template-rows: 1fr;
-    // padding-top: 2.5%;
-    // background-color: #004561;
 }
 
 .text {
-    font-size: 4.5rem;
+    font-size: 4rem;
     font-weight: 800;
     color: #fff;
     text-transform: uppercase;
@@ -15,7 +13,6 @@
 
 .background {
     grid-area: 1/1;
-    // padding-bottom: 2.5%;
     background-color: #0a697f;
     > img {
         width: 100%;
@@ -49,24 +46,25 @@
             // Sponsors Bottle
             > div:nth-child(1) {
                 transform: translateY(0.125rem);
-                position: relative;
-
-                display: block;
+                display: grid;
+                grid-template-columns: 1fr;
+                // position: relative;
                 > img {
+                    grid-area: 1/1;
                     width: min(30vw, 40rem);
                 }
                 > div {
-                    position: absolute;
+                    grid-area: 1/1;
+                    //  position: absolute;
                     top: 0;
                     left: 0;
                     width: 100%;
                     height: 100%;
                     display: flex;
                     justify-content: center;
-                    align-items: center;
+                    align-items: flex-end;
                     > span {
-                        margin-top: 20%;
-                        text-align: center;
+                        margin-bottom: 15%;
                     }
                 }
             }
@@ -92,15 +90,17 @@
     > div:nth-child(2) {
         z-index: 2;
         display: grid;
-        place-items: center;
         grid-template-columns: auto auto auto;
+        place-items: center;
+        row-gap: 0.5rem;
+        padding: 0 5%;
 
         > :nth-child(2n-1) {
-            height: min(45vh, 30rem);
+            height: min(50vh, 30rem);
         }
 
         > :nth-child(2n-2) {
-            width: min(30vw, 25rem);
+            width: min(30vw, 30rem);
         }
 
         > img {
@@ -110,14 +110,14 @@
 
     .gizmo {
         z-index: 1;
-        margin-top: -25%;
         display: flex;
         justify-content: center;
         width: 100%;
+        margin-top: (calc(-100% / 2.25));
         > img {
             overflow: hidden;
-            width: min(50%, calc(100vw / (1920 / 1208)));
-            height: min(125rem, calc(100vh / (1080 / 2100)));
+            width: min(750%, calc(100vw / (1920 / 1208)));
+            height: min(150rem, calc(100vh / (1080 / 2100)));
             max-width: 100%;
             //  max-width: 50%;
         }

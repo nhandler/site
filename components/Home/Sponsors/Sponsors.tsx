@@ -6,14 +6,14 @@ const Sponsors: React.FC = () => {
     return (
         <section className={styles.container}>
             <div className={styles.background}>
-                <img src="/home/sponsors/background.svg" />
+                <img src="/home/sponsors/background2.svg" />
             </div>
             <div className={styles.art}>
                 <div>
                     <div>
                         <div>
                             <img src="/home/sponsors/potions/bottle-sponsors.svg" />
-                            <div className={styles.textWrapper}>
+                            <div>
                                 <span className={styles.text}>Sponsors</span>
                             </div>
                         </div>
