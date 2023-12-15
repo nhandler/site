@@ -5,9 +5,7 @@ import Hero from "@/components/Home/Hero/hero";
 import Faq from "@/components/Home/Faq/Faq";
 import Events from "@/components/Home/Events/events";
 import JoinUs from "@/components/Home/JoinUs/JoinUs";
-import Sponsors from "@/components/Home/Sponsors/sponors";
 import Footer from "@/components/Footer/Footer";
-import DaveHome from "@/components/Home/DaveHome/DaveHome";
 import HackKnights from "@/components/Home/HackKnights/HackKnights";
 
 const Home: React.FC = () => {
@@ -15,11 +13,11 @@ const Home: React.FC = () => {
         <main className={styles.main}>
             <Hero />
             <Events />
-            <Sponsors />
             <HackKnights />
             <JoinUs />
             <Faq />
-            <DaveHome />
+            {/* <DaveHome /> */}
+            <Sponsors />
             <Footer />
         </main>
     );

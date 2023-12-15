@@ -1,56 +1,34 @@
 import styles from './styles.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
-import Cloud from '@/public/home/joinus/dividerCloud.svg'
+import Twitter from '@/public/home/joinus/x logo.svg'
+import Instagram from '@/public/home/joinus/instagram.svg'
+import Bricks from '@/public/home/joinus/joinus brick.svg'
 
-import Twitter from '@/public/home/joinus/twitterlogo.svg'
-import Instagram from '@/public/home/joinus/instagramlogo.svg'
-import Header from '@/public/home/joinus/joinusHeader.svg'
-import SMCloud from '@/public/home/joinus/smcloud.svg'
+import Shelf from '@/public/home/joinus/joinus shelf.svg'
 
 const JoinUs = () => {
     return ( 
         <section className={styles.joinus}>
             <div className={styles.joinusContainer}>
+                <Image src={Bricks} alt="bricks" className={styles.bricks} />
+                <div className={styles.shelfContainer}>
+                    <Image src={Shelf} alt="shelf" className={styles.shelf} />
 
-                {/* <div>
-                    <Image alt="divider cloud" src={Cloud}></Image>
-
-                </div> */}
-                
-                <div className={styles.joinusContainerItem1}>
-                    <Image className={styles.joinusHeader} alt='join us header' src={Header}/>
-                </div>
-
-                <div className={styles.joinusContainerItem2}>
-                    <Image className={styles.socialmediaCloud} alt='social media' src={SMCloud}/>
-
-                    <div className={styles.logoContainer}> 
-                        <Link target="_blank" href="https://www.instagram.com/hackillinois">
-                            <Image className={styles.instagram} alt='instagram' src={Instagram}/>
-                        </Link>
-                        
+                    <div className={styles.socialmediaContainer}>
                         <Link target="_blank" href="https://twitter.com/HackIllinois">
-                            <Image className={styles.twitter} alt='twitter' src={Twitter} />
+                            <Image src={Twitter} alt="twitter" className={styles.twitter} />
                         </Link>
-
-                    </div>
-
-                    <div className={styles.handleContainer}> 
-                        <p> 
-                            @HackIllinois  
-                        </p>
+                        <Link target="_blank" href="https://www.instagram.com/hackillinois">
+                            <Image src={Instagram} alt="instagram" className={styles.instagram} />
+                        </Link>
                     </div>
                 </div>
 
-                <div className={styles.joinusContainerItem3}>
-
-                    <div className={styles.infoContainer}>
-                        Follow us on Twitter (@<a target="_blank" href="https://www.twitter.com/hackillinois">HackIllinois</a>)  
-                        and Instagram (@<a target="_blank" href="https://www.instagram.com/hackillinois">HackIllinois</a>)
-                        to be notified of our event updates! There will be regular content and posts.
-                    </div>
-                        
+                <div className={styles.joinusText}>
+                    Follow us on Twitter (@<a target="_blank" href="https://www.twitter.com/hackillinois">HackIllinois</a>)  
+                    and Instagram (@<a target="_blank" href="https://www.instagram.com/hackillinois">HackIllinois</a>)
+                    to be notified of our event updates! There will be regular content and posts.
                 </div>
 
             </div>
