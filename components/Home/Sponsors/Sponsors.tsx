@@ -6,7 +6,7 @@ const Sponsors: React.FC = () => {
     return (
         <section className={styles.container}>
             <div className={styles.background}>
-                <img src="/home/sponsors/background2.svg" />
+                <img src="/home/sponsors/background3.svg" />
             </div>
             <div className={styles.art}>
                 <div>
@@ -30,9 +30,9 @@ const Sponsors: React.FC = () => {
                     <img src="/home/sponsors/potions/bottle-yellow.svg" />
                     <img src="/home/sponsors/potions/bottle-purple.svg" />
                 </div>
-                <div className={styles.gizmo}>
+                {/* <div className={styles.gizmo}>
                     <img src="/home/sponsors/gizmo.svg" />
-                </div>
+                </div> */}
             </div>
         </section>
     );

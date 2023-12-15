@@ -10,18 +10,33 @@
     text-transform: uppercase;
     font-size: 4rem;
 
-    @media screen and ((min-width: 1280px) and (max-width: 1919px)) {
+    @media screen and (max-width: 1280px) {
         font-size: 3rem;
+    }
+
+    @media screen and (max-width: 1024px) {
+        font-size: 2.5rem;
+    }
+
+    @media screen and (max-width: 900px) {
+        font-size: 2rem;
+    }
+
+    @media screen and (max-width: 700px) {
+        font-size: 1rem;
     }
 }
 
 .background {
     grid-area: 1/1;
     background-color: #0a697f;
+    width: 100%;
+    height: 100%;
     > img {
         width: 100%;
         max-width: 100%;
-        height: 100%;
+        height: 100% !important;
+        object-fit: cover;
     }
 }
 
@@ -31,6 +46,10 @@
     flex-direction: column;
     align-content: space-evenly;
     row-gap: min(5rem, calc(100vh / (1080 / 55)));
+
+    @media screen and (max-width: 700px) {
+        row-gap: 1rem;
+    }
 
     // arranging the shelf
     > div:nth-child(1) {
@@ -47,12 +66,23 @@
             column-gap: min(7.5vh, 10rem);
             transform: translateY(0.125rem);
 
+            @media screen and (max-width: 900px) {
+                column-gap: min(2.5vh, 5rem);
+            }
+
+            @media screen and (max-width: 700px) {
+                column-gap: min(2.5vh, 5rem);
+                transform: translateY(0.025rem);
+            }
+
             // Sponsors Bottle
             > div:nth-child(1) {
-                transform: translateY(0.125rem);
                 display: grid;
                 grid-template-columns: 1fr;
-                // position: relative;
+                transform: translateY(0.125rem);
+                @media screen and (max-width: 700px) {
+                    transform: translateY(0.0065rem);
+                }
                 > img {
                     grid-area: 1/1;
                     width: min(30vw, 40rem);
@@ -78,7 +108,7 @@
             }
             // Lamp
             > img:nth-child(3) {
-                width: min(25vw, 30rem);
+                width: min(22.5vw, 27.5rem);
             }
         }
 
@@ -96,22 +126,56 @@
         display: grid;
         grid-template-columns: auto auto auto;
         place-items: center;
-        row-gap: 0.5rem;
         padding: 0 5%;
+        row-gap: 2.5rem;
+
+        @media screen and (max-width: 900px) {
+            row-gap: 1.5rem;
+        }
+
+        @media screen and (max-width: 700px) {
+            row-gap: 1rem;
+        }
 
         > :nth-child(2n-1) {
-            height: min(50vh, 30rem);
+            height: min(40vh, 25rem);
+            width: 100%;
 
-            @media screen and ((min-width: 1280px) and (max-width: 1919px)) {
-                height: min(45vh, 30rem);
+            @media screen and (max-width: 1280px) {
+                height: min(40vh, 25rem);
+            }
+
+            @media screen and (max-width: 1024px) {
+                height: min(30vh, 20rem);
+            }
+
+            @media screen and (max-width: 900px) {
+                height: min(15vh, 15rem);
+            }
+
+            @media screen and (max-width: 600px) {
+                height: min(7.5vh, 6rem);
             }
         }
 
         > :nth-child(2n-2) {
-            width: min(30vw, 30rem);
+            width: min(25vw, 22.5rem);
+            height: 100%;
 
-            @media screen and ((min-width: 1280px) and (max-width: 1919px)) {
-                width: min(25vw, 25rem);
+            @media screen and (max-width: 1280px) {
+                width: min(25vw, 22.5rem);
+            }
+
+            @media screen and (max-width: 1024px) {
+                width: min(25vw, 20rem);
+            }
+
+            @media screen and (max-width: 900px) {
+                width: min(20vw, 20rem);
+            }
+
+            @media screen and (max-width: 600px) {
+                width: min(17.5vw, 12.5rem);
             }
         }
 
@@ -121,22 +185,39 @@
     }
 
     .gizmo {
-        z-index: 1;
+        //  z-index: 1;
         display: flex;
         justify-content: center;
         width: 100%;
-        margin-top: (calc(-100% / 2.25));
-
-        @media screen and ((min-width: 1280px) and (max-width: 1919px)) {
-            margin-top: (calc(-100% / 2.75));
-        }
 
         > img {
-            overflow: hidden;
-            width: min(750%, calc(100vw / (1920 / 1208)));
-            height: min(150rem, calc(100vh / (1080 / 2100)));
             max-width: 100%;
-            //  max-width: 50%;
+
         }
+        // margin: 0 0 calc((100% / 10));
+
+        // @media screen and (max-width: 1280px) {
+        //     margin: 0 0 calc((100% / 10));
+        // }
+
+        // @media screen and (max-width: 1024px) {
+        //     width: min(20vw, 20rem);
+        // }
+
+        // @media screen and (max-width: 900px) {
+        //     width: min(20vw, 20rem);
+        // }
+
+        // @media screen and (max-width: 600px) {
+        //     width: min(15vw, 15rem);
+        // }
+
+        // > img {
+        //     overflow: hidden;
+        //     width: 100%;
+        //     height: min(150rem, calc(100vh / (1080 / 2100)));
+        //     max-width: 100%;
+        //     //  max-width: 50%;
+        // }
     }
 }
