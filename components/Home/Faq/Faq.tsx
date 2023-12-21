@@ -1,8 +1,6 @@
 "use client"
 import styles from './styles.module.scss'
 
-import Pages from '@/public/home/faq/pages.svg'
-import BookBorder from '@/public/home/faq/borders.svg'
 import FAQHeader from '@/public/home/faq/faq header.svg'
 import Image from 'next/image'
 
@@ -13,8 +11,8 @@ import DurBef from "@/public/home/faq/faq-lotties/Dur-Bef_Spellbook.json"
 import GenBef from '@/public/home/faq/faq-lotties/Gen-Bef_Spellbook.json'
 import GenDur from '@/public/home/faq/faq-lotties/Gen-Dur_Spellbook.json'
 
-import { useRef, useState, useEffect } from 'react';
-import Lottie, { LottieRefCurrentProps, useLottie } from 'lottie-react';
+import { useState, useEffect } from 'react';
+import Lottie from 'lottie-react';
 
 const FAQ = () => {
     const [clicked, setClicked] = useState(0);
