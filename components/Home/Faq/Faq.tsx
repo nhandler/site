@@ -1,118 +1,154 @@
-"use client";
+"use client"
+import styles from './styles.module.scss'
 
-import React from "react";
-import { useState } from "react";
+import Pages from '@/public/home/faq/pages.svg'
+import BookBorder from '@/public/home/faq/borders.svg'
+import FAQHeader from '@/public/home/faq/faq header.svg'
+import Image from 'next/image'
 
-import styles from "./styles.module.scss";
+import BefDur from '@/public/home/faq/faq-lotties/Bef-Dur_Spellbook.json'
+import BefGen from '@/public/home/faq/faq-lotties/Bef-Gen_Spellbook.json'
+import DurGen from '@/public/home/faq/faq-lotties/Dur-Gen_Spellbook.json'
+import DurBef from "@/public/home/faq/faq-lotties/Dur-Bef_Spellbook.json"
+import GenBef from '@/public/home/faq/faq-lotties/Gen-Bef_Spellbook.json'
+import GenDur from '@/public/home/faq/faq-lotties/Gen-Dur_Spellbook.json'
 
-import Image from "next/image";
+import { useRef, useState, useEffect } from 'react';
+import Lottie, { LottieRefCurrentProps, useLottie } from 'lottie-react';
 
-import faqs from "../../../modules/FaqData";
+const FAQ = () => {
+    const [clicked, setClicked] = useState(0);
+    const [initialDisplay, setInitialDisplay] = useState(true);
+    const [gbDisplay, setGbDisplay] = useState(false);
+    const [gdDisplay, setGdDisplay] = useState(false);
 
-import FaqHeader from "@/public/home/faq/faqHeader.svg";
-import FaqCloud from "@/public/home/faq/cloud.svg";
-import ClickedSword from "@/public/home/faq/clickedSword.svg";
-import Sword from "@/public/home/faq/sword.svg";
-import Flames from "@/public/home/faq/faqFlames.svg";
+    const [bdDisplay, setBdDisplay] = useState(false);
+    const [bgDisplay, setBgDisplay] = useState(false);
 
-const Faq: React.FC = () => {
-    const [faqSectionIndex, setFaqSectionIndex] = useState(0);
-    const [generalClicked, setGeneralClicked] = useState(true);
-    const [beforeClicked, setBeforeClicked] = useState(false);
-    const [duringClicked, setDuringClicked] = useState(false);
+    const [dgDisplay, setDgDisplay] = useState(false);
+    const [dbDisplay, setDbDisplay] = useState(false);
 
-    const swordStates = [generalClicked, beforeClicked, duringClicked];
-    const handleClick = (id: string) => {
-        if (id === "general") {
-            setFaqSectionIndex(0);
-            setGeneralClicked(true);
-            setBeforeClicked(false);
-            setDuringClicked(false);
-        } else if (id === "before") {
-            setFaqSectionIndex(1);
-            setGeneralClicked(false);
-            setBeforeClicked(true);
-            setDuringClicked(false);
-        } else {
-            setFaqSectionIndex(2);
-            setGeneralClicked(false);
-            setBeforeClicked(false);
-            setDuringClicked(true);
+    const handleClick = (id: number) => {
+        
+        console.log("handling click for tab " + id);
+        if (initialDisplay) {
+            if (id == 1) {
+                setGbDisplay(true);
+                setInitialDisplay(false);
+            } else if (id == 2) {
+                setGdDisplay(true);
+                setInitialDisplay(false);
+            }
         }
-    };
-    return (
+        if (gbDisplay) {
+            if (id == 2) {
+                setBdDisplay(true);
+                setGbDisplay(false);
+            } else if (id == 0) {
+                setBgDisplay(true);
+                setGbDisplay(false);
+            }
+        } else if (gdDisplay) {
+            if (id == 1) {
+                setDbDisplay(true);
+                setGdDisplay(false);
+            } else if (id == 0) {
+                setDgDisplay(true);
+                setGdDisplay(false);
+            }
+        } else if (bdDisplay) {
+            if (id == 0) {
+                setDgDisplay(true);
+                setBdDisplay(false);
+            } else if (id == 1) {
+                setDbDisplay(true);
+                setBdDisplay(false);
+            }
+        } else if (bgDisplay) {
+            if (id == 1) {
+                setGbDisplay(true);
+                setBgDisplay(false);
+            } else if (id == 2) {
+                setGdDisplay(true);
+                setBgDisplay(false);
+            }
+        } else if (dgDisplay) {
+            if (id == 1) {
+                setGbDisplay(true);
+                setDgDisplay(false);
+            } else if (id == 2) {
+                setGdDisplay(true);
+                setDgDisplay(false);
+            }
+        } else if (dbDisplay) {
+            if (id == 0) {
+                setBgDisplay(true);
+                setDbDisplay(false);
+            } else if (id == 2) {
+                setBdDisplay(true);
+                setDbDisplay(false);
+            }
+        }
+    }
+    useEffect(() => {
+        const general = document.getElementById("general");
+        general?.addEventListener('click', () => handleClick(0));
+        const before = document.getElementById("before");
+        before?.addEventListener('click', () => handleClick(1));
+        const during = document.getElementById("during");
+        during?.addEventListener('click', () => handleClick(2));
+        setClicked(clicked + 1);
+
+    }, [clicked]);
+        
+    return ( 
         <section className={styles.faq}>
             <div className={styles.faqContainer}>
-                <div className={styles.faqContainerItem1}>
-                    <Image
-                        className={styles.faqHeader}
-                        alt="faq header"
-                        src={FaqHeader}
-                    />
-                    <Image
-                        className={styles.faqCloud}
-                        alt="cloud"
-                        src={FaqCloud}
-                    />
+                <div className={styles.faqItemContainer1}>
+                    <Image src={FAQHeader} alt="FAQ Header" className={styles.faqHeader} />
                 </div>
-                <div className={styles.faqContainerItem2}>
-                    <div className={styles.faqSwordContainer}>
-                        <div className={styles.faqSwordandHeader}>
-                            <h2>General</h2>
-                            <Image
-                                className={styles.swords}
-                                alt="general sword"
-                                onClick={() => handleClick("general")}
-                                src={generalClicked ? ClickedSword : Sword}
-                            />
-                        </div>
+            
+                <div className={styles.faqLotties}>
+                    { initialDisplay && <Lottie 
+                        animationData={GenBef}
+                        loop={false}
+                        autoplay={false}
+                    /> }
+                    { gbDisplay && <Lottie 
+                        animationData={GenBef}
+                        loop={false}
+                        autoplay={true}
+                    /> }
+                    { gdDisplay && <Lottie 
+                        animationData={GenDur}
+                        loop={false}
+                        autoplay={true}
+                    /> }
+                    { bdDisplay && <Lottie 
+                        animationData={BefDur}
+                        loop={false}
+                        autoplay={true}
+                        /> }
+                    { bgDisplay && <Lottie
+                        animationData={BefGen}
+                        loop={false}
+                        autoplay={true}
+                    /> }
+                    { dgDisplay && <Lottie 
+                        animationData={DurGen}
+                        loop={false}
+                        autoplay={true}
+                    /> }
+                    { dbDisplay && <Lottie 
+                        animationData={DurBef}
+                        loop={false}
+                        autoplay={true}
+                    /> }
 
-                        <div className={styles.faqSwordandHeader}>
-                            <h2>Before</h2>
-                            <Image
-                                className={styles.swords}
-                                alt="before sword"
-                                onClick={() => handleClick("before")}
-                                src={beforeClicked ? ClickedSword : Sword}
-                            />
-                        </div>
-
-                        <div className={styles.faqSwordandHeader}>
-                            <h2>During</h2>
-                            <Image
-                                className={styles.swords}
-                                alt="during sword"
-                                onClick={() => handleClick("during")}
-                                src={duringClicked ? ClickedSword : Sword}
-                            />
-                        </div>
-                    </div>
-
-                    <div className={styles.faqContent}>
-                        {faqs[faqSectionIndex].sectionFaqs.map(
-                            ({ question, answer }, i) => (
-                                <div
-                                    key={i}
-                                    className={styles.faqContentColumn}
-                                >
-                                    <h3>{question}</h3>
-                                    {answer}
-                                </div>
-                            )
-                        )}
-                    </div>
-
-                    <div className={styles.flamesContainer}>
-                        <Image
-                            className={styles.faqFlames}
-                            alt="flames"
-                            src={Flames}
-                        />
-                    </div>
                 </div>
             </div>
         </section>
     );
-};
+}
 
-export default Faq;
+export default FAQ;

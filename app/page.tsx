@@ -2,13 +2,12 @@ import React from "react";
 import styles from "./page.module.scss";
 
 import Hero from "@/components/Home/Hero/hero";
-import Faq from "@/components/Home/Faq/Faq";
 import Events from "@/components/Home/Events/events";
 import JoinUs from "@/components/Home/JoinUs/JoinUs";
 import Sponsors from "@/components/Home/Sponsors/sponors";
 import Footer from "@/components/Footer/Footer";
 import DaveHome from "@/components/Home/DaveHome/DaveHome";
-import NewFAQ from "@/components/Home/New_Faq/NewFAQ";
+import FAQ from "@/components/Home/Faq/Faq";
 
 
 const Home: React.FC = () => {
@@ -18,8 +17,7 @@ const Home: React.FC = () => {
             <Events />
             <Sponsors />
             <JoinUs />
-            <Faq />
-            <NewFAQ />
+            <FAQ />
             <DaveHome />
             <Footer />
         </main>
