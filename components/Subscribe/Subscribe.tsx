@@ -35,7 +35,7 @@ const Subscribe = () => {
                 className={styles.input}
                 type="email"
                 name="email"
-                placeholder="Email address"
+                placeholder="Type your email here!"
                 value={email}
                 onChange={handleEmailChange}
                 onKeyDown={handleKeydown}
