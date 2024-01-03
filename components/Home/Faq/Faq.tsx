@@ -10,36 +10,61 @@ import { BefDur2, BefGen2, DurGen2, DurBef2, GenBef2, GenDur2 } from '@/public/h
 import { useState, useEffect } from 'react';
 import Lottie from 'lottie-react';
 
+
 const FAQ = () => {
     const isMobile = () => {
         if (typeof window !== "undefined") {
-            console.log("window width: " + window.innerWidth)
-            return window.innerWidth <= 768;
+            return window.innerWidth <= 770;
         }
     }
 
-    // const [mobile, setMobile] = useState(isMobile());
+    const [mobile, setMobile] = useState(isMobile());
+    const handleResize = () => {
+        const newMobile = isMobile();
+        console.log("mobile: " + newMobile);
+    
+        const newUsebd = newMobile ? BefDur2 : BefDur;
+        const newUsebg = newMobile ? BefGen2 : BefGen;
+        const newUsedg = newMobile ? DurGen2 : DurGen;
+        const newUsedb = newMobile ? DurBef2 : DurBef;
+        const newUsegb = newMobile ? GenBef2 : GenBef;
+        const newUsegd = newMobile ? GenDur2 : GenDur;
+    
+        setMobile(newMobile);
+        setUsebd(newUsebd);
+        setUsebg(newUsebg);
+        setUsedg(newUsedg);
+        setUsedb(newUsedb);
+        setUsegb(newUsegb);
+        setUsegd(newUsegd);
+    
+        if (display === usegb) {
+            console.log("display is usegb");
+            setDisplay(newUsegb);
+        } else if (display === usegd) {
+            console.log("display is usegd");
+            setDisplay(newUsegd);
+        } else if (display === usebd) {
+            console.log("display is usebd");
+            setDisplay(newUsebd);
+        } else if (display === usebg) {
+            console.log("display is usebg");
+            setDisplay(newUsebg);
+        } else if (display === usedg) {
+            console.log("display is usedg");
+            setDisplay(newUsedg);
+        } else if (display === usedb) {
+            console.log("display is usedb");
+            setDisplay(newUsedb);
+        } 
+    }
 
-    // const usebd = mobile ? BefDur2 : BefDur;
-    // const usebg = mobile ? BefGen2 : BefGen;
-    // const usedg = mobile ? DurGen2 : DurGen;
-    // const usedb = mobile ? DurBef2 : DurBef;
-    // const usegb = mobile ? GenBef2 : GenBef;
-    // const usegd = mobile ? GenDur2 : GenDur;
-
-    const usebd = BefDur2;
-    const usebg = BefGen2;
-    const usedg = DurGen2;
-    const usedb = DurBef2;
-    const usegb = GenBef2;
-    const usegd = GenDur2;
-
-    // const usebd = BefDur;
-    // const usebg = BefGen;
-    // const usedg = DurGen;
-    // const usedb = DurBef;
-    // const usegb = GenBef;
-    // const usegd = GenDur;
+    const [usebd, setUsebd] = useState(mobile ? BefDur2 : BefDur);
+    const [usebg, setUsebg] = useState(mobile ? BefGen2 : BefGen);
+    const [usedg, setUsedg] = useState(mobile ? DurGen2 : DurGen);
+    const [usedb, setUsedb] = useState(mobile ? DurBef2 : DurBef);
+    const [usegb, setUsegb] = useState(mobile ? GenBef2 : GenBef);
+    const [usegd, setUsegd] = useState(mobile ? GenDur2 : GenDur);
     
     const [display, setDisplay] = useState(usedg);
 
@@ -96,14 +121,17 @@ const FAQ = () => {
         general?.addEventListener('click', handleGeneralClick);
         before?.addEventListener('click', handleBeforeClick);
         during?.addEventListener('click', handleDuringClick);
+
+        window.addEventListener('resize', handleResize);
         
         return () => {
             general?.removeEventListener('click', handleGeneralClick);
             before?.removeEventListener('click', handleBeforeClick);
             during?.removeEventListener('click', handleDuringClick);
+            window.removeEventListener('resize', handleResize);
         }
 
-    }, [display]);
+    }, [display, mobile]);
         
     return ( 
         <section className={styles.faq}>
@@ -111,16 +139,18 @@ const FAQ = () => {
                 <div className={styles.faqItemContainer1}>
                     <Image src={FAQHeader} alt="FAQ Header" className={styles.faqHeader} />
                 </div>
-            
+
                 <div className={styles.faqLotties}>
-                    { <Lottie 
-                        animationData={display}
-                        loop={false}
-                        autoplay={true}
-                    />
-                    }
-                    
+                    <div className={mobile ? styles.faqScroll : styles.faqSpellbook}>
+                        { <Lottie 
+                            animationData={display}
+                            loop={false}
+                            autoplay={true}
+                        />
+                        }
+                    </div>
                 </div>
+                
             </div>
         </section>
     );
