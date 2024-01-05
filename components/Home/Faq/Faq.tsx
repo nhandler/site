@@ -13,15 +13,16 @@ import Lottie from 'lottie-react';
 
 const FAQ = () => {
     const isMobile = () => {
+
         if (typeof window !== "undefined") {
-            return window.innerWidth <= 770;
+            return window.innerWidth <= 900;
         }
     }
 
     const [mobile, setMobile] = useState(isMobile());
+    const [lottie, setLottie] = useState('');
     const handleResize = () => {
         const newMobile = isMobile();
-        console.log("mobile: " + newMobile);
     
         const newUsebd = newMobile ? BefDur2 : BefDur;
         const newUsebg = newMobile ? BefGen2 : BefGen;
@@ -39,22 +40,16 @@ const FAQ = () => {
         setUsegd(newUsegd);
     
         if (display === usegb) {
-            console.log("display is usegb");
             setDisplay(newUsegb);
         } else if (display === usegd) {
-            console.log("display is usegd");
             setDisplay(newUsegd);
         } else if (display === usebd) {
-            console.log("display is usebd");
             setDisplay(newUsebd);
         } else if (display === usebg) {
-            console.log("display is usebg");
             setDisplay(newUsebg);
         } else if (display === usedg) {
-            console.log("display is usedg");
             setDisplay(newUsedg);
         } else if (display === usedb) {
-            console.log("display is usedb");
             setDisplay(newUsedb);
         } 
     }
@@ -69,7 +64,6 @@ const FAQ = () => {
     const [display, setDisplay] = useState(usedg);
 
     const handleClick = (id: number) => {
-        console.log("handling click for tab " + id);
         if (display == usegb) {
             if (id == 2) {
                 setDisplay(usebd);
@@ -110,13 +104,28 @@ const FAQ = () => {
     }
 
     useEffect(() => {
+        setLottie(mobile ? styles.faqScroll : styles.faqSpellbook);
         const general = document.getElementById("general");
         const before = document.getElementById("before");
         const during = document.getElementById("during");
 
+        const genheading = document.querySelectorAll('[aria-label="GENERAL"]');
+        const beforeheading = document.querySelectorAll('[aria-label="BEFORE"]');
+        const duringheading = document.querySelectorAll('[aria-label="DURING"]');
+
         const handleGeneralClick = () => handleClick(0);
         const handleBeforeClick = () => handleClick(1);
         const handleDuringClick = () => handleClick(2);
+
+        genheading.forEach((heading) => {
+            heading.addEventListener('click', handleGeneralClick);
+        });
+        beforeheading.forEach((heading) => {
+            heading.addEventListener('click', handleBeforeClick);
+        });
+        duringheading.forEach((heading) => {
+            heading.addEventListener('click', handleDuringClick);
+        });
 
         general?.addEventListener('click', handleGeneralClick);
         before?.addEventListener('click', handleBeforeClick);
@@ -128,6 +137,16 @@ const FAQ = () => {
             general?.removeEventListener('click', handleGeneralClick);
             before?.removeEventListener('click', handleBeforeClick);
             during?.removeEventListener('click', handleDuringClick);
+            genheading.forEach((heading) => {
+                heading.removeEventListener('click', handleGeneralClick);
+            });
+            beforeheading.forEach((heading) => {
+                heading.removeEventListener('click', handleBeforeClick);
+            });
+            duringheading.forEach((heading) => {
+                heading.removeEventListener('click', handleDuringClick);
+            });
+            
             window.removeEventListener('resize', handleResize);
         }
 
@@ -141,7 +160,7 @@ const FAQ = () => {
                 </div>
 
                 <div className={styles.faqLotties}>
-                    <div className={mobile ? styles.faqScroll : styles.faqSpellbook}>
+                    <div className={lottie}>
                         { <Lottie 
                             animationData={display}
                             loop={false}
