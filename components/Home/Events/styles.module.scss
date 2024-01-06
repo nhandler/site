@@ -1,48 +1,106 @@
 @use "/app/colors" as *;
 
-$nail-size: 24px;
-
 .eventsMain {
-    // height: max(100vh, 60vw);
-    // max-height: 100vh;
-    // max-height: -webkit-fill-available;
-    background-color: $events-bg-primary;
-
+    background-color: #964c1b;
+    height: 100vh;
     position: relative;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    padding: calc(48px - 15px + min(72px, calc(100vw / (1912 / 179)))) 48px;
+    padding-left: 220px;
+    padding-right: 220px;
+    padding-top: calc(41px + (130 / 1512) * 100vw);
+    padding-bottom: calc(-13vw + (285 / 952) * 100vw);
+
+    @media screen and (max-width: 1152px) {
+        padding-left: 180px;
+        padding-right: 180px;
+    }
+    @media screen and (max-width: 960px) {
+        padding-left: 130px;
+        padding-right: 130px;
+    }
     @media screen and (max-width: 640px) {
-        padding: calc(32px - 15px + min(72px, calc(100vw / (1912 / 179)))) 32px;
+        padding-left: 32px;
+        padding-right: 32px;
     }
 }
 
 .sheet {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    $x-height: 73.5px;
+    $y-height: 57.5px;
+
+    // prettier-ignore
+    clip-path: polygon(
+      0% $y-height, $x-height 0%, /* top left corner fold */
+      25% 0%, calc(25% + 10px) 14px, calc(25% + 20px) 0, calc(25% + 25px) 9px, calc(25% + 30px) 0%,  /* T1 2p mountain */
+      38.8% 0%, calc(38.8% + 7px) 11px, calc(38.8% + 14px) 0%,   /* T2 1p mountain */
+      57% 0%, calc(57% + 5px) 10px, calc(57% + 10px) 0%,   /* T3 1p mountain */
+      100% 0%, /* top left corner */
+      100% 42%, calc(100% - 10px) calc(42% + 5px), 100% calc(42% + 10px),  /* R1 1p mountain */
+      100% 70%, calc(100% - 11px) calc(70% + 6.5px), 100% calc(70% + 13px), calc(100% - 11px) calc(70% + 19.5px), 100% calc(70% + 26px),  /* R2 2p mountain */
+      100% 100%, /* bottom right corner */
+      88.3% 100%, calc(88.3% - 5px) calc(100% - 9px), calc(88.3% - 10px) 100%,   /* B1 1p mountain */
+      66.8% 100%, calc(66.8% - 7px) calc(100% - 12px), calc(66.8% - 14px) 100%,   /* B2 1p mountain */
+      calc(66.8% - 20px) 100%, calc(66.8% - 24px) calc(100% - 6px), calc(66.8% - 28px) 100%,  /* B3 1p mountain */
+      22.5% 100%, calc(22.5% - 6px) calc(100% - 11px), calc(22.5% - 12px) 100%, calc(22.5% - 22px) calc(100% - 18px), calc(22.5% - 32px) 100%,   /* B4 2p mountain */
+      0% 100%, /* bottom left corner */
+      0% 78.5%, 10px calc(78.5% - 6px), 0% calc(78.5% - 12px),  /* L1 2p mountain */
+      0% 42.6%, 10px calc(42.6% - 6px), 2px calc(42.6% - 11px), 10px calc(42.6% - 16px), 0% calc(42.6% - 22px)  /* L1 2p mountain */
+    );
+
     background-color: $events-bg-secondary;
     width: 100%;
+    height: 100%;
 
-    padding: 64px;
+    padding: 72px 92px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 16px;
 
-    position: relative;
-
     @media screen and (max-width: 1152px) {
-        padding: 56px 48px;
+        padding: 64px 92px;
     }
     @media screen and (max-width: 640px) {
-        padding: 48px 32px;
+        padding: 48px 64px;
+
+        // prettier-ignore
+        clip-path: polygon(
+          0% 34px, 44px 0%, /* top left corner fold */
+          38.8% 0%, calc(38.8% + 7px) 11px, calc(38.8% + 14px) 0%,   /* T2 1p mountain */
+          100% 0%, /* top left corner */
+          100% 42%, calc(100% - 10px) calc(42% + 5px), 100% calc(42% + 10px),  /* R1 1p mountain */
+          100% 70%, calc(100% - 11px) calc(70% + 6.5px), 100% calc(70% + 13px), calc(100% - 11px) calc(70% + 19.5px), 100% calc(70% + 26px),  /* R2 2p mountain */
+          100% 100%, /* bottom right corner */
+          88.3% 100%, calc(88.3% - 5px) calc(100% - 9px), calc(88.3% - 10px) 100%,   /* B1 1p mountain */
+          66.8% 100%, calc(66.8% - 7px) calc(100% - 12px), calc(66.8% - 14px) 100%,   /* B2 1p mountain */
+          calc(66.8% - 20px) 100%, calc(66.8% - 24px) calc(100% - 6px), calc(66.8% - 28px) 100%,  /* B3 1p mountain */
+          22.5% 100%, calc(22.5% - 6px) calc(100% - 11px), calc(22.5% - 12px) 100%, calc(22.5% - 22px) calc(100% - 18px), calc(22.5% - 32px) 100%,   /* B4 2p mountain */
+          0% 100%, /* bottom left corner */
+          0% 78.5%, 10px calc(78.5% - 6px), 0% calc(78.5% - 12px),  /* L1 2p mountain */
+          0% 42.6%, 10px calc(42.6% - 6px), 2px calc(42.6% - 11px), 10px calc(42.6% - 16px), 0% calc(42.6% - 22px)  /* L1 2p mountain */
+        );
     }
+}
+
+.sheetWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 .eventsLabel {
     color: $logo-primary;
-    font-size: 60px;
-    @media screen and (max-width: 1152px) {
+
+    font-size: 50px;
+    @media screen and (max-width: 960px) {
         font-size: 40px;
     }
     @media screen and (max-width: 640px) {
@@ -51,179 +109,114 @@ $nail-size: 24px;
 }
 
 .eventsDescription {
-    color: black;
-    font-size: 26px;
-    @media screen and (max-width: 1152px) {
+    color: rgba(0, 0, 0, 0.7);
+
+    font-size: 20px;
+    @media screen and (max-width: 960px) {
         font-size: 18px;
     }
     @media screen and (max-width: 640px) {
-        font-size: 14px;
+        font-size: 16px;
     }
 }
 
-.brFoldWrapper {
-    background-color: $events-bg-primary;
+.eventsTagline {
+    color: rgba(0, 0, 0, 0.7);
 
-    $h: 40px;
-    width: (66 / 70) * $h;
-    height: $h;
-
-    img {
-        object-fit: contain;
-    }
-
-    position: absolute;
-    bottom: 0;
-    right: 0;
-
-    @media screen and (max-width: 1152px) {
-        width: 32px;
-        height: 32px;
+    font-size: 34px;
+    font-weight: 700;
+    @media screen and (max-width: 960px) {
+        font-size: 28px;
     }
     @media screen and (max-width: 640px) {
-        width: 22px;
-        height: 22px;
+        font-size: 26px;
     }
 }
 
-.tlFoldWrapper {
-    background-color: $events-bg-primary;
-
-    $h: 40px;
-    width: (61 / 65) * $h;
-    height: $h;
-
-    img {
-        object-fit: contain;
-    }
-
+.topLeftFoldWrapper {
+    z-index: 1;
     position: absolute;
     top: 0;
     left: 0;
 
-    @media screen and (max-width: 1152px) {
-        width: 32px;
-        height: 32px;
-    }
     @media screen and (max-width: 640px) {
-        width: 22px;
-        height: 22px;
+        scale: 0.6;
+        transform: translate(-23px, -25px);
     }
 }
 
-.trFoldWrapper {
-    $h: 40px;
-    $free-w: calc(100vw - 32px - 60px);
-    width: min($free-w, calc((1086 / 118) * $h));
-    height: min(calc($free-w / (1086 / 118)), $h);
-    @media screen and (max-width: 640px) {
-        width: min($free-w, calc((1086 / 118) * 30px));
-        height: min(calc($free-w / (1086 / 118)), 30px);
-    }
-
-    transform: translate(1px, -2px);
-
-    img {
-        object-fit: contain;
-    }
-
+.topRightFoldWrapper {
+    z-index: 1;
     position: absolute;
     top: 0;
     right: 0;
+    transform: translate(78px, -23.5px);
+    @media screen and (max-width: 1152px) {
+        scale: 0.8;
+        transform: translate(129px, -45px);
+    }
+    @media screen and (max-width: 960px) {
+        scale: 0.6;
+        transform: translate(214px, -81px);
+    }
+    @media screen and (max-width: 640px) {
+        scale: 0.4;
+        transform: translate(383px, -152px);
+    }
+}
+
+.leftPageWrapper {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    transform: translate(0, -50%);
+
+    img {
+        width: 250px;
+    }
+    @media screen and (max-width: 1152px) {
+        img {
+            width: 200px;
+        }
+    }
+    @media screen and (max-width: 960px) {
+        img {
+            width: 150px;
+        }
+    }
+}
+.rightPageWrapper {
+    position: absolute;
+    top: 45%;
+    right: 0;
+    transform: translate(0, -50%);
+
+    img {
+        width: 250px;
+    }
+    @media screen and (max-width: 1152px) {
+        img {
+            width: 200px;
+        }
+    }
+    @media screen and (max-width: 960px) {
+        img {
+            width: 150px;
+        }
+    }
 }
 
 .topPlankWrapper {
-    transform: translateY(-15px);
+    z-index: 3;
     position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
-    height: min(72px, calc(100vw / (1912 / 179)));
 }
 
 .bottomPlankWrapper {
-    transform: translateY(15px);
     position: absolute;
-    bottom: 0;
+    bottom: -4px;
     left: 0;
     width: 100vw;
-    height: min(72px, calc(100vw / (1912 / 179)));
-}
-
-.leftNail {
-    width: $nail-size;
-    height: $nail-size;
-    position: absolute;
-    top: calc(30%);
-    left: 20px;
-
-    @media screen and (max-width: 640px) {
-        width: $nail-size / 2;
-        height: $nail-size / 2;
-    }
-}
-
-.rightNail {
-    width: $nail-size;
-    height: $nail-size;
-    position: absolute;
-    top: calc(45%);
-    right: 30px;
-
-    @media screen and (max-width: 640px) {
-        width: $nail-size / 2;
-        height: $nail-size / 2;
-    }
-}
-
-.butterflyWrapper {
-    $ratio: (223 / 237);
-    $h: 130px;
-    height: $h;
-    width: $h * $ratio;
-    position: absolute;
-    top: -$h + 25px;
-    @media screen and (max-width: 1152px) {
-        height: 90px;
-        width: 90px * $ratio;
-        top: -90px + 25px;
-    }
-    @media screen and (max-width: 640px) {
-        height: 80px;
-        width: 80px * $ratio;
-        top: -80px + 25px;
-    }
-    left: 3%;
-}
-.caterpillarWrapper {
-    $ratio: (257 / 208);
-    $h: 120px;
-    height: $h;
-    width: $h * $ratio;
-    position: absolute;
-    top: -$h + 5px;
-    right: 30%;
-    @media screen and (max-width: 1152px) {
-        height: 80px;
-        width: 80px * $ratio;
-        top: -80px + 5px;
-    }
-    @media screen and (max-width: 640px) {
-        height: 60px;
-        width: 60px * $ratio;
-        top: -60px + 5px;
-    }
-}
-.ladybugWrapper {
-    $ratio: (74 / 76);
-    $h: 36px;
-    height: $h;
-    width: $h * $ratio;
-    position: absolute;
-    top: 15%;
-    right: 15%;
-    @media screen and (max-width: 640px) {
-        height: 24px;
-        width: 24px * $ratio;
-    }
 }
