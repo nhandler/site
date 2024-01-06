@@ -7,6 +7,7 @@ import styles from "./styles.module.scss";
 import Background from "@/public/home/hackknights/knights_background.svg"
 import Mascots from "@/public/home/hackknights/hackknights_mascots.svg"
 import LearnMoreButton from "@/public/home/hackknights/learnmore.svg"
+import HackKnightsButton from "@/public/home/hackknights/hackknights_button.svg"
 import Divider from "@/public/home/hackknights/stone divider.svg"
 import Image from "next/image";
 
@@ -28,7 +29,7 @@ const HackKnights: React.FC = () => {
                             Hack<span style={{color: "#FFB23E"}}>Knights</span>
                         </h3>
                         <button className={styles.hkButton}>
-                            <Image className={styles.hkLearnMoreButton} alt="learn more button" src={LearnMoreButton} />
+                            <Image className={styles.hkLearnMoreButton} alt="learn more button" src={HackKnightsButton} />
                         </button>
                     </div>
                 </div>
