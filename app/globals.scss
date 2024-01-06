@@ -88,7 +88,7 @@ body {
 body {
     position: relative;
     color: rgb(var(--foreground-rgb));
-    background-color: #6ae4ff;
+    background-color: #5b619b;
     overflow: clip;
 }
 
@@ -112,6 +112,16 @@ textarea {
     font-size: 100%; /* 1 */
     line-height: 1.15; /* 1 */
     margin: 0; /* 2 */
+    padding: 0;
+
+    border: none;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
 }
 
 button,
