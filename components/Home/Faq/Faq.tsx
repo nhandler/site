@@ -3,7 +3,6 @@ import styles from './styles.module.scss'
 
 import FAQHeader from '@/public/home/faq/faq header.svg'
 import Image from 'next/image'
-import General from '@/public/home/faq/general.svg'
 import { BefDur, BefGen, DurGen, DurBef, GenBef, GenDur } from '@/public/home/faq/faq-lotties-spellbook/index'
 import { BefDur2, BefGen2, DurGen2, DurBef2, GenBef2, GenDur2 } from '@/public/home/faq/faq-lotties-scroll/index'
 
