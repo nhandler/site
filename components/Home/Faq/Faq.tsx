@@ -3,13 +3,13 @@ import styles from './styles.module.scss'
 
 import FAQHeader from '@/public/home/faq/faq header.svg'
 import Image from 'next/image'
-
+import General from '@/public/home/faq/general.svg'
 import { BefDur, BefGen, DurGen, DurBef, GenBef, GenDur } from '@/public/home/faq/faq-lotties-spellbook/index'
 import { BefDur2, BefGen2, DurGen2, DurBef2, GenBef2, GenDur2 } from '@/public/home/faq/faq-lotties-scroll/index'
 
 import { useState, useEffect } from 'react';
 import Lottie from 'lottie-react';
-
+import faqs from '@/modules/FaqData'
 
 const FAQ = () => {
     const isMobile = () => {
@@ -21,6 +21,7 @@ const FAQ = () => {
 
     const [mobile, setMobile] = useState(isMobile());
     const [lottie, setLottie] = useState('');
+    const [tab, setTab] = useState(0);
     const handleResize = () => {
         const newMobile = isMobile();
     
@@ -64,6 +65,7 @@ const FAQ = () => {
     const [display, setDisplay] = useState(usedg);
 
     const handleClick = (id: number) => {
+        setTab(id);
         if (display == usegb) {
             if (id == 2) {
                 setDisplay(usebd);
@@ -101,8 +103,10 @@ const FAQ = () => {
                 setDisplay(usebd);
             }
         } 
+        setFaqKey(faqKey + 1);
     }
-
+    const [faqKey, setFaqKey] = useState(0);
+    
     useEffect(() => {
         setLottie(mobile ? styles.faqScroll : styles.faqSpellbook);
         const general = document.getElementById("general");
@@ -134,6 +138,7 @@ const FAQ = () => {
         window.addEventListener('resize', handleResize);
         
         return () => {
+
             general?.removeEventListener('click', handleGeneralClick);
             before?.removeEventListener('click', handleBeforeClick);
             during?.removeEventListener('click', handleDuringClick);
@@ -161,15 +166,27 @@ const FAQ = () => {
 
                 <div className={styles.faqLotties}>
                     <div className={lottie}>
-                        { <Lottie 
+                        <Lottie 
                             animationData={display}
                             loop={false}
                             autoplay={true}
                         />
-                        }
+
+                        <div key={faqKey} className={styles.faqText}>
+
+                                {faqs[tab].sectionFaqs.map(({ question, answer}, i) => (
+                                    <div key={i} className={styles.faqTextItem}>
+                                        <h3>{question}</h3>
+                                        <p>{answer}</p>
+                                    </div>
+                                
+                                ))}
+                        </div>
+
+                        
                     </div>
+
                 </div>
-                
             </div>
         </section>
     );

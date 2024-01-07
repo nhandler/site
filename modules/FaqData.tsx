@@ -49,15 +49,14 @@ import React from "react";
        {
          question: 'How can I register?',
          answer: [
-           <p key={0}>We have a registration portal, which will open near the end of 2023 or beginning of 2024. Be on the lookout for the registration announcement on our social media platforms (Instagram, Facebook, Reddit, etc.)!
-           <br></br><br></br>In addition, we will have a travel reimbursement form. More details will be released shortly. 
+           <p key={0}>Our registration portal will open during January 2024. Be on the lookout for the registration announcement and travel reimbursement details on our social media platforms!
            </p>,
          ],
        },
        {
          question: 'Are there any themes or specific challenges we need to address?',
          answer: [
-           <p key={0}>HackIllinois provides several different tracks for teams to follow. The specific track themes will be released soon. </p>,
+           <p key={0}>HackIllinois provides several tracks for teams to follow. The track themes will be announced soon. </p>,
          ],
        },
        
@@ -71,13 +70,13 @@ import React from "react";
        {
          question: 'What else happens at HackIllinois other than the hackathon? ',
          answer: [
-           <p key={0}>We provide collaborative events with UIUC classes, student organizations, and other universities for you to check out! We also host social activities as well, listed in the “During the Hackathon” section.</p>,
+           <p key={0}>We provide collaborative events with UIUC classes, student organizations, and other universities! We also host social activities, listed under “During the Hackathon”.</p>,
          ],
        },
        {
         question: 'How are teams formed, or can I bring my own team? What if I don\'t have a team yet?',
         answer: [
-          <p key={0}>Feel free to form your own team! But don’t worry if you do not have one -  we will have a team matching workshop available, along with team matching channels on Discord. </p>
+          <p key={0}>Feel free to form your own team! But don’t worry if you do not have one -  you can meet people through our team matching workshop and Discord channels.</p>
         ],
        },
 
