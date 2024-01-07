@@ -102,13 +102,13 @@ import React from "react";
        {
          question: 'What are the criteria for judging and how will projects be evaluated?',
          answer: [
-           <p key={0}>Check our attendee guide for more info!</p>,
+           <p key={0}>More info coming soon!</p>,
          ],
        },
        {
          question: 'What should we prioritize: the technical details, user experience, business model, or the impact of our solution?',
          answer: [
-           <p key={0}>Check our attendee guide for more info!</p>,
+           <p key={0}>More info coming soon!</p>,
          ],
        },
        {
