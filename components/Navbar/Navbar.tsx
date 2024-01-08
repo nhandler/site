@@ -12,26 +12,26 @@ type NavbarItem = {
 };
 
 const navbar_items: NavbarItem[] = [
-    {
-        title: "Schedule",
-        link: "#"
-    },
-    {
-        title: "Mentors",
-        link: "#"
-    },
-    {
-        title: "Prizes",
-        link: "#"
-    },
-    {
-        title: "Map",
-        link: "#"
-    },
-    {
-        title: "Travel",
-        link: "#"
-    }
+    // {
+    //     title: "Schedule",
+    //     link: "#"
+    // },
+    // {
+    //     title: "Mentors",
+    //     link: "#"
+    // },
+    // {
+    //     title: "Prizes",
+    //     link: "#"
+    // },
+    // {
+    //     title: "Map",
+    //     link: "#"
+    // },
+    // {
+    //     title: "Travel",
+    //     link: "#"
+    // }
 ];
 
 const Navbar = () => {
@@ -44,10 +44,10 @@ const Navbar = () => {
                 className={styles.mobileMenu}
                 onClick={() => setShowMobileNavbar(p => !p)}
             >
-                <div className={styles.mobileMenuButton}>
+                {/* <div className={styles.mobileMenuButton}>
                     <span>Menu</span>
                     <Image alt="Menu" src={CloudMenu} />
-                </div>
+                </div> */}
                 {showMobileNavbar && (
                     <ul className={styles.mobileNavbarMenu}>
                         {navbar_items.map((item, index) => (
@@ -55,9 +55,9 @@ const Navbar = () => {
                                 <a href={item.link}>{item.title}</a>
                             </li>
                         ))}
-                        <li>
+                        {/* <li>
                             <KnightsButton />
-                        </li>
+                        </li> */}
                     </ul>
                 )}
             </div>
@@ -67,9 +67,9 @@ const Navbar = () => {
                         <a href={item.link}>{item.title}</a>
                     </li>
                 ))}
-                <li>
+                {/* <li>
                     <KnightsButton />
-                </li>
+                </li> */}
             </ul>
         </nav>
     );
