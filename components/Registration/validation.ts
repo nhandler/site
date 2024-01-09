@@ -26,6 +26,30 @@ export const registrationSchema = z.object({
   // terms: z.boolean().refine((val: boolean) => val),
 });
 
+// Type validation for new Schema
+// export const registrationSchema = z.object({
+//   name: z.string().min(1).regex(/^[^ ]+ +[^ ]+.*$/, 'Please enter your first and last name.'),
+//   gender: z.string().min(1),
+//   email: z.string().min(1).email(),
+//   race: z.string().array().min(1),
+//   age: z.number().int(),
+//   phone: z.string().min(1),
+//   location: z.string().min(1),
+//   degreePursued: z.enum(['ASSOCIATES', 'BACHELORS', 'MASTERS', 'PHD', 'GRADUATED', 'OTHER']),
+//   school: z.string().min(1),
+//   major: z.string().min(1),
+//   minor: z.string().min(1),
+//   graduationYear: z.number().int(),
+//   resumeFilename: z.string().optional(),
+//   whyHack: z.string().min(1),
+//   programmingYears: z.number().array().min(1),//.int().min(0).max(10),
+//   programmingAbility: z.number().array().min(1),//.int().min(1).max(10),
+//   interests: z.string().array().min(1),
+//   outreachSurvey: z.string().array().min(1),
+//   dietary: z.string().array().min(1),
+//   travelReimbursement: z.string().min(1)
+// });
+
 export type RegistrationSchema = z.infer<typeof registrationSchema>;
 
 export const errorMap: z.ZodErrorMap = (error, ctx) => {
