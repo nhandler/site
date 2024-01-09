@@ -1,8 +1,7 @@
 // TODO - Implement Page
 
 const Education = () => {
-
-    return(<></>);
+    return <></>;
 };
 
 export default Education;

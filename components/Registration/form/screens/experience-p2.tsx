@@ -1,28 +1,24 @@
-import React from 'react';
-import clsx from 'clsx';
+import React from "react";
+import clsx from "clsx";
 
-import Checkboxes from '@/components/form/Checkboxes';
-import Select from '@/components/form/Select';
-import styles from './styles.module.scss';
+import Checkboxes from "@/components/form/Checkboxes";
+import Select from "@/components/form/Select";
+import styles from "./styles.module.scss";
 
-const formatYears = (years: number) => `${years} year${years === 1 ? '' : 's'}`;
-const programmingYearsOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-  .map((years) => ({
+const formatYears = (years: number) => `${years} year${years === 1 ? "" : "s"}`;
+const programmingYearsOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(years => ({
     value: years,
-    label: years === 10 ? '10+' : years, //formatYears(years),
-    isRadio: true, 
+    label: years === 10 ? "10+" : years, //formatYears(years),
+    isRadio: true,
     isRadioButton: true
-  }));
+}));
 
-const abilityOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-  .map((years) => ({
+const abilityOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(years => ({
     value: years,
     label: years, //formatYears(years),
-    isRadio: true, 
+    isRadio: true,
     isRadioButton: true
-  }));
-
-
+}));
 
 // const abilityOptions = [
 //   { value: 1, label: '1 - What is code?' },
@@ -37,11 +33,10 @@ const abilityOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 //   { value: 'NO', label: 'No' },
 // ];
 
-
 let value = false;
 
 const handleChange = () => {
-  value = !value;
+    value = !value;
 };
 
 // const yearOptions = [
@@ -71,23 +66,26 @@ const handleChange = () => {
 // ];
 
 const ExperienceP2 = (): JSX.Element => (
-  <div className={clsx(styles.screen, styles.experience)}>
-    <h1 className={styles.title}>Prior Experience</h1>
-    <p className={styles.text}>How many years have you been programming?</p>
-    <Checkboxes
-      className={styles.checkboxes}
-      name="programmingYears"
-      options={programmingYearsOptions}
-    />
-    <p className={styles.text}>How would you rate your programming ability (1 - beginner, 10 - legend)?</p>
-    {/* <p className={styles.fixNoteLeft}>what’s... code?</p> */}
-    <Checkboxes
-      className={styles.checkboxes}
-      name="programmingAbility"
-      options={abilityOptions}
-    />
-    {/* <p className={styles.fixNoteRight}>I eat code for breakfast</p> */}
-  </div>
+    <div className={clsx(styles.screen, styles.experience)}>
+        <h1 className={styles.title}>Prior Experience</h1>
+        <p className={styles.text}>How many years have you been programming?</p>
+        <Checkboxes
+            className={styles.checkboxes}
+            name="programmingYears"
+            options={programmingYearsOptions}
+        />
+        <p className={styles.text}>
+            How would you rate your programming ability (1 - beginner, 10 -
+            legend)?
+        </p>
+        {/* <p className={styles.fixNoteLeft}>what’s... code?</p> */}
+        <Checkboxes
+            className={styles.checkboxes}
+            name="programmingAbility"
+            options={abilityOptions}
+        />
+        {/* <p className={styles.fixNoteRight}>I eat code for breakfast</p> */}
+    </div>
 );
 
 export default ExperienceP2;

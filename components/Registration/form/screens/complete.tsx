@@ -1,8 +1,7 @@
 // TODO - Implement Page
 
 const Complete = () => {
-
-    return(<></>);
+    return <></>;
 };
 
 export default Complete;

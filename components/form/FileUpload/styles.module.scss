@@ -1,29 +1,27 @@
 .fileUpload {
+    label {
+        border: 2px solid #fcdc8f;
+        border-radius: 50ch;
+        cursor: pointer;
+        display: inline-block;
+        font-weight: 600;
+        margin-right: 8px;
+        padding: 5px 12px;
+        color: #fcdc8f;
+    }
 
-  label {
-    border: 2px solid #FCDC8F;
-    border-radius: 50ch;
-    cursor: pointer;
-    display: inline-block;
-    font-weight: 600;
-    margin-right: 8px;
-    padding: 5px 12px;
-    color: #FCDC8F;
+    .filename {
+        color: #fcdc8f;
+        font-size: 0.875em;
+    }
 
-  }
+    input {
+        display: none;
+    }
 
-  .filename {
-    color: #FCDC8F;
-    font-size: .875em;
-  }
-
-  input {
-    display: none;
-  }
-
-  p {
-    font-style: italic;
-    color: #C9D2E5;
-    font-size: 1.25em;
-  }
+    p {
+        font-style: italic;
+        color: #c9d2e5;
+        font-size: 1.25em;
+    }
 }

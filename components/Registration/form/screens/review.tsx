@@ -1,8 +1,7 @@
 // TODO - Implement Page
 
 const Review = () => {
-
-    return(<></>);
+    return <></>;
 };
 
 export default Review;

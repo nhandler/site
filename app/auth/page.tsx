@@ -1,12 +1,11 @@
-"use client"
+"use client";
 import React, { useEffect } from "react";
-import { useSearchParams } from 'next/navigation'
+import { useSearchParams } from "next/navigation";
 
 const Auth = () => {
     const search = useSearchParams();
 
-    useEffect(() =>{
-        
+    useEffect(() => {
         const token = search.get("token");
 
         // these are set in `authenticate` in util/api
@@ -23,7 +22,6 @@ const Auth = () => {
             }
         }
     });
-   
 
     return <h2>Loading</h2>;
-}
+};

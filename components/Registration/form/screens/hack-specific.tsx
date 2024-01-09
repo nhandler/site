@@ -1,8 +1,7 @@
 // TODO - Implement Page
 
 const HackSpecific = () => {
-
-    return(<></>);
+    return <></>;
 };
 
 export default HackSpecific;

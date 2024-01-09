@@ -1,8 +1,7 @@
 // TODO - Implement Page
 
 const PersonalInfo = () => {
-
-    return(<></>);
+    return <></>;
 };
 
 export default PersonalInfo;
