@@ -1,0 +1,44 @@
+.input {
+  display: block;
+  font-family: inherit;
+  border: none;
+  outline: none;
+  font-size: 1.25em;
+  font-weight: 300;
+  border-bottom: 1.5px solid #FFFFFF;
+  width: 100%;
+  padding: 10px 0;
+  background-color: transparent;
+  color: #FFFFFF;
+
+  &::placeholder {
+    color: #FFFFFF;
+    font-size: 0.9em;
+  }
+
+}
+
+.multiline {
+  width: 100%;
+  min-height: 29vh;
+  padding: 10px 0;
+  border: 3px solid #FFFFFF;
+  border-radius: 10px;
+  font-family: 'Montserrat';
+  color: #1D2644;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 17px;
+  background-color: #C9D2E5;
+
+  &::placeholder {
+    color: #1D2644;
+    font-size: 0.9em;
+  }
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}

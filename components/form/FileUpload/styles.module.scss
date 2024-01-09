@@ -1,0 +1,29 @@
+.fileUpload {
+
+  label {
+    border: 2px solid #FCDC8F;
+    border-radius: 50ch;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    margin-right: 8px;
+    padding: 5px 12px;
+    color: #FCDC8F;
+
+  }
+
+  .filename {
+    color: #FCDC8F;
+    font-size: .875em;
+  }
+
+  input {
+    display: none;
+  }
+
+  p {
+    font-style: italic;
+    color: #C9D2E5;
+    font-size: 1.25em;
+  }
+}
