@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 
-const Auth = () => {
+const Auth : React.FC = () => {
     const search = useSearchParams();
 
     useEffect(() => {
@@ -25,3 +25,5 @@ const Auth = () => {
 
     return <h2>Loading</h2>;
 };
+
+export default Auth;
