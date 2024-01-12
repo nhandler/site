@@ -21,6 +21,123 @@
     .faqLotties {
         position: relative;
     }
+
+    .hideText, .hideText2 {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.5s ease;
+    }
+
+    .faqLottieText, .hideText{
+        top: 33%;
+        left: 11%;
+        width: 38vw;
+        height: 50%;
+
+        @media screen and (min-width: 1950px) {
+            width: 730px;
+            left: calc(49vw - 730px);
+        }
+        @media (max-width: 900px) {
+            top: 8%;
+            width: 384px;
+            left: calc(45vw - 192px);
+            height: 80%;
+        }
+        @media (max-width: 430px) {
+            top: 8%;
+            width: 89vw;
+            left: 0;
+        }
+    }
+
+    .faqLottieText2, .hideText2{
+        top: 33%;
+        right: 8%;
+        width: 38vw;
+        height: 50%;
+
+        @media screen and (min-width: 1950px) {
+            width: 730px;
+            right: calc(47.5vw - 730px);
+        }
+        @media (max-width: 900px) {
+            display: none;
+        }
+    }
+
+    .faqLottieText {
+        position: absolute;
+        font-size: 1.2vw;
+        color: #0F4041;
+        padding: 1%;
+        transition: opacity 0.5s ease;
+        opacity: 1;
+
+        h2 {
+            font-size: 1.5vw;
+            font-weight: 600;
+            margin-bottom: 1%;
+            margin-top: 1.5%;
+        }
+
+        @media screen and (min-width: 1950px) {
+            font-size: 20px;
+            h2 {
+                font-size: 24px;
+            }
+        }
+        @media (max-width: 900px) {
+            font-size: 14px;
+            padding: 13px;
+            h2 {
+                font-size: 17px;
+            }
+        }
+        @media (max-width: 430px) {
+            font-size: 3.5vw;
+            h2 {
+                font-size: 3.7vw;
+            }
+        }
+
+    };
+
+    .faqLottieText2 {
+        position: absolute;
+        font-size: 1.2vw;
+        color: #0F4041;
+        padding: 1%;
+        transition: opacity 0.5s ease;
+        opacity: 1;
+
+        h2 {
+            font-size: 1.5vw;
+            font-weight: 600;
+            margin-bottom: 1%;
+            margin-top: 1.5%;
+        }
+
+        @media screen and (min-width: 1950px) {
+            font-size: 20px;
+            h2 {
+                font-size: 24px;
+            }
+        }
+    };
+
+    .image {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        max-width: 100%;
+
+        @media screen and (max-width: 900px) {
+            padding: 5%;
+        }
+    }
+
     .faqSpellbook {
         display: flex;
         justify-content: center;
